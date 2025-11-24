@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 const GOIABAS = document.getElementById("Goiabas");
 const CHICOS = document.getElementById("Chicos");
 const btnchicos = document.getElementById("Chico");
@@ -105,3 +106,5 @@ setInterval(() => {
     GOIABAS.textContent = "Goiabas: " + GOB;
     setCookie("gobValue", GOB);
 }, 1000);
+
+});
