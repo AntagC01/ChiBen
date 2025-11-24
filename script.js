@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 const GOIABAS = document.getElementById("Goiabas");
+const GOIABASDPS = document.getElementById("Goiabasdps");
 const CHICOS = document.getElementById("Chicos");
 const btnchicos = document.getElementById("Chico");
 const ROSINHAS = document.getElementById("Rosinhas");
 const btnrosinha = document.getElementById("Rosinha");
 
+const btnConfig = document.getElementById('btnConfig');
+const configWindow = document.getElementById('configWindow');
+const closeConfig = document.getElementById('closeConfig');
 
 
 // Lê o cookie ao carregar
@@ -63,48 +67,69 @@ function escolherAudioPonderado(audios) {
 }
 
 
-document.getElementById("Aperta").onclick = function () {
-    GOB += 1;
-    GOIABAS.textContent = "Goiabas: " + GOB;
-    setCookie("gobValue", GOB);
+    // Funções de clique
+    document.getElementById("Aperta").onclick = function () {
+        GOB += 1;
+        GOIABAS.textContent = "Goiabas: " + GOB;
+        setCookie("gobValue", GOB);
 
-    const aleatorio = escolherAudioPonderado(audios);
-    const audio = new Audio(aleatorio);
-    audio.play();
-};
+        const aleatorio = escolherAudioPonderado(audios);
+        
+            audioPlayer.src = aleatorio;
+            audioPlayer.volume = volumeControl.value;
+            audioPlayer.play();
+        
+    };
 
-document.getElementById("Chico").onclick = function () {
-    if (GOB >= custochico){
-    GOB = GOB - custochico;
-    GOIABAS.textContent = "Goiabas: " + GOB;
-    setCookie("gobValue", GOB);
-    CBT += 1;
-    custochico = custochico * 1.25;
-    CHICOS.textContent = CBT + " Chicos";
-    btnchicos.textContent = "+1 Chico " + custochico + " Goiabas";
+    document.getElementById("Chico").onclick = function () {
+        if (GOB >= custochico){
+            GOB -= custochico;
+            GOIABAS.textContent = "Goiabas: " + GOB;
+            setCookie("gobValue", GOB);
 
-    setCookie("cbtValue", CBT);
-    setCookie("custochicoValue", custochico);
+            CBT += 1;
+            custochico = Math.trunc(custochico * 1.25);
+            CHICOS.textContent = CBT + " Chicos";
+            btnchicos.textContent = "+1 Chico " + custochico + " Goiabas";
 
-    const audio = new Audio("mp3/mais-um-deu-soh-1763986010386.mp3");
-    audio.play();}
+            setCookie("cbtValue", CBT);
+            setCookie("custochicoValue", custochico);
 
-};
+            audioPlayer.src = "mp3/mais-um-deu-soh-1763986010386.mp3";
+            audioPlayer.volume = volumeControl.value;
+            audioPlayer.play();
+        }
+    };
 
-document.getElementById("Rosinha").onclick = function () {
-    RS += 1;
-    ROSINHAS.textContent = RS + " Rosinhas";
-    setCookie("rsValue", RS);
-
-    const audio = new Audio("");
-    audio.play();
-
-};
+    document.getElementById("Rosinha").onclick = function () {
+        RS += 1;
+        ROSINHAS.textContent = RS + " Rosinhas";
+        setCookie("rsValue", RS);
+        // nenhum som aqui
+    };
 
 setInterval(() => {
     GOB += CBT;
+    GOBDPS = CBT;
     GOIABAS.textContent = "Goiabas: " + GOB;
     setCookie("gobValue", GOB);
+    GOIABASDPS.textContent = "Goiabas per second: " + GOBDPS;
 }, 1000);
+
+
+btnConfig.addEventListener('click', () => {
+    configWindow.style.display = 'block';
+});
+
+closeConfig.addEventListener('click', () => {
+    configWindow.style.display = 'none';
+});
+
+// Exemplo: controla o volume do áudio
+const audio = document.querySelector('audio');
+const volumeControl = document.getElementById('volume');
+volumeControl.addEventListener('input', () => {
+    audio.volume = volumeControl.value;
+});
 
 });
