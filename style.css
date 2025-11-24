@@ -1,0 +1,78 @@
+/* ====== RESET BÁSICO ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ====== FUNDO E FONTE ====== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #bbb7af, #ccc5c3);
+    color: #2b2b2b;
+    text-align: center;
+    padding: 40px;
+}
+
+/* ====== TEXTO PRINCIPAL ====== */
+#ChicoBento {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #542d00;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.4);
+}
+
+/* ====== PARÁGRAFOS ====== */
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* ====== BOTÃO ====== */
+#Aperta {
+    padding: 12px 25px;
+    background-color: #ffcf40;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 0 #b68400;
+}
+
+#Aperta:hover {
+    background-color: #ffe27a;
+}
+
+#Aperta:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 0 #b68400;
+}
+
+/* ====== ANIMAÇÃO SUAVE ====== */
+body {
+    animation: fadeIn 0.7s ease forwards;
+}
+
+.img-esquerda {
+    position: fixed;
+    left: 20px;      /* distância da lateral esquerda */
+    top: 30px;       /* distância do topo */
+}
+
+.img-direita {
+    position: fixed;
+    right: 20px;     /* distância da lateral direita */
+    top: 30px;
+}
+
+/* Texto centralizado entre as imagens */
+.conteudo {
+    text-align: center;  /* centraliza o texto */
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
