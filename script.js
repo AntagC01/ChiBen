@@ -19,14 +19,14 @@ Chicos.textContent = "Chico Bentos: " + CBC;
 
 // Lista de áudios com peso
 const audios = [
-    { src: "/home/adilson/Jogin/mp3/ai-1763986035185.mp3", peso: 2 },
-    { src: "/home/adilson/Jogin/mp3/ui-1763986055146.mp3", peso: 2 },
-    { src: "/home/adilson/Jogin/mp3/clica-sua-safada-1763985977777.mp3", peso: 1 },
-    { src: "/home/adilson/Jogin/mp3/aoooooooo-1763985941343.mp3", peso: 1 },
-    { src: "/home/adilson/Jogin/mp3/mais-um-deu-soh-1763986010386.mp3", peso: 1 },
-    { src: "/home/adilson/Jogin/mp3/olha-a-on-a-1763986084897.mp3", peso: 1 },
-    { src: "/home/adilson/Jogin/mp3/goiabinha-da-boa-1763986826970.mp3", peso: 1 },
-    { src: "/home/adilson/Jogin/mp3/eita-1763986860328.mp3", peso: 2 },
+    { src: "mp3/ai-1763986035185.mp3", peso: 2 },
+    { src: "mp3/ui-1763986055146.mp3", peso: 2 },
+    { src: "mp3/clica-sua-safada-1763985977777.mp3", peso: 1 },
+    { src: "mp3/aoooooooo-1763985941343.mp3", peso: 1 },
+    { src: "mp3/mais-um-deu-soh-1763986010386.mp3", peso: 1 },
+    { src: "mp3/olha-a-on-a-1763986084897.mp3", peso: 1 },
+    { src: "mp3/goiabinha-da-boa-1763986826970.mp3", peso: 1 },
+    { src: "mp3/eita-1763986860328.mp3", peso: 2 },
     { src: "", peso: 15 }
 ];
 
