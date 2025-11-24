@@ -137,7 +137,7 @@ function escolherAudioPonderado(audios) {
             setCookie("zllValue", ZLL);
             setCookie("custozeleleValue", custozelele);
 
-            audioPlayer.src = "";
+            audioPlayer.src = "mp3/fala-parceiro-z-lele-1764017115514.mp3";
             audioPlayer.volume = volumeControl.value;
             audioPlayer.play();
         }
