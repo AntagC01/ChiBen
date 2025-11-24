@@ -88,6 +88,25 @@ body {
     z-index: 1000;
 }
 
+#btnConfig {
+    position: fixed;   /* Fica sempre na tela, mesmo ao rolar */
+    bottom: 20px;         /* Distância do topo */
+    right: 20px;       /* Distância da borda direita */
+    z-index: 100;      /* Fica acima do conteúdo */
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+
+/* Efeito hover */
+#btnConfig:hover {
+    transform: scale(1.1);
+}
+
 
 @keyframes fadeIn {
     from { opacity: 0; }

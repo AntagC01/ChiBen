@@ -106,6 +106,10 @@ function escolherAudioPonderado(audios) {
         ROSINHAS.textContent = RS + " Rosinhas";
         setCookie("rsValue", RS);
         // nenhum som aqui
+
+        audioPlayer.src = "mp3/rosinha-meu-amor-1763995355051.mp3";
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
     };
 
 setInterval(() => {
@@ -131,5 +135,27 @@ const volumeControl = document.getElementById('volume');
 volumeControl.addEventListener('input', () => {
     audio.volume = volumeControl.value;
 });
+
+    const RESET = document.getElementById('reset');
+    
+    RESET.addEventListener('click', () => {
+        // Zera os cookies
+        CBT = 0;
+        GOB = 0;
+        custochico = 10;
+        setCookie("gobValue", 0);
+        setCookie("cbtValue", 0);
+        setCookie("custochicoValue", 10); // valor inicial do Chico
+        setCookie("rsValue", 0);
+
+        // Atualiza os elementos da tela
+        document.getElementById("Goiabas").textContent = "Goiabas: 0";
+        document.getElementById("Chicos").textContent = "0 Chicos";
+        document.getElementById("Rosinhas").textContent = "0 Rosinhas";
+        document.getElementById("Chico").textContent = "+1 Chico 10 Goiabas";
+
+        // Se você quiser, também pode resetar contadores por segundo
+        // e qualquer outro estado do jogo
+    });
 
 });

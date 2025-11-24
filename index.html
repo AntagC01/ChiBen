@@ -35,7 +35,7 @@
 
 
     <!-- Botão de Configurações -->
-    <button id="btnConfig" style="position: fixed; top: 20px; right: 20px;">⚙️ Configurações</button>
+    <button id="btnConfig">⚙️ Configurações</button>
 
     <!-- Janela Flutuante -->
     <div id="configWindow" class="config-window">
@@ -44,12 +44,15 @@
             Volume:
             <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
         </label>
+        <label>
+            <input type="button" id="reset" value="reset">
+        </label>
         <br>
         <button id="closeConfig">Fechar</button>
     </div>
 
     <audio id="audioPlayer" autoplay hidden></audio>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
