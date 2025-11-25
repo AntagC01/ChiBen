@@ -130,6 +130,12 @@ body {
 #Upgrade5{
     display: none;
 }
+#Upgrade6{
+    display: none;
+}
+#Upgrade7{
+    display: none;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; }

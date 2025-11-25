@@ -22,6 +22,8 @@ const upgrade2 = document.getElementById("Upgrade2")
 const upgrade3 = document.getElementById("Upgrade3")
 const upgrade4 = document.getElementById("Upgrade4")
 const upgrade5 = document.getElementById("Upgrade5")
+const upgrade6 = document.getElementById("Upgrade6")
+const upgrade7 = document.getElementById("Upgrade7")
 
 
 
@@ -66,13 +68,15 @@ let custorosinha = parseInt(getCookie("custorosinhaValue")) || 1000;
 btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Goiabas";
 
 let GLOBAL = parseInt(getCookie("globalbonusValue")) || 1;
-
+let CLICK = parseInt(getCookie("clickValue")) || 1;
 
 let up1 = parseInt(getCookie("up1Value")) || 0;
 let up2 = parseInt(getCookie("up2Value")) || 0;
 let up3 = parseInt(getCookie("up3Value")) || 0;
 let up4 = parseInt(getCookie("up4Value")) || 0;
 let up5 = parseInt(getCookie("up5Value")) || 0;
+let up6 = parseInt(getCookie("up6Value")) || 0;
+let up7 = parseInt(getCookie("up7Value")) || 0;
 
 if (RS > 0){
     rosasdiv.style.display = 'block';
@@ -108,7 +112,7 @@ function escolherAudioPonderado(audios) {
 
     // Funções de clique
     document.getElementById("Aperta").onclick = function () {
-        GOB += 1;
+        GOB += CLICK;
         GOIABAS.textContent = "Goiabas: " + GOB;
         setCookie("gobValue", GOB);
 
@@ -177,10 +181,10 @@ function escolherAudioPonderado(audios) {
         audioPlayer.src = "mp3/rosinha-meu-amor-1763995355051.mp3";
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();
-    };
+    }
 };
 
-//tick global
+ //tick global
 setInterval(() => {
     GOBDPS = ((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS)) * GLOBAL;
     GOB += GOBDPS;
@@ -196,7 +200,7 @@ setInterval(() => {
 }, 1000);
 
 setInterval(() => {
-if (GOB >= 50 && up1 == 0){
+if (GOB >= 80 && up1 == 0){
     upgrade1.style.display = 'block';
 }
 if (ZLL >= 1 && up2 == 0){
@@ -211,7 +215,12 @@ if (ROSA >= 50 && up4 == 0){
 if (RS >= 10 && up5 == 0){
     upgrade5.style.display = 'block';
 }
-
+if (GOB >= 30 && up6 == 0){
+    upgrade6.style.display = 'block';
+}
+if (GOB >= 750 && up7 == 0){
+    upgrade7.style.display = 'block';
+}
 if (GOB >= 1000000)
 {
     alert("Parabens, você chegou ao final do jogo, você comeu tanta goiaba que explodiu e cabo tudo");
@@ -220,13 +229,13 @@ if (GOB >= 1000000)
 }, 3000);
 
     document.getElementById("Upgrade1").onclick = function () {
-        if (GOB >= 50){
+        if (GOB >= 80){
             setCookie("up1Value", 1);
             setCookie("cbtbonusValue", CBT_BONUS * 2);
             CBT_BONUS = CBT_BONUS * 2;
             up1 = 1;
             upgrade1.style.display = 'none';
-    };
+    }
 };
 
     document.getElementById("Upgrade2").onclick = function () {
@@ -238,27 +247,29 @@ if (GOB >= 1000000)
             upgrade2.style.display = 'none';
             ZELELES.textContent = ZLL + " Ze leles";
             alert("Veio uma onça e cumeu o ze lele :(")
-    };
+    }
 };
 
     document.getElementById("Upgrade3").onclick = function () {
         if (GOB >= 500){
+            GOB -= 500;
             setCookie("up3Value", 1);
             setCookie("globalbonusValue", GLOBAL * 2);
             GLOBAL = GLOBAL * 2;
             up3 = 1;
             upgrade3.style.display = 'none';
-    };
+    }
 };
 
     document.getElementById("Upgrade4").onclick = function () {
         if (ROSA >= 50){
+            ROSA -= 50;
             setCookie("up4Value", 1);
             setCookie("globalbonusValue", GLOBAL * 3);
             GLOBAL = GLOBAL * 3;
             up4 = 1;
             upgrade4.style.display = 'none';
-    };
+    }
 };
 
     document.getElementById("Upgrade5").onclick = function () {
@@ -268,7 +279,29 @@ if (GOB >= 1000000)
             GLOBAL = GLOBAL * 10;
             up5 = 1;
             upgrade5.style.display = 'none';
-    };
+    }
+};
+
+    document.getElementById("Upgrade6").onclick = function () {
+        if (GOB >= 30){
+            GOB -= 30;
+            setCookie("up6Value", 1);
+            setCookie("clickValue", CLICK * 2);
+            CLICK = CLICK * 2;
+            up6 = 1;
+            upgrade6.style.display = 'none';
+    }
+};
+
+    document.getElementById("Upgrade7").onclick = function () {
+        if (GOB >= 750){
+            GOB -= 750;
+            setCookie("up7Value", 1);
+            setCookie("clickValue", CLICK * 10);
+            CLICK = CLICK * 10;
+            up7 = 1;
+            upgrade7.style.display = 'none';
+    }
 };
 btnConfig.addEventListener('click', () => {
     configWindow.style.display = 'block';
@@ -301,8 +334,10 @@ function reseta(){
         ROSADPS = 0;
         custorosinha = 1000;
         GLOBAL = 1;
+        CLICK = 0;
 
-        setCookie("globalbonusValue",1)
+        setCookie("clickValue",1);
+        setCookie("globalbonusValue",1);
         setCookie("gobValue", 0);
         setCookie("cbtValue", 0);
         setCookie("custochicoValue", 10); // valor inicial do Chico
@@ -319,6 +354,8 @@ function reseta(){
         setCookie("up3Value",0);
         setCookie("up4Value",0);
         setCookie("up5Value",0);
+        setCookie("up6Value",0);
+        setCookie("up7Value",0);
         // Atualiza os elementos da tela
         document.getElementById("Goiabas").textContent = "Goiabas: 0";
         document.getElementById("Chicos").textContent = "0 Chicos";
