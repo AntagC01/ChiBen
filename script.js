@@ -297,6 +297,8 @@ function reseta(){
         custozelele = 100;
         ZLL_BONUS = 0;
         RS = 0;
+        ROSA = 0;
+        ROSADPS = 0;
         custorosinha = 1000;
         GLOBAL = 1;
 
