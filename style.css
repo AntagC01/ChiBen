@@ -111,6 +111,26 @@ body {
     display: none;
 }
 
+
+#listaupgrades{
+    align-items: center;
+}
+#Upgrade1{
+    display: none;
+}
+#Upgrade2{
+    display: none;
+}
+#Upgrade3{
+    display: none;
+}
+#Upgrade4{
+    display: none;
+}
+#Upgrade5{
+    display: none;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
