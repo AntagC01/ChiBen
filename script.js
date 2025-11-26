@@ -112,13 +112,8 @@ fecharconquistas.addEventListener("click", () => {
 
     //==================== AUDIO ====================
     const audios = [
-        { src: "mp3/ai-1763986035185.mp3", peso: 2 },
-        { src: "mp3/ui-1763986055146.mp3", peso: 2 },
-        { src: "mp3/aoooooooo-1763985941343.mp3", peso: 1 },
-        { src: "mp3/olha-a-on-a-1763986084897.mp3", peso: 1 },
-        { src: "mp3/goiabinha-da-boa-1763986826970.mp3", peso: 1 },
-        { src: "mp3/eita-1763986860328.mp3", peso: 2 },
-        { src: "", peso: 15 }
+        { src: "mp3/click_satisfatorio.wav", peso: 2 }
+        //{ src: "mp3/ui-1763986055146.mp3", peso: 2 },
     ];
 
     function escolherAudioPonderado(lista) {
@@ -139,7 +134,7 @@ fecharconquistas.addEventListener("click", () => {
 
         const audio = escolherAudioPonderado(audios);
         audioPlayer.src = audio;
-        audioPlayer.volume = volumeControl.value;
+        audioPlayer.volume = volumeControl.value * 0.75;
         audioPlayer.play();
     };
 
@@ -158,9 +153,13 @@ fecharconquistas.addEventListener("click", () => {
         setCookie("cbtValue", CBT);
         setCookie("custochicoValue", custochico);
 
-        audioPlayer.src = "mp3/mais-um-deu-soh-1763986010386.mp3";
+        audioPlayer.src = "mp3/compra.mp3";
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();
+
+        //audioPlayer.src = "mp3/mais-um-deu-soh-1763986010386.mp3";
+        //audioPlayer.volume = volumeControl.value;
+        //audioPlayer.play();
     };
 
     document.getElementById("Zelele").onclick = function () {
@@ -178,7 +177,7 @@ fecharconquistas.addEventListener("click", () => {
         setCookie("zllValue", ZLL);
         setCookie("custozeleleValue", custozelele);
 
-        audioPlayer.src = "mp3/fala-parceiro-z-lele-1764017115514.mp3";
+        audioPlayer.src = "mp3/compra.mp3";
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();
     };
@@ -198,11 +197,11 @@ fecharconquistas.addEventListener("click", () => {
         setCookie("rsValue", RS);
         setCookie("custorosinhaValue", custorosinha);
 
-        rosasdiv.style.display = 'block';
-
-        audioPlayer.src = "mp3/rosinha-meu-amor-1763995355051.mp3";
+        audioPlayer.src = "mp3/compra.mp3";
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();
+
+        rosasdiv.style.display = 'block';
     };
 
     //==================== AUTOMATIC PRODUCTION ====================
@@ -445,6 +444,10 @@ document.getElementById("Upgrade8").onclick = function () {
 
         textoElemento.textContent = texto;
         popup.classList.add("show");
+        
+        audioPlayer.src = "mp3/achievement.mp3";
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
 
         setTimeout(() => popup.classList.remove("show"), 5000);
     }
