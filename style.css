@@ -225,7 +225,9 @@ body {
 #fecharconquistas{
     margin-top: 10px;
 }
-
+#totalcqtdiv{
+    margin-top: 10px;
+}
 #cqt1{
     display: none;
 }

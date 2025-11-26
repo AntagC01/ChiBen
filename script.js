@@ -33,6 +33,7 @@ const cqt4 = document.getElementById("cqt4")
 const cqt5 = document.getElementById("cqt5")
 const cqt6 = document.getElementById("cqt6")
 const cqt7 = document.getElementById("cqt7")
+const totalcqtdiv = document.getElementById("totalcqtdiv")
 
 const sidebar = document.getElementById("sidebar");
 const toggleSidebar = document.getElementById("toggleSidebar");
@@ -112,6 +113,8 @@ let vcqt4 = parseInt(getCookie("vcqt4Value")) || 0;
 let vcqt5 = parseInt(getCookie("vcqt5Value")) || 0;
 let vcqt6 = parseInt(getCookie("vcqt6Value")) || 0;
 let vcqt7 = parseInt(getCookie("vcqt7Value")) || 0;
+let totalcqt = parseInt(getCookie("totalcqtValue")) || 0;
+
 
 if (RS > 0){
     rosasdiv.style.display = 'block';
@@ -267,6 +270,8 @@ if (ZLL >= 15 && up8 == 0 && up2 == 1){
 if(GOB >= 1){
     cqt1.style.display = 'block';
     if(vcqt1 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
         mostrarConquista("Primeira goiabinha");
         vcqt1 = 1;
         setCookie("vcqt1Value",1)
@@ -275,6 +280,8 @@ if(GOB >= 1){
 if(CBT >= 1){
     cqt2.style.display = 'block';
     if(vcqt2 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
         mostrarConquista("Clonando chicos");
         vcqt2 = 1;
         setCookie("vcqt2Value",1)
@@ -283,6 +290,8 @@ if(CBT >= 1){
 if(ZLL >= 1){
     cqt3.style.display = 'block';
     if(vcqt3 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
         mostrarConquista("Melhor Amigo");
         vcqt3 = 1;
         setCookie("vcqt3Value",1)
@@ -291,6 +300,8 @@ if(ZLL >= 1){
 if(up2 == 1){
     cqt4.style.display = 'block';
     if(vcqt4 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
         mostrarConquista("Tchau melhor amigo :(");
         vcqt4 = 1;
         setCookie("vcqt4Value",1)
@@ -299,6 +310,8 @@ if(up2 == 1){
 if(up8 == 1){
     cqt5.style.display = 'block';
     if(vcqt5 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
         mostrarConquista("Bem vindo de volta Ze lele");
         vcqt5 = 1;
         setCookie("vcqt5Value",1)
@@ -307,6 +320,8 @@ if(up8 == 1){
 if(RS >= 1){
     cqt6.style.display = 'block';
     if(vcqt6 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
         mostrarConquista("Primeira rosinha");
         vcqt6 = 1;
         setCookie("vcqt6Value",1)
@@ -315,11 +330,15 @@ if(RS >= 1){
 if(RS >= 10){
     cqt7.style.display = 'block';
     if(vcqt7 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
         mostrarConquista("Rosinha pra mais de metro");
         vcqt7 = 1;
         setCookie("vcqt7Value",1)
     }
 }
+
+totalcqtdiv.textContent = totalcqt + " de 7 alcançadas";
 }, 3000);
 
     function mostrarConquista(texto) {
@@ -485,6 +504,7 @@ function reseta(){
         setCookie("vcqt5Value",0);
         setCookie("vcqt6Value",0);
         setCookie("vcqt7Value",0);
+        setCookie("totalcqtValue",0);
         // Atualiza os elementos da tela
         document.getElementById("Goiabas").textContent = "Goiabas: 0";
         document.getElementById("Chicos").textContent = "0 Chicos";
