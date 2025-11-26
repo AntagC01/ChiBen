@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let vcqt6 = parseInt(getCookie("vcqt6Value")) || 0;
     let vcqt7 = parseInt(getCookie("vcqt7Value")) || 0;
     let totalcqt = parseInt(getCookie("totalcqtValue")) || 0;
+    let objetivo = 0;
 
     if (RS > 0) rosasdiv.style.display = 'block';
 
@@ -282,10 +283,11 @@ if (GOB >= 30 && up6 == 0){
 if (GOB >= 750 && up7 == 0){
     upgrade7.style.display = 'block';
 }
-if (GOB >= 1000000)
+if (GOB >= 1000000 && objetivo != 1)
 {
     showCustomAlert("Congratulations, you reached the end of the game, you ate so many guavas that you exploded and everything ended. Now you must ASCEND!!!!!");
-    btnascend.style.display = 'block'
+    btnascend.style.display = 'block';
+    objetivo = 1;
 }
 if (ZLL >= 15 && up8 == 0 && up2 == 1){
     upgrade8.style.display = 'block';
@@ -486,6 +488,8 @@ document.getElementById("Upgrade8").onclick = function () {
         setCookie("ascendValue",ascendvar);
         escalamento -= 0.02;
         setCookie("escalamentoValue",escalamento);
+        btnascend.style.display = 'none';
+        ascend();
     }
 
     //==================== CONFIG ====================
@@ -580,6 +584,7 @@ document.getElementById("Upgrade8").onclick = function () {
         custorosinha = 1000;
         GLOBAL = 1;
         CLICK = 0;
+        objetivo = 0;
 
         setCookie("clickValue",1);
         setCookie("globalbonusValue",1);

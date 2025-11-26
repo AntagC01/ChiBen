@@ -485,3 +485,7 @@ body {
   #customAlertBox button:hover {
     background-color: #ffd966;
   }
+
+  #ascend{
+    display: none;
+  }
