@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     //==================== INITIAL ALERT ====================
-    alert("You are just a guava thief farmer dreaming of 1 million guavas, this is your goal");
+    showCustomAlert("You are just a guava thief farmer dreaming of 1 million guavas, this is your goal");
 
     //==================== ELEMENTS ====================
     const GOIABAS = document.getElementById("Goiabas");
@@ -256,7 +256,7 @@ if (GOB >= 750 && up7 == 0){
 }
 if (GOB >= 1000000)
 {
-    alert("Congratulations, you reached the end of the game, you ate so many guavas that you exploded and everything ended");
+    showCustomAlert("Congratulations, you reached the end of the game, you ate so many guavas that you exploded and everything ended");
     reseta();
 }
 if (ZLL >= 15 && up8 == 0 && up2 == 1){
@@ -354,7 +354,7 @@ totalcqtdiv.textContent = totalcqt + " of 7 achieved";
             up2 = 1;
             upgrade2.style.display = 'none';
             ZELELES.textContent = ZLL + " Ze leles";
-            alert("A jaguar came and ate Ze Lele :(")
+            showCustomAlert("A jaguar came and ate Ze Lele :(")
     }
 };
 
@@ -421,7 +421,7 @@ document.getElementById("Upgrade8").onclick = function () {
         setCookie("zllbonusValue", ZLL_BONUS);
         up8 = 1;
         upgrade8.style.display = 'none';
-        alert("You beat the jaguar until it spit Ze Lele back :) (2x Ze Lele production)")
+        showCustomAlert("You beat the jaguar until it spit Ze Lele back :) (2x Ze Lele production)")
     }
 };
 
@@ -521,3 +521,12 @@ document.getElementById("Upgrade8").onclick = function () {
     RESET.addEventListener("click", reseta);
 
 });
+
+ function showCustomAlert(message) {
+    document.getElementById('customAlertMessage').textContent = message;
+    document.getElementById('customAlertOverlay').style.display = 'flex';
+  }
+
+  function closeCustomAlert() {
+    document.getElementById('customAlertOverlay').style.display = 'none';
+  }

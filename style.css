@@ -175,17 +175,16 @@ body {
     transform: scale(0.95);
 }
 
-/* Botões dos upgrades com visual mais bonito */
 #listaupgrades button {
     padding: 10px 15px;
     background-color: #ffe8b3;
     border: 2px solid #8b6f4f;
     border-radius: 10px;
-
     cursor: pointer;
     transition: 0.2s;
     font-size: 14px;
     width: 250px;
+    position: relative; /* necessário para o tooltip */
 }
 
 #listaupgrades button:hover {
@@ -196,6 +195,46 @@ body {
 #listaupgrades button:active {
     transform: scale(0.95);
 }
+
+/* Tooltip */
+#listaupgrades button::after {
+    content: attr(data-tooltip); /* pega o texto do data-tooltip */
+    position: absolute;
+    bottom: 125%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+/* Triângulo do tooltip */
+#listaupgrades button::before {
+    content: "";
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.8) transparent transparent transparent;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Mostrar tooltip ao passar o mouse */
+#listaupgrades button:hover::after,
+#listaupgrades button:hover::before {
+    opacity: 1;
+}
+
 
 #Upgrade1{
     display: none;
@@ -299,14 +338,65 @@ body {
 .pagina.show {
     display: flex;
 }
-#conquistas{
+/* Título principal */
+#paginaconquistas h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #222;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Subtítulo mostrando progresso */
+#paginaconquistas h2 {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Container dos botões de conquistas */
+#conquistas {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 30px;
 }
-#fecharconquistas{
-    margin-top: 10px;
+
+/* Botões de conquistas */
+#conquistas button {
+    flex: 1 1 140px;  /* adaptável ao tamanho do container */
+    padding: 12px 15px;
+    background-color: #ffe8b3;
+    border: 2px solid #8b6f4f;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
-#totalcqtdiv{
-    margin-top: 10px;
+
+/* Hover nos botões */
+#conquistas button:hover {
+    background-color: #ffd966;
+    transform: scale(1.05);
+}
+
+/* Botão de voltar */
+#fecharconquistas {
+    padding: 12px 25px;
+    background-color: #8b6f4f;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#fecharconquistas:hover {
+    background-color: #6e5744;
+    transform: scale(1.05);
 }
 #cqt1{
     display: none;
@@ -353,3 +443,45 @@ body {
     opacity: 1;
     bottom: 40px; /* sobe um pouco */
 }
+
+
+  /* Fundo escuro semi-transparente */
+  #customAlertOverlay {
+    display: none; /* começa escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Caixa do alerta */
+  #customAlertBox {
+    background-color: #fff8dc;
+    padding: 20px 30px;
+    border: 2px solid #8b6f4f;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-family: sans-serif;
+  }
+
+  #customAlertBox button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #ffe8b3;
+    border: 2px solid #8b6f4f;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+  }
+
+  #customAlertBox button:hover {
+    background-color: #ffd966;
+  }

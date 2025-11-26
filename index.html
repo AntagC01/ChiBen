@@ -54,35 +54,35 @@
 
    <div id="upgradeContainer">
     <div id="listaupgrades">
-        <button id="Upgrade1" title="You collected many guavas and decided to throw a party to boost morale">
+        <button id="Upgrade1" data-tooltip="You collected many guavas and decided to throw a party to boost morale -80 guavas">
             Throw a guava party (2x Chico production)
         </button>
 
-        <button id="Upgrade2" title="Now that you have a friend, you both decide to go swimming in the river">
+        <button id="Upgrade2" data-tooltip="Now that you have a friend, you both decide to go swimming in the river">
             Jump in the river with Ze Lele (?)
         </button>
 
-        <button id="Upgrade3" title="Time to kill those larvae!">
+        <button id="Upgrade3" data-tooltip="Time to kill those larvae! -500 guavas">
             Spray insecticide to kill guava bugs (2x GBPS)
         </button>
 
-        <button id="Upgrade4" title="Give Chico a little gift so he works harder">
+        <button id="Upgrade4" data-tooltip="Give Chico a little gift so he works harder -50 rosas">
             Give roses to Chico (3x GBPS)
         </button>
 
-        <button id="Upgrade5" title="Chico has never seen so many little roses, he went crazy">
+        <button id="Upgrade5" data-tooltip="Chico has never seen so many little roses, he went crazy">
             Break Chico’s heart (10x GBPS!!!!!!!!!!!!!)
         </button>
 
-        <button id="Upgrade6" title="You think a little and decide to double your harvesting speed">
+        <button id="Upgrade6" data-tooltip="You think a little and decide to double your harvesting speed -30 guavas">
             Pick guavas with both hands (2x guavas per click)
         </button>
 
-        <button id="Upgrade7" title="Description goes here">
+        <button id="Upgrade7" data-tooltip="It is a lot easier to just punch the trees -750 guavas">
             Punch the trees (10x guavas per click)
         </button>
 
-        <button id="Upgrade8" title="Let's hunt that jaguar">
+        <button id="Upgrade8" data-tooltip="Let's hunt that jaguar">
             Hunt the jaguar that ate Ze Lele (?)
         </button>
     </div>
@@ -124,6 +124,17 @@
         <p id="conquistaTexto">Achievement unlocked!</p>
     </div>
 
+
+
+
+
+    <!-- Estrutura do alerta -->
+    <div id="customAlertOverlay">
+    <div id="customAlertBox">
+        <p id="customAlertMessage"></p>
+        <button onclick="closeCustomAlert()">OK</button>
+    </div>
+    </div>
     <audio id="audioPlayer" autoplay hidden></audio>
     <script src="script.js"></script>
 </body>
