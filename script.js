@@ -1,242 +1,237 @@
 document.addEventListener("DOMContentLoaded", () => {
-alert ("Você é só um fazendeiro ladrão de goiabas que tem o sonho de ter 1 milhão de goiabas, essa é sua meta")
-const GOIABAS = document.getElementById("Goiabas");
-const GOIABASDPS = document.getElementById("Goiabasdps");
-const CHICOS = document.getElementById("Chicos");
-const btnchicos = document.getElementById("Chico");
-const ZELELES = document.getElementById("Zeleles");
-const btnZELELES = document.getElementById("Zelele");
-const ROSINHAS = document.getElementById("Rosinhas");
-const btnrosinha = document.getElementById("Rosinha");
 
-const ROSAS = document.getElementById("Rosas");
-const ROSASDPS = document.getElementById("Rosasdps");
-const rosasdiv = document.getElementById("rosasdiv");
+    //==================== INITIAL ALERT ====================
+    alert("You are just a guava thief farmer dreaming of 1 million guavas, this is your goal");
 
-const btnConfig = document.getElementById('btnConfig');
-const configWindow = document.getElementById('configWindow');
-const closeConfig = document.getElementById('closeConfig');
+    //==================== ELEMENTS ====================
+    const GOIABAS = document.getElementById("Goiabas");
+    const GOIABASDPS = document.getElementById("Goiabasdps");
+    const CHICOS = document.getElementById("Chicos");
+    const btnchicos = document.getElementById("Chico");
+    const ZELELES = document.getElementById("Zeleles");
+    const btnZELELES = document.getElementById("Zelele");
+    const ROSINHAS = document.getElementById("Rosinhas");
+    const btnrosinha = document.getElementById("Rosinha");
 
-const upgrade1 = document.getElementById("Upgrade1")
-const upgrade2 = document.getElementById("Upgrade2")
-const upgrade3 = document.getElementById("Upgrade3")
-const upgrade4 = document.getElementById("Upgrade4")
-const upgrade5 = document.getElementById("Upgrade5")
-const upgrade6 = document.getElementById("Upgrade6")
-const upgrade7 = document.getElementById("Upgrade7")
-const upgrade8 = document.getElementById("Upgrade8")
+    const ROSAS = document.getElementById("Rosas");
+    const ROSASDPS = document.getElementById("Rosasdps");
+    const rosasdiv = document.getElementById("rosasdiv");
 
-const cqt1 = document.getElementById("cqt1")
-const cqt2 = document.getElementById("cqt2")
-const cqt3 = document.getElementById("cqt3")
-const cqt4 = document.getElementById("cqt4")
-const cqt5 = document.getElementById("cqt5")
-const cqt6 = document.getElementById("cqt6")
-const cqt7 = document.getElementById("cqt7")
-const totalcqtdiv = document.getElementById("totalcqtdiv")
+    const btnConfig = document.getElementById('btnConfig');
+    const configWindow = document.getElementById('configWindow');
+    const closeConfig = document.getElementById('closeConfig');
 
-const sidebar = document.getElementById("sidebar");
-const toggleSidebar = document.getElementById("toggleSidebar");
+    const sidebar = document.getElementById("sidebar");
+    const toggleSidebar = document.getElementById("toggleSidebar");
 
-toggleSidebar.addEventListener("click", () => {
+    const paginaconquistas = document.getElementById("paginaconquistas");
+    const btnconquistas = document.getElementById("btnconquistas");
+    const fecharconquistas = document.getElementById("fecharconquistas");
+
+    // Upgrades
+    const upgrade1 = document.getElementById("Upgrade1");
+    const upgrade2 = document.getElementById("Upgrade2");
+    const upgrade3 = document.getElementById("Upgrade3");
+    const upgrade4 = document.getElementById("Upgrade4");
+    const upgrade5 = document.getElementById("Upgrade5");
+    const upgrade6 = document.getElementById("Upgrade6");
+    const upgrade7 = document.getElementById("Upgrade7");
+    const upgrade8 = document.getElementById("Upgrade8");
+
+    toggleSidebar.addEventListener("click", () => {
     sidebar.classList.toggle("open");
-});
+    });
+    // Achievements
+    const cqt1 = document.getElementById("cqt1");
+    const cqt2 = document.getElementById("cqt2");
+    const cqt3 = document.getElementById("cqt3");
+    const cqt4 = document.getElementById("cqt4");
+    const cqt5 = document.getElementById("cqt5");
+    const cqt6 = document.getElementById("cqt6");
+    const cqt7 = document.getElementById("cqt7");
+    const totalcqtdiv = document.getElementById("totalcqtdiv");
 
-const paginaconquistas = document.getElementById("paginaconquistas");
-const btnconquistas = document.getElementById("btnconquistas");
-const fecharconquistas = document.getElementById("fecharconquistas");
-
-btnconquistas.addEventListener("click", () => {
+    btnconquistas.addEventListener("click", () => {
     paginaconquistas.classList.add("show");
 });
 
 fecharconquistas.addEventListener("click", () => {
     paginaconquistas.classList.remove("show");
 });
-
-// Lê o cookie ao carregar
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";")[0];
-    return null;
-}
-
-// Salva no cookie
-function setCookie(name, value) {
-    document.cookie = `${name}=${value}; path=/`;
-}
-
-
-// Inicializa GOB a partir do cookie
-let GOB = parseInt(getCookie("gobValue")) || 0;
-GOIABAS.textContent = "Goiabas: " + GOB;
-let ROSA = parseInt(getCookie("rosaValue")) || 0;
-GOIABAS.textContent = "Rosas: " + ROSA;
-
-// Inicializa CBT a partir do cookie
-let CBT = parseInt(getCookie("cbtValue")) || 0;
-CHICOS.textContent = CBT + " Chicos";
-let custochico = parseInt(getCookie("custochicoValue")) || 10;
-btnchicos.textContent = "+1 Chico " + custochico + " Goiabas";
-let CBT_BONUS = parseInt(getCookie("cbtbonusValue")) || 1;
-
-// Inicializa ZLL a partir do cookie
-let ZLL = parseInt(getCookie("zllValue")) || 0;
-ZELELES.textContent = ZLL + " Ze leles";
-let custozelele = parseInt(getCookie("custozeleleValue")) || 100;
-btnZELELES.textContent = "+1 Ze lele " + custozelele + " Goiabas";
-let ZLL_BONUS = parseInt(getCookie("zllbonusValue")) || 7;
-
-// Inicializa RS a partir do cookie
-let RS = parseInt(getCookie("rsValue")) || 0;
-ROSINHAS.textContent = RS + " Rosinhas";
-let custorosinha = parseInt(getCookie("custorosinhaValue")) || 1000;
-btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Goiabas";
-
-let GLOBAL = parseInt(getCookie("globalbonusValue")) || 1;
-let CLICK = parseInt(getCookie("clickValue")) || 1;
-
-let up1 = parseInt(getCookie("up1Value")) || 0;
-let up2 = parseInt(getCookie("up2Value")) || 0;
-let up3 = parseInt(getCookie("up3Value")) || 0;
-let up4 = parseInt(getCookie("up4Value")) || 0;
-let up5 = parseInt(getCookie("up5Value")) || 0;
-let up6 = parseInt(getCookie("up6Value")) || 0;
-let up7 = parseInt(getCookie("up7Value")) || 0;
-let up8 = parseInt(getCookie("up8Value")) || 0;
-
-let vcqt1 = parseInt(getCookie("vcqt1Value")) || 0;
-let vcqt2 = parseInt(getCookie("vcqt2Value")) || 0;
-let vcqt3 = parseInt(getCookie("vcqt3Value")) || 0;
-let vcqt4 = parseInt(getCookie("vcqt4Value")) || 0;
-let vcqt5 = parseInt(getCookie("vcqt5Value")) || 0;
-let vcqt6 = parseInt(getCookie("vcqt6Value")) || 0;
-let vcqt7 = parseInt(getCookie("vcqt7Value")) || 0;
-let totalcqt = parseInt(getCookie("totalcqtValue")) || 0;
-
-
-if (RS > 0){
-    rosasdiv.style.display = 'block';
-}
-
-
-
-// Lista de áudios com peso
-const audios = [
-    { src: "mp3/ai-1763986035185.mp3", peso: 2 },
-    { src: "mp3/ui-1763986055146.mp3", peso: 2 },
-    { src: "mp3/aoooooooo-1763985941343.mp3", peso: 1 },
-    //{ src: "mp3/mais-um-deu-soh-1763986010386.mp3", peso: 1 },
-    { src: "mp3/olha-a-on-a-1763986084897.mp3", peso: 1 },
-    { src: "mp3/goiabinha-da-boa-1763986826970.mp3", peso: 1 },
-    { src: "mp3/eita-1763986860328.mp3", peso: 2 },
-    { src: "", peso: 15 }
-];
-
-// Função para escolher aleatório ponderado
-function escolherAudioPonderado(audios) {
-    const totalPeso = audios.reduce((soma, a) => soma + a.peso, 0);
-    let rand = Math.random() * totalPeso;
-    for (let i = 0; i < audios.length; i++) {
-        rand -= audios[i].peso;
-        if (rand < 0) {
-            return audios[i].src;
-        }
+    //==================== COOKIES ====================
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";")[0];
+        return null;
     }
-    return audios[0].src;
-}
 
+    function setCookie(name, value) {
+        document.cookie = `${name}=${value}; path=/`;
+    }
 
-    // Funções de clique
+    //==================== INITIAL VARIABLES ====================
+    let GOB = parseInt(getCookie("gobValue")) || 0;
+    let ROSA = parseInt(getCookie("rosaValue")) || 0;
+
+    let CBT = parseInt(getCookie("cbtValue")) || 0;
+    let custochico = parseInt(getCookie("custochicoValue")) || 10;
+    let CBT_BONUS = parseInt(getCookie("cbtbonusValue")) || 1;
+
+    let ZLL = parseInt(getCookie("zllValue")) || 0;
+    let custozelele = parseInt(getCookie("custozeleleValue")) || 100;
+    let ZLL_BONUS = parseInt(getCookie("zllbonusValue")) || 7;
+
+    let RS = parseInt(getCookie("rsValue")) || 0;
+    let custorosinha = parseInt(getCookie("custorosinhaValue")) || 1000;
+
+    let GLOBAL = parseInt(getCookie("globalbonusValue")) || 1;
+    let CLICK = parseInt(getCookie("clickValue")) || 1;
+
+    // Upgrades active
+    let up1 = parseInt(getCookie("up1Value")) || 0;
+    let up2 = parseInt(getCookie("up2Value")) || 0;
+    let up3 = parseInt(getCookie("up3Value")) || 0;
+    let up4 = parseInt(getCookie("up4Value")) || 0;
+    let up5 = parseInt(getCookie("up5Value")) || 0;
+    let up6 = parseInt(getCookie("up6Value")) || 0;
+    let up7 = parseInt(getCookie("up7Value")) || 0;
+    let up8 = parseInt(getCookie("up8Value")) || 0;
+
+    // Achievements
+    let vcqt1 = parseInt(getCookie("vcqt1Value")) || 0;
+    let vcqt2 = parseInt(getCookie("vcqt2Value")) || 0;
+    let vcqt3 = parseInt(getCookie("vcqt3Value")) || 0;
+    let vcqt4 = parseInt(getCookie("vcqt4Value")) || 0;
+    let vcqt5 = parseInt(getCookie("vcqt5Value")) || 0;
+    let vcqt6 = parseInt(getCookie("vcqt6Value")) || 0;
+    let vcqt7 = parseInt(getCookie("vcqt7Value")) || 0;
+    let totalcqt = parseInt(getCookie("totalcqtValue")) || 0;
+
+    if (RS > 0) rosasdiv.style.display = 'block';
+
+    //==================== AUDIO ====================
+    const audios = [
+        { src: "mp3/ai-1763986035185.mp3", peso: 2 },
+        { src: "mp3/ui-1763986055146.mp3", peso: 2 },
+        { src: "mp3/aoooooooo-1763985941343.mp3", peso: 1 },
+        { src: "mp3/olha-a-on-a-1763986084897.mp3", peso: 1 },
+        { src: "mp3/goiabinha-da-boa-1763986826970.mp3", peso: 1 },
+        { src: "mp3/eita-1763986860328.mp3", peso: 2 },
+        { src: "", peso: 15 }
+    ];
+
+    function escolherAudioPonderado(lista) {
+        const total = lista.reduce((s, a) => s + a.peso, 0);
+        let rand = Math.random() * total;
+        for (let a of lista) {
+            rand -= a.peso;
+            if (rand < 0) return a.src;
+        }
+        return lista[0].src;
+    }
+
+    //==================== CLICKS ====================
     document.getElementById("Aperta").onclick = function () {
         GOB += CLICK;
-        GOIABAS.textContent = "Goiabas: " + GOB;
+        GOIABAS.textContent = "Guavas: " + GOB;
         setCookie("gobValue", GOB);
 
-        const aleatorio = escolherAudioPonderado(audios);
-        
-            audioPlayer.src = aleatorio;
-            audioPlayer.volume = volumeControl.value;
-            audioPlayer.play();
-        
+        const audio = escolherAudioPonderado(audios);
+        audioPlayer.src = audio;
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
     };
 
     document.getElementById("Chico").onclick = function () {
-        if (GOB >= custochico){
-            GOB -= custochico;
-            GOIABAS.textContent = "Goiabas: " + GOB;
-            setCookie("gobValue", GOB);
+        if (GOB < custochico) return;
 
-            CBT += 1;
-            custochico = Math.trunc(custochico * 1.25);
-            CHICOS.textContent = CBT + " Chicos";
-            btnchicos.textContent = "+1 Chico " + custochico + " Goiabas";
+        GOB -= custochico;
+        CBT++;
+        custochico = Math.trunc(custochico * 1.25);
 
-            setCookie("cbtValue", CBT);
-            setCookie("custochicoValue", custochico);
+        GOIABAS.textContent = "Guavas: " + GOB;
+        CHICOS.textContent = CBT + " Chicos";
+        btnchicos.textContent = "+1 Chico " + custochico + " Guavas";
 
-            audioPlayer.src = "mp3/mais-um-deu-soh-1763986010386.mp3";
-            audioPlayer.volume = volumeControl.value;
-            audioPlayer.play();
-        }
+        setCookie("gobValue", GOB);
+        setCookie("cbtValue", CBT);
+        setCookie("custochicoValue", custochico);
+
+        audioPlayer.src = "mp3/mais-um-deu-soh-1763986010386.mp3";
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
     };
 
-       document.getElementById("Zelele").onclick = function () {
-        if (GOB >= custozelele){
-            GOB -= custozelele;
-            GOIABAS.textContent = "Goiabas: " + GOB;
-            setCookie("gobValue", GOB);
+    document.getElementById("Zelele").onclick = function () {
+        if (GOB < custozelele) return;
 
-            ZLL += 1;
-            custozelele = Math.trunc(custozelele * 1.25);
-            ZELELES.textContent = ZLL + " Ze leles";
-            btnZELELES.textContent = "+1 Ze lele " + custozelele + " Goiabas";
+        GOB -= custozelele;
+        ZLL++;
+        custozelele = Math.trunc(custozelele * 1.25);
 
-            setCookie("zllValue", ZLL);
-            setCookie("custozeleleValue", custozelele);
+        GOIABAS.textContent = "Guavas: " + GOB;
+        ZELELES.textContent = ZLL + " Ze leles";
+        btnZELELES.textContent = "+1 Ze lele " + custozelele + " Guavas";
 
-            audioPlayer.src = "mp3/fala-parceiro-z-lele-1764017115514.mp3";
-            audioPlayer.volume = volumeControl.value;
-            audioPlayer.play();
-        }
+        setCookie("gobValue", GOB);
+        setCookie("zllValue", ZLL);
+        setCookie("custozeleleValue", custozelele);
+
+        audioPlayer.src = "mp3/fala-parceiro-z-lele-1764017115514.mp3";
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
     };
 
     document.getElementById("Rosinha").onclick = function () {
-        if (GOB >= custorosinha){
-            GOB -= custorosinha;
-            GOIABAS.textContent = "Goiabas: " + GOB;
-            setCookie("gobValue", GOB);
+        if (GOB < custorosinha) return;
 
-            RS += 1;
-            custorosinha = Math.trunc(custorosinha * 1.25);
-            ROSINHAS.textContent = RS + " Rosinhas";
-            btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Goiabas";
+        GOB -= custorosinha;
+        RS++;
+        custorosinha = Math.trunc(custorosinha * 1.25);
 
-            setCookie("rsValue", RS);
-            setCookie("custorosinhaValue", custorosinha);
-            rosasdiv.style.display = 'block';
+        GOIABAS.textContent = "Guavas: " + GOB;
+        ROSINHAS.textContent = RS + " Rosinhas";
+        btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Guavas";
+
+        setCookie("gobValue", GOB);
+        setCookie("rsValue", RS);
+        setCookie("custorosinhaValue", custorosinha);
+
+        rosasdiv.style.display = 'block';
+
         audioPlayer.src = "mp3/rosinha-meu-amor-1763995355051.mp3";
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();
-    }
-};
+    };
 
- //tick global
-setInterval(() => {
-    GOBDPS = ((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS)) * GLOBAL;
-    GOB += GOBDPS;
-    GOIABAS.textContent = "Goiabas: " + GOB;
-    setCookie("gobValue", GOB);
-    GOIABASDPS.textContent = "Goiabas per second: " + GOBDPS;
+    //==================== AUTOMATIC PRODUCTION ====================
+    setInterval(() => {
+        let GOBDPS = ((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS)) * GLOBAL;
+        GOB += GOBDPS;
 
-    ROSADPS = RS;
-    ROSA += ROSADPS;
-    ROSAS.textContent = "Rosas: " + ROSA;
-    setCookie("rosaValue", ROSA);
-    ROSASDPS.textContent = "Rosas per second: " + ROSADPS;
-}, 1000);
+        GOIABAS.textContent = "Guavas: " + GOB;
+        GOIABASDPS.textContent = "Guavas per second: " + GOBDPS;
 
+        setCookie("gobValue", GOB);
+
+        let ROSADPS = RS;
+        ROSA += ROSADPS;
+
+        ROSAS.textContent = "Rosas: " + ROSA;
+        ROSASDPS.textContent = "Rosas per second: " + ROSADPS;
+
+        setCookie("rosaValue", ROSA);
+
+        CHICOS.textContent = CBT + " Chicos";
+        btnchicos.textContent = "+1 Chico " + custochico + " Guavas";
+        ZELELES.textContent = ZLL + " Ze leles";
+        btnZELELES.textContent = "+1 Ze lele " + custozelele + " Guavas";
+        ROSINHAS.textContent = RS + " Rosinhas";
+        btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Guavas";
+    }, 1000);
+
+    //==================== ACHIEVEMENTS / UPGRADES ====================
 setInterval(() => {
 if (GOB >= 80 && up1 == 0){
     upgrade1.style.display = 'block';
@@ -261,7 +256,7 @@ if (GOB >= 750 && up7 == 0){
 }
 if (GOB >= 1000000)
 {
-    alert("Parabens, você chegou ao final do jogo, você comeu tanta goiaba que explodiu e cabo tudo");
+    alert("Congratulations, you reached the end of the game, you ate so many guavas that you exploded and everything ended");
     reseta();
 }
 if (ZLL >= 15 && up8 == 0 && up2 == 1){
@@ -272,7 +267,7 @@ if(GOB >= 1){
     if(vcqt1 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
-        mostrarConquista("Primeira goiabinha");
+        mostrarConquista("First little guava");
         vcqt1 = 1;
         setCookie("vcqt1Value",1)
     }
@@ -282,7 +277,7 @@ if(CBT >= 1){
     if(vcqt2 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
-        mostrarConquista("Clonando chicos");
+        mostrarConquista("Cloning chicos");
         vcqt2 = 1;
         setCookie("vcqt2Value",1)
     }
@@ -292,7 +287,7 @@ if(ZLL >= 1){
     if(vcqt3 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
-        mostrarConquista("Melhor Amigo");
+        mostrarConquista("Best Friend");
         vcqt3 = 1;
         setCookie("vcqt3Value",1)
     }
@@ -302,7 +297,7 @@ if(up2 == 1){
     if(vcqt4 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
-        mostrarConquista("Tchau melhor amigo :(");
+        mostrarConquista("Goodbye best friend :(");
         vcqt4 = 1;
         setCookie("vcqt4Value",1)
     }
@@ -312,7 +307,7 @@ if(up8 == 1){
     if(vcqt5 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
-        mostrarConquista("Bem vindo de volta Ze lele");
+        mostrarConquista("Welcome back Ze lele");
         vcqt5 = 1;
         setCookie("vcqt5Value",1)
     }
@@ -322,7 +317,7 @@ if(RS >= 1){
     if(vcqt6 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
-        mostrarConquista("Primeira rosinha");
+        mostrarConquista("First little rose");
         vcqt6 = 1;
         setCookie("vcqt6Value",1)
     }
@@ -332,27 +327,14 @@ if(RS >= 10){
     if(vcqt7 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
-        mostrarConquista("Rosinha pra mais de metro");
+        mostrarConquista("Roses for days");
         vcqt7 = 1;
         setCookie("vcqt7Value",1)
     }
 }
 
-totalcqtdiv.textContent = totalcqt + " de 7 alcançadas";
-}, 3000);
-
-    function mostrarConquista(texto) {
-        const popup = document.getElementById("conquistaPopup");
-        const textoElemento = document.getElementById("conquistaTexto");
-
-        textoElemento.textContent = texto;
-        popup.classList.add("show");
-
-        // esconde depois de 3 segundos
-        setTimeout(() => {
-            popup.classList.remove("show");
-        }, 5000);
-    }
+totalcqtdiv.textContent = totalcqt + " of 7 achieved";
+    }, 3000);
 
     document.getElementById("Upgrade1").onclick = function () {
         if (GOB >= 80){
@@ -372,7 +354,7 @@ totalcqtdiv.textContent = totalcqt + " de 7 alcançadas";
             up2 = 1;
             upgrade2.style.display = 'none';
             ZELELES.textContent = ZLL + " Ze leles";
-            alert("Veio uma onça e cumeu o ze lele :(")
+            alert("A jaguar came and ate Ze Lele :(")
     }
 };
 
@@ -439,28 +421,47 @@ document.getElementById("Upgrade8").onclick = function () {
         setCookie("zllbonusValue", ZLL_BONUS);
         up8 = 1;
         upgrade8.style.display = 'none';
-        alert("Você bate na onca até ela guspir o ze lele de volta :) (2x Producao ze lele)")
+        alert("You beat the jaguar until it spit Ze Lele back :) (2x Ze Lele production)")
     }
 };
-btnConfig.addEventListener('click', () => {
-    configWindow.style.display = 'block';
-});
 
-closeConfig.addEventListener('click', () => {
-    configWindow.style.display = 'none';
-});
+    function conquista(id, div, texto) {
+        div.style.display = 'block';
 
-//controla o volume do áudio
-const audio = document.querySelector('audio');
-const volumeControl = document.getElementById('volume');
-volumeControl.addEventListener('input', () => {
-    audio.volume = volumeControl.value;
-});
+        if (eval(`vcqt${id}`) === 0) {
+            totalcqt++;
+            setCookie("totalcqtValue", totalcqt);
 
-const RESET = document.getElementById('reset');
-    
-function reseta(){
-  // Zera os cookies
+            mostrarConquista(texto);
+
+            eval(`vcqt${id} = 1`);
+            setCookie(`vcqt${id}Value`, 1);
+        }
+    }
+
+    function mostrarConquista(texto) {
+        const popup = document.getElementById("conquistaPopup");
+        const textoElemento = document.getElementById("conquistaTexto");
+
+        textoElemento.textContent = texto;
+        popup.classList.add("show");
+
+        setTimeout(() => popup.classList.remove("show"), 5000);
+    }
+
+    //==================== CONFIG ====================
+    btnConfig.addEventListener('click', () => configWindow.style.display = 'block');
+    closeConfig.addEventListener('click', () => configWindow.style.display = 'none');
+
+    const audio = document.querySelector("audio");
+    const volumeControl = document.getElementById("volume");
+    volumeControl.addEventListener("input", () => audio.volume = volumeControl.value);
+
+    //==================== RESET ====================
+    const RESET = document.getElementById("reset");
+
+    function reseta() {
+          // Zera os cookies
         GOB = 0;
         CBT = 0;
         custochico = 10;
@@ -506,19 +507,17 @@ function reseta(){
         setCookie("vcqt7Value",0);
         setCookie("totalcqtValue",0);
         // Atualiza os elementos da tela
-        document.getElementById("Goiabas").textContent = "Goiabas: 0";
+        document.getElementById("Goiabas").textContent = "Guavas: 0";
         document.getElementById("Chicos").textContent = "0 Chicos";
-        document.getElementById("Chico").textContent = "+1 Chico 10 Goiabas";
-        document.getElementById("Zeleles").textContent = "0 Ze leles";
-        document.getElementById("Zelele").textContent = "+1 Ze lele 100 Goiabas";
+        document.getElementById("Chico").textContent = "+1 Chico 10 Guavas";
+        document.getElementById("Zeleles").textContent = "0 Zeleles";
+        document.getElementById("Zelele").textContent = "+1 Zelele 100 Guavas";
         document.getElementById("Rosinhas").textContent = "0 Rosinhas";
-        document.getElementById("Rosinha").textContent = "+1 Rosinha 1000 Goiabas";
-
+        document.getElementById("Rosinha").textContent = "+1 Rosinha 1000 Guavas";
 
         location.reload();
-}
-RESET.addEventListener('click', () => {
-      reseta();
-    });
+    }
+
+    RESET.addEventListener("click", reseta);
 
 });

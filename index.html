@@ -4,70 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>AOOOOOOOOOHHHHHH TREM BAO</title>
+    <title>YEEEEEHAAAW GOOD STUFF</title>
 </head>
 <body>
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar">
         <h2>Menu</h2>
-        <button>Início</button>
-        <button id="btnconquistas">Conquistas</button>
+        <button>Home</button>
+        <button id="btnconquistas">Achievements</button>
+        <button id="btnConfig">Settings</button>
     </div>
 
-    <!-- Botão de abrir/fechar -->
+    <!-- Open/Close Button -->
     <button id="toggleSidebar" class="sidebar-toggle">☰</button>
-    <audio src="mp3/chico-bento-no-shopping.mp3" autoplay hidden></audio>
+    <audio src="" autoplay hidden></audio> <!-- Change Music -->
 
-    <img class="img-esquerda" src="img/chicosf.png" height="100px" width="100px">
-    <img class="img-direita"  src="img/chicosf.png" height="100px" width="100px">
+    <!--<img class="img-esquerda" src="img/chicosf.png" height="100px" width="100px">-->
+    <!--<img class="img-direita" src="" height="100px" width="100px"> Change image -->
 
     <div class="conteudo">
-        <div style="align-items: center; gap: 10px;">
-            <p id="Goiabas">Goiabas: 0</p>
-            <p id="Goiabasdps">Goiabas per second: 0</p>
+        <div>
+            <p id="Goiabas">Guavas: 0</p>
+            <p id="Goiabasdps">Guavas per second: 0</p>
         </div>
-        <div id="rosasdiv" style="align-items: center; gap: 10px;">
-            <p id="Rosas">Rosas: 0</p>
-            <p id="Rosasdps">Rosas per second: 0</p>
+        <div id="rosasdiv">
+            <p id="Rosas">Roses: 0</p>
+            <p id="Rosasdps">Roses per second: 0</p>
         </div>
-        <p>Chico bento no</p>
-        <p>Shopping</p>
-        <button id="Aperta">Aperta</button>
+        <p>Little Farm</p>
+        <button id="Aperta">Click</button>
     </div>
 
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <button id="Chico">+1 Chico 10 Goiabas</button>
-        <p id="Chicos">0 Chicos</p>
+    <div id="listaitens">
+        <div class="item">
+            <button id="Chico">+1 Chico 10 Guavas</button>
+            <p id="Chicos">0 Chicos</p>
+        </div>
+
+        <div class="item">
+            <button id="Zelele">+1 Ze Lele 100 Guavas</button>
+            <p id="Zeleles">0 Ze Leles</p>
+        </div>
+
+        <div class="item">
+            <button id="Rosinha">+1 Rosinha 1000 Guavas</button>
+            <p id="Rosinhas">0 Rosinhas</p>
+        </div>
     </div>
 
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <button id="Zelele">+1 Ze lele 100 Goiabas</button>
-        <p id="Zeleles">0 Ze leles</p>
-    </div>
-
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <button id="Rosinha">+1 Rosinha 1000 Goiabas</button>
-        <p id="Rosinhas">0 Rosinhas</p>
-    </div>
-
+   <div id="upgradeContainer">
     <div id="listaupgrades">
-        <button id="Upgrade1" title="Você pegou muitas goiabas e decide fazer uma festa para aumentar a moral">Fazer uma festa de goiabas (2x Producao Chico)</button>
-        <button id="Upgrade2" title="Agora que você tem um amigo vocês decidem ir no rio juntos">Pular no rio com o Ze lele (?)</button>
-        <button id="Upgrade3" title="Bora matar essas larva!">Passar inseticida pra matar os bichos da goiaba (2x GBPS)</button>
-        <button id="Upgrade4" title="Dar um agradinho para o Chico trapalhar mais">Dar rosas para o Chico (3x GBPS)</button>
-        <button id="Upgrade5" title="Chico nunca viu tanta rosinha na vida, ficou biruta">Iludir o coração do chico (10x GBPS!!!!!!!!!!!!!)</button>
-        <button id="Upgrade6" title="Você pensa um pouquinho e acaba por dobrar a sua coleta">Pegar Goiaba com as duas mãos (2x goiabas por click)</button>
-        <button id="Upgrade7" title="Descricao vai aqui">Dar soco nas arvores (10x goiabas por click)</button>
-        <button id="Upgrade8" title="Vamo pega aquela lambaia">Cacar a onca que comeu o ze lele (?)</button>
+        <button id="Upgrade1" title="You collected many guavas and decided to throw a party to boost morale">
+            Throw a guava party (2x Chico production)
+        </button>
+
+        <button id="Upgrade2" title="Now that you have a friend, you both decide to go swimming in the river">
+            Jump in the river with Ze Lele (?)
+        </button>
+
+        <button id="Upgrade3" title="Time to kill those larvae!">
+            Spray insecticide to kill guava bugs (2x GBPS)
+        </button>
+
+        <button id="Upgrade4" title="Give Chico a little gift so he works harder">
+            Give roses to Chico (3x GBPS)
+        </button>
+
+        <button id="Upgrade5" title="Chico has never seen so many little roses, he went crazy">
+            Break Chico’s heart (10x GBPS!!!!!!!!!!!!!)
+        </button>
+
+        <button id="Upgrade6" title="You think a little and decide to double your harvesting speed">
+            Pick guavas with both hands (2x guavas per click)
+        </button>
+
+        <button id="Upgrade7" title="Description goes here">
+            Punch the trees (10x guavas per click)
+        </button>
+
+        <button id="Upgrade8" title="Let's hunt that jaguar">
+            Hunt the jaguar that ate Ze Lele (?)
+        </button>
     </div>
+</div>
 
 
-    <!-- Botão de Configurações -->
-    <button id="btnConfig">⚙️ Configurações</button>
-
-    <!-- Janela Flutuante -->
+    <!-- Floating Window -->
     <div id="configWindow" class="config-window">
-        <h3>Configurações</h3>
+        <h3>Settings</h3>
         <label>
             Volume:
             <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
@@ -76,31 +100,29 @@
             <input type="button" id="reset" value="Reset">
         </label>
         <br>
-        <button id="closeConfig">Fechar</button>
+        <button id="closeConfig">Close</button>
     </div>
-
-
 
     <div id="paginaconquistas" class="pagina">
-    <h1>CONQUISTAS</h1>
-    <h2 id="totalcqtdiv">0 de 7 alcançadas</h2>
-    <div id="conquistas">
-        <button id="cqt1" title="Consiga 1 goiaba">Primeira goiabinha</button>
-        <button id="cqt2" title="Consiga 1 chico">Clonando chicos</button>
-        <button id="cqt3" title="Consiga 1 ze lele">Melhor Amigo</button>
-        <button id="cqt4" title="Onca comeu o ze lele">Tchau melhor amigo :(</button>
-        <button id="cqt5" title="Salve o ze lele">Bem vindo de volta Ze lele</button>
-        <button id="cqt6" title="Consiga uma rosinha">Primeira rosinha</button>
-        <button id="cqt7" title="Tenha 10 rosinhas">Rosinha pra mais de metro</button>
-    </div>
+        <h1>ACHIEVEMENTS</h1>
+        <h2 id="totalcqtdiv">0 of 7 unlocked</h2>
 
-    <button id="fecharconquistas">Voltar</button>
+        <div id="conquistas">
+            <button id="cqt1" title="Get 1 guava">First little guava</button>
+            <button id="cqt2" title="Get 1 Chico">Cloning Chicos</button>
+            <button id="cqt3" title="Get 1 Ze Lele">Best Friend</button>
+            <button id="cqt4" title="Jaguar ate Ze Lele">Goodbye best friend :(</button>
+            <button id="cqt5" title="Save Ze Lele">Welcome back Ze Lele</button>
+            <button id="cqt6" title="Get a Rosinha">First little rose</button>
+            <button id="cqt7" title="Have 10 rosinhas">Roses everywhere</button>
+        </div>
+
+        <button id="fecharconquistas">Back</button>
     </div>
 
     <div id="conquistaPopup" class="conquista-popup">
-    <p id="conquistaTexto">Conquista desbloqueada!</p>
+        <p id="conquistaTexto">Achievement unlocked!</p>
     </div>
-
 
     <audio id="audioPlayer" autoplay hidden></audio>
     <script src="script.js"></script>

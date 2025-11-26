@@ -68,10 +68,6 @@ body {
     top: 30px;
 }
 
-/* Texto centralizado entre as imagens */
-.conteudo {
-    text-align: center;  /* centraliza o texto */
-}
 
 .config-window {
     position: fixed;
@@ -88,34 +84,119 @@ body {
     z-index: 1000;
 }
 
-#btnConfig {
-    position: fixed;   /* Fica sempre na tela, mesmo ao rolar */
-    bottom: 20px;         /* Distância do topo */
-    right: 20px;       /* Distância da borda direita */
-    z-index: 100;      /* Fica acima do conteúdo */
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 8px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-}
-
 
 /* Efeito hover */
 #btnConfig:hover {
     transform: scale(1.1);
 }
 
+#upgradeContainer {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+
+    background: #f5f1e8;
+    border: 3px solid #8b6f4f;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+
+    display: flex;
+    justify-content: center;
+}
+
+#listaupgrades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.conteudo > div {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center;     /* centraliza verticalmente */
+    flex-direction: column; 
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 #rosasdiv{
     display: none;
 }
-
-
-#listaupgrades{
+/* Container geral */
+#listaitens {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
 }
+
+/* Container geral */
+#listaitens {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+
+    /* Centraliza os itens horizontalmente */
+    align-items: center;
+}
+
+/* Cada linha (botão + contador) */ 
+#listaitens .item { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; } 
+/* Botões dos itens com mesmo visual do listaupgrades */ 
+#listaitens button { 
+    padding: 10px 15px; 
+    background-color: #ffe8b3; 
+    border: 2px solid #8b6f4f; 
+    border-radius: 10px; 
+    cursor: pointer; transition: 0.2s; 
+    font-size: 14px; 
+    width: 250px; }
+
+
+#listaitens button:hover {
+    background-color: #fff3cc;
+    transform: scale(1.04);
+}
+
+#listaitens button:active {
+    transform: scale(0.95);
+}
+
+/* Botões dos upgrades com visual mais bonito */
+#listaupgrades button {
+    padding: 10px 15px;
+    background-color: #ffe8b3;
+    border: 2px solid #8b6f4f;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+    width: 250px;
+}
+
+#listaupgrades button:hover {
+    background-color: #fff3cc;
+    transform: scale(1.04);
+}
+
+#listaupgrades button:active {
+    transform: scale(0.95);
+}
+
 #Upgrade1{
     display: none;
 }
