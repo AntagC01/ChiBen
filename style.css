@@ -113,6 +113,7 @@ body {
 
 
 #listaupgrades{
+    display: flex;
     align-items: center;
 }
 #Upgrade1{
@@ -218,8 +219,55 @@ body {
     display: flex;
 }
 #conquistas{
+    display: flex;
     margin-top: 10px;
 }
 #fecharconquistas{
     margin-top: 10px;
+}
+
+#cqt1{
+    display: none;
+}
+#cqt2{
+    display: none;
+}
+#cqt3{
+    display: none;
+}
+#cqt4{
+    display: none;
+}
+#cqt5{
+    display: none;
+}
+#cqt6{
+    display: none;
+}
+#cqt7{
+    display: none;
+}
+#cqt8{
+    display: none;
+}
+
+.conquista-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    font-size: 18px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, bottom 0.4s ease;
+    z-index: 2000;
+}
+.conquista-popup.show {
+    opacity: 1;
+    bottom: 40px; /* sobe um pouco */
 }
