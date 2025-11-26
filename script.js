@@ -28,6 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnconquistas = document.getElementById("btnconquistas");
     const fecharconquistas = document.getElementById("fecharconquistas");
 
+    const paginaascension = document.getElementById("paginaascension");
+    const btnascension = document.getElementById("btnascension");
+    const fecharascension = document.getElementById("fecharascension");
+
+
+    //Ascension
+    const btnascend = document.getElementById("ascend");
+
     // Upgrades
     const upgrade1 = document.getElementById("Upgrade1");
     const upgrade2 = document.getElementById("Upgrade2");
@@ -53,11 +61,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnconquistas.addEventListener("click", () => {
     paginaconquistas.classList.add("show");
-});
+    });
 
-fecharconquistas.addEventListener("click", () => {
+    fecharconquistas.addEventListener("click", () => {
     paginaconquistas.classList.remove("show");
-});
+    });
+
+    btnascension.addEventListener("click", () => {
+    paginaascension.classList.add("show");
+    });
+
+    fecharascension.addEventListener("click", () => {
+    paginaascension.classList.remove("show");
+    });
     //==================== COOKIES ====================
     function getCookie(name) {
         const value = `; ${document.cookie}`;
@@ -87,6 +103,10 @@ fecharconquistas.addEventListener("click", () => {
 
     let GLOBAL = parseInt(getCookie("globalbonusValue")) || 1;
     let CLICK = parseInt(getCookie("clickValue")) || 1;
+
+    let escalamento = parseFloat(getCookie("escalamentoValue")) || 1.25;
+
+    let ascendvar = parseInt(getCookie("ascendValue")) || 0;
 
     // Upgrades active
     let up1 = parseInt(getCookie("up1Value")) || 0;
@@ -143,7 +163,10 @@ fecharconquistas.addEventListener("click", () => {
 
         GOB -= custochico;
         CBT++;
-        custochico = Math.trunc(custochico * 1.25);
+        custochico = Math.trunc(custochico * escalamento) || 1;
+        if (custochico == Math.trunc(custochico * escalamento)){
+            custochico += 1;
+        }
 
         GOIABAS.textContent = "Guavas: " + GOB;
         CHICOS.textContent = CBT + " Chicos";
@@ -167,7 +190,10 @@ fecharconquistas.addEventListener("click", () => {
 
         GOB -= custozelele;
         ZLL++;
-        custozelele = Math.trunc(custozelele * 1.25);
+        custozelele = Math.trunc(custozelele * escalamento);
+        if (custozelele == Math.trunc(custozelele * escalamento)){
+            custozelele += 1;
+        }
 
         GOIABAS.textContent = "Guavas: " + GOB;
         ZELELES.textContent = ZLL + " Ze leles";
@@ -187,7 +213,10 @@ fecharconquistas.addEventListener("click", () => {
 
         GOB -= custorosinha;
         RS++;
-        custorosinha = Math.trunc(custorosinha * 1.25);
+        custorosinha = Math.trunc(custorosinha * escalamento) || 1;
+        if (custorosinha == Math.trunc(custorosinha * escalamento)){
+            custorosinha += 1;
+        }
 
         GOIABAS.textContent = "Guavas: " + GOB;
         ROSINHAS.textContent = RS + " Rosinhas";
@@ -255,8 +284,8 @@ if (GOB >= 750 && up7 == 0){
 }
 if (GOB >= 1000000)
 {
-    showCustomAlert("Congratulations, you reached the end of the game, you ate so many guavas that you exploded and everything ended");
-    reseta();
+    showCustomAlert("Congratulations, you reached the end of the game, you ate so many guavas that you exploded and everything ended. Now you must ASCEND!!!!!");
+    btnascend.style.display = 'block'
 }
 if (ZLL >= 15 && up8 == 0 && up2 == 1){
     upgrade8.style.display = 'block';
@@ -452,6 +481,13 @@ document.getElementById("Upgrade8").onclick = function () {
         setTimeout(() => popup.classList.remove("show"), 5000);
     }
 
+    document.getElementById("ascend").onclick = function () {
+        ascendvar += 1;
+        setCookie("ascendValue",ascendvar);
+        escalamento -= 0.02;
+        setCookie("escalamentoValue",escalamento);
+    }
+
     //==================== CONFIG ====================
     btnConfig.addEventListener('click', () => configWindow.style.display = 'block');
     closeConfig.addEventListener('click', () => configWindow.style.display = 'none');
@@ -464,6 +500,72 @@ document.getElementById("Upgrade8").onclick = function () {
     const RESET = document.getElementById("reset");
 
     function reseta() {
+          // Zera os cookies
+        GOB = 0;
+        CBT = 0;
+        custochico = 10;
+        CBT_BONUS = 0;
+        ZLL = 0;
+        custozelele = 100;
+        ZLL_BONUS = 0;
+        RS = 0;
+        ROSA = 0;
+        ROSADPS = 0;
+        custorosinha = 1000;
+        GLOBAL = 1;
+        CLICK = 0;
+        ascendvar = 0;
+        escalamento = 1.25;
+
+
+        setCookie("escalamentoValue",1.25);
+        setCookie("clickValue",1);
+        setCookie("globalbonusValue",1);
+        setCookie("gobValue", 0);
+        setCookie("cbtValue", 0);
+        setCookie("custochicoValue", 10); // valor inicial do Chico
+        setCookie("cbtbonusValue", 1); // valor inicial do Chico
+        setCookie("zllValue", 0);
+        setCookie("custozeleleValue", 100); // valor inicial do Chico
+        setCookie("rsValue", 0);
+        setCookie("rosaValue", 0);
+        setCookie("custorosinhaValue", 1000); // valor inicial do Chico
+
+
+        setCookie("up1Value",0);
+        setCookie("up2Value",0);
+        setCookie("up3Value",0);
+        setCookie("up4Value",0);
+        setCookie("up5Value",0);
+        setCookie("up6Value",0);
+        setCookie("up7Value",0);
+        setCookie("up8Value",0);
+
+        setCookie("vcqt1Value",0);
+        setCookie("vcqt2Value",0);
+        setCookie("vcqt3Value",0);
+        setCookie("vcqt4Value",0);
+        setCookie("vcqt5Value",0);
+        setCookie("vcqt6Value",0);
+        setCookie("vcqt7Value",0);
+        setCookie("totalcqtValue",0);
+
+        setCookie("ascendValue",0);
+        // Atualiza os elementos da tela
+        document.getElementById("Goiabas").textContent = "Guavas: 0";
+        document.getElementById("Chicos").textContent = "0 Chicos";
+        document.getElementById("Chico").textContent = "+1 Chico 10 Guavas";
+        document.getElementById("Zeleles").textContent = "0 Zeleles";
+        document.getElementById("Zelele").textContent = "+1 Zelele 100 Guavas";
+        document.getElementById("Rosinhas").textContent = "0 Rosinhas";
+        document.getElementById("Rosinha").textContent = "+1 Rosinha 1000 Guavas";
+        
+        location.reload();
+    }
+
+    RESET.addEventListener("click", reseta);
+
+    function ascend() {
           // Zera os cookies
         GOB = 0;
         CBT = 0;
@@ -517,12 +619,10 @@ document.getElementById("Upgrade8").onclick = function () {
         document.getElementById("Zelele").textContent = "+1 Zelele 100 Guavas";
         document.getElementById("Rosinhas").textContent = "0 Rosinhas";
         document.getElementById("Rosinha").textContent = "+1 Rosinha 1000 Guavas";
-
+        
         location.reload();
+        
     }
-
-    RESET.addEventListener("click", reseta);
-
 });
 
  function showCustomAlert(message) {
