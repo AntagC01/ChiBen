@@ -24,8 +24,26 @@ const upgrade4 = document.getElementById("Upgrade4")
 const upgrade5 = document.getElementById("Upgrade5")
 const upgrade6 = document.getElementById("Upgrade6")
 const upgrade7 = document.getElementById("Upgrade7")
+const upgrade8 = document.getElementById("Upgrade8")
 
+const sidebar = document.getElementById("sidebar");
+const toggleSidebar = document.getElementById("toggleSidebar");
 
+toggleSidebar.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
+
+const paginaconquistas = document.getElementById("paginaconquistas");
+const btnconquistas = document.getElementById("btnconquistas");
+const fecharconquistas = document.getElementById("fecharconquistas");
+
+btnconquistas.addEventListener("click", () => {
+    paginaconquistas.classList.add("show");
+});
+
+fecharconquistas.addEventListener("click", () => {
+    paginaconquistas.classList.remove("show");
+});
 
 // Lê o cookie ao carregar
 function getCookie(name) {
@@ -77,6 +95,7 @@ let up4 = parseInt(getCookie("up4Value")) || 0;
 let up5 = parseInt(getCookie("up5Value")) || 0;
 let up6 = parseInt(getCookie("up6Value")) || 0;
 let up7 = parseInt(getCookie("up7Value")) || 0;
+let up8 = parseInt(getCookie("up7Value")) || 0;
 
 if (RS > 0){
     rosasdiv.style.display = 'block';
@@ -226,6 +245,9 @@ if (GOB >= 1000000)
     alert("Parabens, você chegou ao final do jogo, você comeu tanta goiaba que explodiu e cabo tudo");
     reseta();
 }
+if (ZLL >= 15 && up8 == 0 && up2 == 1){
+    upgrade8.style.display = 'block';
+}
 }, 3000);
 
     document.getElementById("Upgrade1").onclick = function () {
@@ -303,6 +325,19 @@ if (GOB >= 1000000)
             upgrade7.style.display = 'none';
     }
 };
+
+document.getElementById("Upgrade8").onclick = function () {
+    if (ZLL >= 15){
+        setCookie("zllValue", ZLL + 1);
+        ZLL += 1;
+        setCookie("up8Value", 1);
+        ZLL_BONUS *= 2;
+        setCookie("zllbonusValue", ZLL_BONUS);
+        up8 = 1;
+        upgrade8.style.display = 'none';
+        alert("Você bate na onca até ela guspir o ze lele de volta :) (2x Producao ze lele)")
+    }
+};
 btnConfig.addEventListener('click', () => {
     configWindow.style.display = 'block';
 });
@@ -356,6 +391,7 @@ function reseta(){
         setCookie("up5Value",0);
         setCookie("up6Value",0);
         setCookie("up7Value",0);
+        setCookie("up8Value",0);
         // Atualiza os elementos da tela
         document.getElementById("Goiabas").textContent = "Goiabas: 0";
         document.getElementById("Chicos").textContent = "0 Chicos";
