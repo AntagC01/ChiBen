@@ -530,7 +530,7 @@ document.getElementById("Upgrade8").onclick = function () {
         setCookie("custochicoValue", 10); // valor inicial do Chico
         setCookie("cbtbonusValue", 1); // valor inicial do Chico
         setCookie("zllValue", 0);
-        setCookie("zllbonusValue", 1);
+        setCookie("zllbonusValue", 7);
         setCookie("custozeleleValue", 100); // valor inicial do Chico
         setCookie("rsValue", 0);
         setCookie("rosaValue", 0);
@@ -595,7 +595,7 @@ document.getElementById("Upgrade8").onclick = function () {
         setCookie("cbtbonusValue", 1); // valor inicial do Chico
         setCookie("zllValue", 0);
         setCookie("custozeleleValue", 100); // valor inicial do Chico
-        setCookie("zllbonusValue", 1);
+        setCookie("zllbonusValue", 7);
         setCookie("rsValue", 0);
         setCookie("rosaValue", 0);
         setCookie("custorosinhaValue", 1000); // valor inicial do Chico
