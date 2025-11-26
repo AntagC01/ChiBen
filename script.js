@@ -134,7 +134,7 @@ fecharconquistas.addEventListener("click", () => {
 
         const audio = escolherAudioPonderado(audios);
         audioPlayer.src = audio;
-        audioPlayer.volume = volumeControl.value * 0.75;
+        audioPlayer.volume = volumeControl.value * 0.85;
         audioPlayer.play();
     };
 
@@ -446,7 +446,7 @@ document.getElementById("Upgrade8").onclick = function () {
         popup.classList.add("show");
         
         audioPlayer.src = "mp3/achievement.mp3";
-        audioPlayer.volume = volumeControl.value;
+        audioPlayer.volume = volumeControl.value * 0.85;
         audioPlayer.play();
 
         setTimeout(() => popup.classList.remove("show"), 5000);
