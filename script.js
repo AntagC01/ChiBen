@@ -486,8 +486,6 @@ document.getElementById("Upgrade8").onclick = function () {
     document.getElementById("ascend").onclick = function () {
         ascendvar += 1;
         setCookie("ascendValue",ascendvar);
-        escalamento -= 0.02;
-        setCookie("escalamentoValue",escalamento);
         btnascend.style.display = 'none';
         ascend();
     }
@@ -572,7 +570,7 @@ document.getElementById("Upgrade8").onclick = function () {
 
     function ascend() {
           // Zera os cookies
-        GOB = 0;
+        GOB = 0 + (ascendvar * 100);
         CBT = 0;
         custochico = 10;
         CBT_BONUS = 0;
@@ -583,13 +581,16 @@ document.getElementById("Upgrade8").onclick = function () {
         ROSA = 0;
         ROSADPS = 0;
         custorosinha = 1000;
-        GLOBAL = 1;
-        CLICK = 1 + (ascendvar + 1);
+        GLOBAL = 1 + (ascendvar * 0.1); //bonus
+        CLICK = 1 + (ascendvar + 1); //bonus
         objetivo = 0;
+        escalamento -= 0.02; //bonus
 
+
+        setCookie("escalamentoValue",escalamento);
         setCookie("clickValue",CLICK);
-        setCookie("globalbonusValue",1);
-        setCookie("gobValue", 0);
+        setCookie("globalbonusValue",GLOBAL);
+        setCookie("gobValue", GOB);
         setCookie("cbtValue", 0);
         setCookie("custochicoValue", 10); // valor inicial do Chico
         setCookie("cbtbonusValue", 1); // valor inicial do Chico
