@@ -292,7 +292,7 @@ if (GOB >= 1000000 && objetivo != 1)
 if (ZLL >= 15 && up8 == 0 && up2 == 1){
     upgrade8.style.display = 'block';
 }
-if(GOB >= 1){
+if(GOB >= 1 || vcqt1 == 1){
     cqt1.style.display = 'block';
     if(vcqt1 == 0){
         totalcqt += 1;
@@ -302,7 +302,7 @@ if(GOB >= 1){
         setCookie("vcqt1Value",1)
     }
 }
-if(CBT >= 1){
+if(CBT >= 1 || vcqt2 == 1){
     cqt2.style.display = 'block';
     if(vcqt2 == 0){
         totalcqt += 1;
@@ -312,7 +312,7 @@ if(CBT >= 1){
         setCookie("vcqt2Value",1)
     }
 }
-if(ZLL >= 1){
+if(ZLL >= 1 || vcqt3 == 1){
     cqt3.style.display = 'block';
     if(vcqt3 == 0){
         totalcqt += 1;
@@ -322,7 +322,7 @@ if(ZLL >= 1){
         setCookie("vcqt3Value",1)
     }
 }
-if(up2 == 1){
+if(up2 == 1 || vcqt4 == 1){
     cqt4.style.display = 'block';
     if(vcqt4 == 0){
         totalcqt += 1;
@@ -332,7 +332,7 @@ if(up2 == 1){
         setCookie("vcqt4Value",1)
     }
 }
-if(up8 == 1){
+if(up8 == 1 || vcqt5 == 1){
     cqt5.style.display = 'block';
     if(vcqt5 == 0){
         totalcqt += 1;
@@ -342,7 +342,7 @@ if(up8 == 1){
         setCookie("vcqt5Value",1)
     }
 }
-if(RS >= 1){
+if(RS >= 1 || vcqt6 == 1){
     cqt6.style.display = 'block';
     if(vcqt6 == 0){
         totalcqt += 1;
@@ -352,7 +352,7 @@ if(RS >= 1){
         setCookie("vcqt6Value",1)
     }
 }
-if(RS >= 10){
+if(RS >= 10 || vcqt7 == 1){
     cqt7.style.display = 'block';
     if(vcqt7 == 0){
         totalcqt += 1;
@@ -364,7 +364,7 @@ if(RS >= 10){
 }
 
 totalcqtdiv.textContent = totalcqt + " of 7 achieved";
-    }, 3000);
+    }, 2500);
 
     document.getElementById("Upgrade1").onclick = function () {
         if (GOB >= 80){
@@ -517,7 +517,7 @@ document.getElementById("Upgrade8").onclick = function () {
         ROSADPS = 0;
         custorosinha = 1000;
         GLOBAL = 1;
-        CLICK = 0;
+        CLICK = 1;
         ascendvar = 0;
         escalamento = 1.25;
 
@@ -584,10 +584,10 @@ document.getElementById("Upgrade8").onclick = function () {
         ROSADPS = 0;
         custorosinha = 1000;
         GLOBAL = 1;
-        CLICK = 0;
+        CLICK = 1 + (ascendvar + 1);
         objetivo = 0;
 
-        setCookie("clickValue",1);
+        setCookie("clickValue",CLICK);
         setCookie("globalbonusValue",1);
         setCookie("gobValue", 0);
         setCookie("cbtValue", 0);
@@ -610,14 +610,6 @@ document.getElementById("Upgrade8").onclick = function () {
         setCookie("up7Value",0);
         setCookie("up8Value",0);
 
-        setCookie("vcqt1Value",0);
-        setCookie("vcqt2Value",0);
-        setCookie("vcqt3Value",0);
-        setCookie("vcqt4Value",0);
-        setCookie("vcqt5Value",0);
-        setCookie("vcqt6Value",0);
-        setCookie("vcqt7Value",0);
-        setCookie("totalcqtValue",0);
         // Atualiza os elementos da tela
         document.getElementById("Goiabas").textContent = "Guavas: 0";
         document.getElementById("Chicos").textContent = "0 Chicos";
