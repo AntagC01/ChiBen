@@ -85,7 +85,6 @@ body {
     z-index: 1000;
 }
 
-
 /* Efeito hover */
 #btnConfig:hover {
     transform: scale(1.1);

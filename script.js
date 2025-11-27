@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    let lingua = getCookie("lingua") || 'en';
+    const btnlingua = document.getElementById("trocalingua");
+
     //==================== ELEMENTS ====================
     const GOIABAS = document.getElementById("Goiabas");
     const GOIABASDPS = document.getElementById("Goiabasdps");
@@ -141,9 +144,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     //==================== INITIAL ALERT ====================
-    showCustomAlert("You are just a guava thief farmer dreaming of " + objetivoascend + " guavas, this is your goal");
+    if (lingua == 'en') {
+        showCustomAlert("You are just a guava thief farmer dreaming of " + objetivoascend + " guavas, this is your goal");
+    }
+    if (lingua == 'pt') {
+        showCustomAlert("Você é só um ladrão de goiabas com um sonho de  " + objetivoascend + " goiabas, essa é sua meta");
+    }
+        
 
-    
+
     //==================== AUDIO ====================
     const audios = [
         { src: "mp3/click_satisfatorio.wav", peso: 2 }
@@ -163,7 +172,12 @@ document.addEventListener("DOMContentLoaded", () => {
     //==================== CLICKS ====================
     document.getElementById("Aperta").onclick = function () {
         GOB += CLICK;
+        if (lingua == 'en') {
         GOIABAS.textContent = "Guavas: " + GOB;
+        }
+        if (lingua == 'pt') {
+        GOIABAS.textContent = "Goiabas: " + GOB;
+        }
         setCookie("gobValue", GOB);
 
         const audio = escolherAudioPonderado(audios);
@@ -182,9 +196,14 @@ document.addEventListener("DOMContentLoaded", () => {
             custochico += 1;
         }
 
-        GOIABAS.textContent = "Guavas: " + GOB;
+        if (lingua == 'en') {
         CHICOS.textContent = CBT + " Chicos";
         btnchicos.textContent = "+1 Chico " + custochico + " Guavas";
+        }
+        if (lingua == 'pt') {
+        CHICOS.textContent = CBT + " Chicos";
+        btnchicos.textContent = "+1 Chico " + custochico + " Goiabas";
+        }
 
         setCookie("gobValue", GOB);
         setCookie("cbtValue", CBT);
@@ -194,9 +213,6 @@ document.addEventListener("DOMContentLoaded", () => {
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();
 
-        //audioPlayer.src = "mp3/mais-um-deu-soh-1763986010386.mp3";
-        //audioPlayer.volume = volumeControl.value;
-        //audioPlayer.play();
     };
 
     document.getElementById("Zelele").onclick = function () {
@@ -208,10 +224,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (custozelele == Math.trunc(custozelele * escalamento)){
             custozelele += 1;
         }
-
-        GOIABAS.textContent = "Guavas: " + GOB;
+        
+        if (lingua == 'en') {
         ZELELES.textContent = ZLL + " Ze leles";
         btnZELELES.textContent = "+1 Ze lele " + custozelele + " Guavas";
+        }
+        if (lingua == 'pt') {
+        ZELELES.textContent = ZLL + " Ze leles";
+        btnZELELES.textContent = "+1 Ze lele " + custozelele + " Goiabas";
+        }
 
         setCookie("gobValue", GOB);
         setCookie("zllValue", ZLL);
@@ -232,9 +253,14 @@ document.addEventListener("DOMContentLoaded", () => {
             custorosinha += 1;
         }
 
-        GOIABAS.textContent = "Guavas: " + GOB;
+        if (lingua == 'en') {
         ROSINHAS.textContent = RS + " Rosinhas";
         btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Guavas";
+        }
+        if (lingua == 'pt') {
+        ROSINHAS.textContent = RS + " Rosinhas";
+        btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Goiabas";
+        }
 
         setCookie("gobValue", GOB);
         setCookie("rsValue", RS);
@@ -257,8 +283,14 @@ document.addEventListener("DOMContentLoaded", () => {
             custocavalo += 1;
         }
 
+        if (lingua == 'en') {
+        CAVALOS.textContent = CVL + " Cavalos";
+        btncavalo.textContent = "+1 Cavalo " + custocavalo + " Roses";
+        }
+        if (lingua == 'pt') {
         CAVALOS.textContent = CVL + " Cavalos";
         btncavalo.textContent = "+1 Cavalo " + custocavalo + " Rosas";
+        }
 
         setCookie("rosaValue", ROSA);
         setCookie("custocavaloValue", custocavalo);
@@ -277,19 +309,32 @@ document.addEventListener("DOMContentLoaded", () => {
         let GOBDPS = Math.trunc(((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS)) * GLOBAL * BONUSCAVALO);
         GOB += GOBDPS;
 
+        if (lingua == 'en') {
         GOIABAS.textContent = "Guavas: " + GOB;
         GOIABASDPS.textContent = "Guavas per second: " + GOBDPS;
+        }
+        if (lingua == 'pt') {
+        GOIABAS.textContent = "Goiabas: " + GOB;
+        GOIABASDPS.textContent = "Goiabas por segundo: " + GOBDPS;
+        }
 
         setCookie("gobValue", GOB);
 
         let ROSADPS = RS;
         ROSA += ROSADPS;
 
+        if (lingua == 'en') {
+        ROSAS.textContent = "Roses: " + ROSA;
+        ROSASDPS.textContent = "Roses per second: " + ROSADPS;
+        }
+        if (lingua == 'pt') {
         ROSAS.textContent = "Rosas: " + ROSA;
-        ROSASDPS.textContent = "Rosas per second: " + ROSADPS;
+        ROSASDPS.textContent = "Rosas por segundo: " + ROSADPS;
+        }
 
         setCookie("rosaValue", ROSA);
 
+        if (lingua == 'en') {
         CHICOS.textContent = CBT + " Chicos";
         btnchicos.textContent = "+1 Chico " + custochico + " Guavas";
         ZELELES.textContent = ZLL + " Ze leles";
@@ -297,7 +342,18 @@ document.addEventListener("DOMContentLoaded", () => {
         ROSINHAS.textContent = RS + " Rosinhas";
         btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Guavas";
         CAVALOS.textContent = CVL + " Cavalos";
+        btncavalo.textContent = "+1 Cavalo " + custocavalo + " Roses";
+        }
+        if (lingua == 'pt') {
+        CHICOS.textContent = CBT + " Chicos";
+        btnchicos.textContent = "+1 Chico " + custochico + " Goiabas";
+        ZELELES.textContent = ZLL + " Ze leles";
+        btnZELELES.textContent = "+1 Ze lele " + custozelele + " Goiabas";
+        ROSINHAS.textContent = RS + " Rosinhas";
+        btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Goiabas";
+        CAVALOS.textContent = CVL + " Cavalos";
         btncavalo.textContent = "+1 Cavalo " + custocavalo + " Rosas";
+        }
     }, 1000);
 
     //==================== ACHIEVEMENTS / UPGRADES ====================
@@ -325,7 +381,12 @@ if (GOB >= 750 && up7 == 0){
 }
 if (GOB >= objetivoascend && objetivo != 1)
 {
+    if (lingua == 'en') {
     showCustomAlert("Congratulations, you reached the end of the game, you ate so many guavas that you exploded and everything ended. Now you must ASCEND!!!!!");
+    }
+    if (lingua == 'pt') {
+    showCustomAlert("Parabéns, você chegou ao fim do jogo, comeu tantas goiabas que explodiu e tudo acabou. Agora você deve ASCENDER!!!!!");
+    }
     btnascend.style.display = 'block';
     objetivo = 1;
 }
@@ -337,7 +398,13 @@ if(GOB >= 1 || vcqt1 == 1){
     if(vcqt1 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
         mostrarConquista("First little guava");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Primeira goiabinha");
+        }
+
         vcqt1 = 1;
         setCookie("vcqt1Value",1)
     }
@@ -538,6 +605,18 @@ document.getElementById("Upgrade8").onclick = function () {
     //==================== CONFIG ====================
     btnConfig.addEventListener('click', () => configWindow.style.display = 'block');
     closeConfig.addEventListener('click', () => configWindow.style.display = 'none');
+    btnlingua.addEventListener('click', () => {
+    if(lingua == 'en')
+    {
+    setCookie("lingua", "pt");
+    lingua = "pt"; 
+    }
+    else if(lingua == 'pt')
+    {
+    setCookie("lingua", "en");
+    lingua = "en";  
+    }
+    });
 
     const audio = document.querySelector("audio");
     const volumeControl = document.getElementById("volume");
