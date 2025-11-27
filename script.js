@@ -414,7 +414,12 @@ if(CBT >= 1 || vcqt2 == 1){
     if(vcqt2 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
         mostrarConquista("Cloning chicos");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Clonando chicos");
+        }
         vcqt2 = 1;
         setCookie("vcqt2Value",1)
     }
@@ -424,7 +429,12 @@ if(ZLL >= 1 || vcqt3 == 1){
     if(vcqt3 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
         mostrarConquista("Best Friend");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Melhor amigo");
+        }
         vcqt3 = 1;
         setCookie("vcqt3Value",1)
     }
@@ -434,7 +444,12 @@ if(up2 == 1 || vcqt4 == 1){
     if(vcqt4 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
         mostrarConquista("Goodbye best friend :(");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Adeus melhor amigo :(");
+        }
         vcqt4 = 1;
         setCookie("vcqt4Value",1)
     }
@@ -444,7 +459,12 @@ if(up8 == 1 || vcqt5 == 1){
     if(vcqt5 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
         mostrarConquista("Welcome back Ze lele");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Bem vindo de volta Ze lele");
+        }
         vcqt5 = 1;
         setCookie("vcqt5Value",1)
     }
@@ -454,7 +474,12 @@ if(RS >= 1 || vcqt6 == 1){
     if(vcqt6 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
         mostrarConquista("First little rose");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Primeira rosinha");
+        }
         vcqt6 = 1;
         setCookie("vcqt6Value",1)
     }
@@ -464,18 +489,32 @@ if(RS >= 10 || vcqt7 == 1){
     if(vcqt7 == 0){
         totalcqt += 1;
         setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
         mostrarConquista("Roses for days");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Roses for days");
+        }
         vcqt7 = 1;
         setCookie("vcqt7Value",1)
     }
 }
-
+if (lingua == 'en') {
 totalcqtdiv.textContent = totalcqt + " of 7 achieved";
 totalascension.textContent = ascendvar + " Ascensions giving:";
 acdb1.textContent = "+" + ascendvar * 100 + " Start Guavas";
-acdb2.textContent = "+" + ascendvar * 10 + "% GBPS";
+acdb2.textContent = "+" + ascendvar * 10 + "% GVPS";
 acdb3.textContent = "-" + ascendvar * 0.02 + " Scaling cost";
 acdb4.textContent = "+" + ascendvar * 1 + " Base Click";
+}
+if (lingua == 'pt') {
+totalcqtdiv.textContent = totalcqt + " de 7 alcançados";
+totalascension.textContent = ascendvar + " Ascensões dando:";
+acdb1.textContent = "+" + ascendvar * 100 + " Goiabas Iniciais";
+acdb2.textContent = "+" + ascendvar * 10 + "% GBPS";
+acdb3.textContent = "-" + ascendvar * 0.02 + " Escalonamento de custo";
+acdb4.textContent = "+" + ascendvar * 1 + " Clique base";
+}
     }, 2500);
 
     document.getElementById("Upgrade1").onclick = function () {
@@ -496,7 +535,12 @@ acdb4.textContent = "+" + ascendvar * 1 + " Base Click";
             up2 = 1;
             upgrade2.style.display = 'none';
             ZELELES.textContent = ZLL + " Ze leles";
+            if (lingua == 'en') {
             showCustomAlert("A jaguar came and ate Ze Lele :(")
+            }
+            if (lingua == 'pt') {
+            showCustomAlert("Uma onça veio e cumeu o Ze lele :(")
+            }
     }
 };
 
@@ -563,23 +607,14 @@ document.getElementById("Upgrade8").onclick = function () {
         setCookie("zllbonusValue", ZLL_BONUS);
         up8 = 1;
         upgrade8.style.display = 'none';
+        if (lingua == 'en') {
         showCustomAlert("You beat the jaguar until it spit Ze Lele back :) (2x Ze Lele production)")
-    }
-};
-
-    function conquista(id, div, texto) {
-        div.style.display = 'block';
-
-        if (eval(`vcqt${id}`) === 0) {
-            totalcqt++;
-            setCookie("totalcqtValue", totalcqt);
-
-            mostrarConquista(texto);
-
-            eval(`vcqt${id} = 1`);
-            setCookie(`vcqt${id}Value`, 1);
+        }
+        if (lingua == 'pt') {
+        showCustomAlert("Você bate na onça até ela cuspir o Ze lele de volta :) (2x Ze Lele produção)")
         }
     }
+};
 
     function mostrarConquista(texto) {
         const popup = document.getElementById("conquistaPopup");
