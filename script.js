@@ -35,6 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Ascension
     const btnascend = document.getElementById("ascend");
+    const totalascension = document.getElementById("totalascension");
+    const acdb1 = document.getElementById("acdbonus1");
+    const acdb2 = document.getElementById("acdbonus2");
+    const acdb3 = document.getElementById("acdbonus3");
+    const acdb4 = document.getElementById("acdbonus4");
 
     // Upgrades
     const upgrade1 = document.getElementById("Upgrade1");
@@ -101,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let RS = parseInt(getCookie("rsValue")) || 0;
     let custorosinha = parseInt(getCookie("custorosinhaValue")) || 1000;
 
-    let GLOBAL = parseInt(getCookie("globalbonusValue")) || 1;
+    let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
     let CLICK = parseInt(getCookie("clickValue")) || 1;
 
     let escalamento = parseFloat(getCookie("escalamentoValue")) || 1.25;
@@ -236,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //==================== AUTOMATIC PRODUCTION ====================
     setInterval(() => {
-        let GOBDPS = ((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS)) * GLOBAL;
+        let GOBDPS = Math.trunc(((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS)) * GLOBAL);
         GOB += GOBDPS;
 
         GOIABAS.textContent = "Guavas: " + GOB;
@@ -364,6 +369,11 @@ if(RS >= 10 || vcqt7 == 1){
 }
 
 totalcqtdiv.textContent = totalcqt + " of 7 achieved";
+totalascension.textContent = ascendvar + " Ascensions giving:";
+acdb1.textContent = "+" + ascendvar * 100 + " Start Guavas";
+acdb2.textContent = "+" + ascendvar * 10 + "% GBPS";
+acdb3.textContent = "-" + ascendvar * 0.02 + " Scaling cost";
+acdb4.textContent = "+" + ascendvar * 1 + " Base Click";
     }, 2500);
 
     document.getElementById("Upgrade1").onclick = function () {

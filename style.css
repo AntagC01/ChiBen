@@ -489,3 +489,64 @@ body {
   #ascend{
     display: none;
   }
+
+  /* Título principal */
+#paginaascension h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #222;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Subtítulo mostrando progresso */
+#paginaascension h2 {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Container dos bônus da ascensão */
+#ascendbonus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* Botões de bônus */
+#ascendbonus button {
+    flex: 1 1 140px;
+    padding: 12px 15px;
+    background-color: #ffe8b3;
+    border: 2px solid #8b6f4f;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover nos botões */
+#ascendbonus button:hover {
+    background-color: #ffd966;
+    transform: scale(1.05);
+}
+
+/* Botão de voltar */
+#fecharascension {
+    padding: 12px 25px;
+    background-color: #8b6f4f;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#fecharascension:hover {
+    background-color: #6e5744;
+    transform: scale(1.05);
+}
