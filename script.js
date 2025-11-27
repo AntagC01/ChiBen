@@ -504,7 +504,7 @@ totalcqtdiv.textContent = totalcqt + " of 7 achieved";
 totalascension.textContent = ascendvar + " Ascensions giving:";
 acdb1.textContent = "+" + ascendvar * 100 + " Start Guavas";
 acdb2.textContent = "+" + ascendvar * 10 + "% GVPS";
-acdb3.textContent = "-" + ascendvar * 0.02 + " Scaling cost";
+acdb3.textContent = "-" + ascendvar * 0.02 + " Scaling cost (capped at 1.1)";
 acdb4.textContent = "+" + ascendvar * 1 + " Base Click";
 }
 if (lingua == 'pt') {
@@ -512,7 +512,7 @@ totalcqtdiv.textContent = totalcqt + " de 7 alcançados";
 totalascension.textContent = ascendvar + " Ascensões dando:";
 acdb1.textContent = "+" + ascendvar * 100 + " Goiabas Iniciais";
 acdb2.textContent = "+" + ascendvar * 10 + "% GBPS";
-acdb3.textContent = "-" + ascendvar * 0.02 + " Escalonamento de custo";
+acdb3.textContent = "-" + ascendvar * 0.02 + " Escalonamento de custo (Limitado a 1.1)";
 acdb4.textContent = "+" + ascendvar * 1 + " Clique base";
 }
     }, 2500);
@@ -750,6 +750,10 @@ document.getElementById("Upgrade8").onclick = function () {
         CLICK = 1 + (ascendvar + 1); //bonus
         objetivo = 0;
         escalamento -= 0.02; //bonus
+        if (escalamento < 1.1)
+        {
+            escalamento = 1.1;
+        }
         CVL = 0;
         custocavalo = 35;
         objetivoascend = objetivoascend * 10;
