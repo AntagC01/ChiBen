@@ -138,17 +138,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let vcqt7 = parseInt(getCookie("vcqt7Value")) || 0;
     let totalcqt = parseInt(getCookie("totalcqtValue")) || 0;
     let objetivo = 0;
-    let objetivoascend = 10000000;
+    let objetivoascend = parseInt(getCookie("objetivoascendValue")) || 10000000;
 
     if (RS > 0) rosasdiv.style.display = 'block';
 
 
     //==================== INITIAL ALERT ====================
     if (lingua == 'en') {
-        showCustomAlert("You are just a guava thief farmer dreaming of " + objetivoascend + " guavas, this is your goal");
+        showCustomAlert("You are just a guava thief farmer dreaming of " + objetivoascend.toLocaleString('en-US') + " guavas, this is your goal");
     }
     if (lingua == 'pt') {
-        showCustomAlert("Você é só um ladrão de goiabas com um sonho de  " + objetivoascend + " goiabas, essa é sua meta");
+        showCustomAlert("Você é só um ladrão de goiabas com um sonho de  " + objetivoascend.toLocaleString('pt-BR') + " goiabas, essa é sua meta");
     }
         
 
@@ -644,6 +644,7 @@ document.getElementById("Upgrade8").onclick = function () {
         escalamento = 1.25;
         CVL = 0;
         custocavalo = 35;
+        objetivoascend = 10000000;
 
         
         setCookie("cvlValue",0);
@@ -682,6 +683,7 @@ document.getElementById("Upgrade8").onclick = function () {
         setCookie("totalcqtValue",0);
 
         setCookie("ascendValue",0);
+        setCookie("objetivoascendValue",10000000)
         // Atualiza os elementos da tela
         document.getElementById("Goiabas").textContent = "Guavas: 0";
         document.getElementById("Chicos").textContent = "0 Chicos";
@@ -715,6 +717,7 @@ document.getElementById("Upgrade8").onclick = function () {
         escalamento -= 0.02; //bonus
         CVL = 0;
         custocavalo = 35;
+        objetivoascend = objetivoascend * 10;
 
         
         setCookie("cvlValue",0);
@@ -732,6 +735,7 @@ document.getElementById("Upgrade8").onclick = function () {
         setCookie("rsValue", 0);
         setCookie("rosaValue", 0);
         setCookie("custorosinhaValue", 1000); // valor inicial do Chico
+        setCookie("objetivoascendValue",objetivoascend)
 
 
         setCookie("up1Value",0);
