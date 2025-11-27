@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    //==================== INITIAL ALERT ====================
-    showCustomAlert("You are just a guava thief farmer dreaming of 1 million guavas, this is your goal");
-
     //==================== ELEMENTS ====================
     const GOIABAS = document.getElementById("Goiabas");
     const GOIABASDPS = document.getElementById("Goiabasdps");
@@ -12,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnZELELES = document.getElementById("Zelele");
     const ROSINHAS = document.getElementById("Rosinhas");
     const btnrosinha = document.getElementById("Rosinha");
+    const CAVALOS = document.getElementById("cavalos");
+    const btncavalo = document.getElementById("cavalo");
 
     const ROSAS = document.getElementById("Rosas");
     const ROSASDPS = document.getElementById("Rosasdps");
@@ -106,6 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let RS = parseInt(getCookie("rsValue")) || 0;
     let custorosinha = parseInt(getCookie("custorosinhaValue")) || 1000;
 
+    let CVL = parseInt(getCookie("cvlValue")) || 0;
+    let custocavalo = parseInt(getCookie("custocavaloValue")) || 35;
+
     let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
     let CLICK = parseInt(getCookie("clickValue")) || 1;
 
@@ -133,9 +135,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let vcqt7 = parseInt(getCookie("vcqt7Value")) || 0;
     let totalcqt = parseInt(getCookie("totalcqtValue")) || 0;
     let objetivo = 0;
+    let objetivoascend = 10000000;
 
     if (RS > 0) rosasdiv.style.display = 'block';
 
+
+    //==================== INITIAL ALERT ====================
+    showCustomAlert("You are just a guava thief farmer dreaming of " + objetivoascend + " guavas, this is your goal");
+
+    
     //==================== AUDIO ====================
     const audios = [
         { src: "mp3/click_satisfatorio.wav", peso: 2 }
@@ -239,9 +247,34 @@ document.addEventListener("DOMContentLoaded", () => {
         rosasdiv.style.display = 'block';
     };
 
+    document.getElementById("cavalo").onclick = function () {
+        if (ROSA < custocavalo) return;
+
+        ROSA -= custocavalo;
+        CVL++;
+        custocavalo = Math.trunc(custocavalo * escalamento) || 1;
+        if (custocavalo == Math.trunc(custocavalo * escalamento)){
+            custocavalo += 1;
+        }
+
+        CAVALOS.textContent = CVL + " Cavalos";
+        btncavalo.textContent = "+1 Cavalo " + custocavalo + " Rosas";
+
+        setCookie("rosaValue", ROSA);
+        setCookie("custocavaloValue", custocavalo);
+        setCookie("cvlValue", CVL);
+
+        audioPlayer.src = "mp3/compra.mp3";
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
+
+        rosasdiv.style.display = 'block';
+    };
+
     //==================== AUTOMATIC PRODUCTION ====================
     setInterval(() => {
-        let GOBDPS = Math.trunc(((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS)) * GLOBAL);
+        let BONUSCAVALO = 1 + (CVL * 0.1);
+        let GOBDPS = Math.trunc(((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS)) * GLOBAL * BONUSCAVALO);
         GOB += GOBDPS;
 
         GOIABAS.textContent = "Guavas: " + GOB;
@@ -263,6 +296,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btnZELELES.textContent = "+1 Ze lele " + custozelele + " Guavas";
         ROSINHAS.textContent = RS + " Rosinhas";
         btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Guavas";
+        CAVALOS.textContent = CVL + " Cavalos";
+        btncavalo.textContent = "+1 Cavalo " + custocavalo + " Rosas";
     }, 1000);
 
     //==================== ACHIEVEMENTS / UPGRADES ====================
@@ -288,7 +323,7 @@ if (GOB >= 30 && up6 == 0){
 if (GOB >= 750 && up7 == 0){
     upgrade7.style.display = 'block';
 }
-if (GOB >= 1000000 && objetivo != 1)
+if (GOB >= objetivoascend && objetivo != 1)
 {
     showCustomAlert("Congratulations, you reached the end of the game, you ate so many guavas that you exploded and everything ended. Now you must ASCEND!!!!!");
     btnascend.style.display = 'block';
@@ -528,8 +563,12 @@ document.getElementById("Upgrade8").onclick = function () {
         CLICK = 1;
         ascendvar = 0;
         escalamento = 1.25;
+        CVL = 0;
+        custocavalo = 35;
 
-
+        
+        setCookie("cvlValue",0);
+        setCookie("custocavaloValue",35);
         setCookie("escalamentoValue",1.25);
         setCookie("clickValue",1);
         setCookie("globalbonusValue",1);
@@ -595,8 +634,12 @@ document.getElementById("Upgrade8").onclick = function () {
         CLICK = 1 + (ascendvar + 1); //bonus
         objetivo = 0;
         escalamento -= 0.02; //bonus
+        CVL = 0;
+        custocavalo = 35;
 
-
+        
+        setCookie("cvlValue",0);
+        setCookie("custocavaloValue",35);
         setCookie("escalamentoValue",escalamento);
         setCookie("clickValue",CLICK);
         setCookie("globalbonusValue",GLOBAL);

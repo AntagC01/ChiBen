@@ -175,6 +175,12 @@ body {
     transform: scale(0.95);
 }
 
+.descricaop {
+    font-size: 13px;
+    color: #794a14;
+    
+}
+
 #listaupgrades button {
     padding: 10px 15px;
     background-color: #ffe8b3;
