@@ -31,24 +31,21 @@ p {
 
 /* ====== BOTÃO ====== */
 #Aperta {
-    padding: 12px 25px;
-    background-color: #ffcf40;
     border: none;
-    border-radius: 10px;
     font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
     transition: 0.2s;
-    box-shadow: 0 4px 0 #b68400;
+    width: 100px;
+    height: 100px;
 }
 
 #Aperta:hover {
-    background-color: #ffe27a;
+    transform: scale(1.30);
 }
 
 #Aperta:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 0 #b68400;
+    transform: scale(0.75);
 }
 
 /* ====== ANIMAÇÃO SUAVE ====== */
