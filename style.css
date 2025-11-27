@@ -38,6 +38,7 @@ p {
     transition: 0.2s;
     width: 100px;
     height: 100px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #Aperta:hover {
