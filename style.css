@@ -29,6 +29,9 @@ p {
     margin: 10px 0;
 }
 
+#recursosprod{
+    flex-direction: column; 
+}
 /* ====== BOTÃO ====== */
 #Aperta {
     border: none;
@@ -111,18 +114,20 @@ body {
     justify-content: center;
 }
 
-.conteudo > div {
-    display: flex;
-    justify-content: center; /* centraliza horizontalmente */
-    align-items: center;     /* centraliza verticalmente */
-    flex-direction: column; 
-}
-
 .conteudo {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* elementos principais empilhados verticalmente */
     align-items: center;
     text-align: center;
+}
+
+/* topo com as duas divs */
+.topo {
+    display: flex;
+    flex-direction: row;
+    gap: 30px; /* distância entre as duas */
+    justify-content: center;
+    align-items: center;
 }
 
 #rosasdiv{
