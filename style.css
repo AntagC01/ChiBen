@@ -326,6 +326,23 @@ body {
     background: #444;
 }
 
+#multcompra {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 14px;
+    font-size: 20px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#multcompra:hover {
+    background: #444;
+}
+
 /* Sidebar aberta */
 .sidebar.open {
     left: 0;
