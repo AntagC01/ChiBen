@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const upgrade6 = document.getElementById("Upgrade6");
     const upgrade7 = document.getElementById("Upgrade7");
     const upgrade8 = document.getElementById("Upgrade8");
+    const upgrade9 = document.getElementById("Upgrade9");
 
     toggleSidebar.addEventListener("click", () => {
     sidebar.classList.toggle("open");
@@ -110,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let CVL = parseInt(getCookie("cvlValue")) || 0;
     let custocavalo = parseInt(getCookie("custocavaloValue")) || 35;
+    let CVL_BONUS = parseFloat(getCookie("cvlbonusValue")) || 0.1
 
     let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
     let CLICK = parseInt(getCookie("clickValue")) || 1;
@@ -127,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let up6 = parseInt(getCookie("up6Value")) || 0;
     let up7 = parseInt(getCookie("up7Value")) || 0;
     let up8 = parseInt(getCookie("up8Value")) || 0;
+    let up9 = parseInt(getCookie("up9Value")) || 0;
 
     // Achievements
     let vcqt1 = parseInt(getCookie("vcqt1Value")) || 0;
@@ -305,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //==================== AUTOMATIC PRODUCTION ====================
     setInterval(() => {
-        let BONUSCAVALO = 1 + (CVL * 0.1);
+        let BONUSCAVALO = 1 + (CVL * CVL_BONUS);
         let GOBDPS = Math.trunc(((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS)) * GLOBAL * BONUSCAVALO);
         GOB += GOBDPS;
 
@@ -392,6 +395,9 @@ if (GOB >= objetivoascend && objetivo != 1)
 }
 if (ZLL >= 15 && up8 == 0 && up2 == 1){
     upgrade8.style.display = 'block';
+}
+if (GOB >= 100000 && up9 == 0){
+    upgrade9.style.display = 'block';
 }
 if(GOB >= 1 || vcqt1 == 1){
     cqt1.style.display = 'block';
@@ -616,6 +622,16 @@ document.getElementById("Upgrade8").onclick = function () {
     }
 };
 
+document.getElementById("Upgrade9").onclick = function () {
+    if (GOB >= 100000){
+        CVL_BONUS += 0.1;
+        setCookie("cvlbonusValue", CVL_BONUS);
+        setCookie("up9Value", 1);
+        up9 = 1;
+        upgrade9.style.display = 'none';
+    }
+};
+
     function mostrarConquista(texto) {
         const popup = document.getElementById("conquistaPopup");
         const textoElemento = document.getElementById("conquistaTexto");
@@ -680,8 +696,10 @@ document.getElementById("Upgrade8").onclick = function () {
         CVL = 0;
         custocavalo = 35;
         objetivoascend = 10000000;
+        CVL_BONUS = 0.1;
 
         
+        setCookie("cvlbonusValue",0.1);
         setCookie("cvlValue",0);
         setCookie("custocavaloValue",35);
         setCookie("escalamentoValue",1.25);
@@ -757,8 +775,10 @@ document.getElementById("Upgrade8").onclick = function () {
         CVL = 0;
         custocavalo = 35;
         objetivoascend = objetivoascend * 10;
+        CVL_BONUS = 0.1;
 
         
+        setCookie("cvlbonusValue",0.1);
         setCookie("cvlValue",0);
         setCookie("custocavaloValue",35);
         setCookie("escalamentoValue",escalamento);
