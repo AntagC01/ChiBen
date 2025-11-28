@@ -338,6 +338,7 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 #multcompra:hover {
     background: #444;
