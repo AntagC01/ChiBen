@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let lingua = getCookie("lingua") || 'en';
     const btnlingua = document.getElementById("trocalingua");
-
+    
+    const btnmult = document.getElementById("multcompra");
     //==================== ELEMENTS ====================
     const GOIABAS = document.getElementById("Goiabas");
     const GOIABASDPS = document.getElementById("Goiabasdps");
@@ -142,6 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let totalcqt = parseInt(getCookie("totalcqtValue")) || 0;
     let objetivo = 0;
     let objetivoascend = parseInt(getCookie("objetivoascendValue")) || 10000000;
+    let multcompra = 1;
+
 
     if (RS > 0) rosasdiv.style.display = 'block';
 
@@ -172,6 +175,20 @@ document.addEventListener("DOMContentLoaded", () => {
         return lista[0].src;
     }
 
+    document.getElementById("multcompra").onclick = function () {
+        if(multcompra == 1){
+            multcompra = 5;
+            btnmult.textContent = 'x' + multcompra;
+        }
+        else if(multcompra == 5){
+            multcompra = 10;
+            btnmult.textContent = 'x' + multcompra;
+        }
+        else if(multcompra == 10){
+            multcompra = 1;
+            btnmult.textContent = 'x' + multcompra;
+        }
+    }
     //==================== CLICKS ====================
     document.getElementById("Aperta").onclick = function () {
         GOB += CLICK;
@@ -190,6 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     document.getElementById("Chico").onclick = function () {
+        for (let i = 0; i < multcompra; i++)
+        {
         if (GOB < custochico) return;
 
         GOB -= custochico;
@@ -211,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie("gobValue", GOB);
         setCookie("cbtValue", CBT);
         setCookie("custochicoValue", custochico);
-
+        }
         audioPlayer.src = "mp3/compra.mp3";
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();
@@ -219,6 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     document.getElementById("Zelele").onclick = function () {
+        for (let i = 0; i < multcompra; i++)
+        {
         if (GOB < custozelele) return;
 
         GOB -= custozelele;
@@ -240,13 +261,15 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie("gobValue", GOB);
         setCookie("zllValue", ZLL);
         setCookie("custozeleleValue", custozelele);
-
+        }
         audioPlayer.src = "mp3/compra.mp3";
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();
     };
 
     document.getElementById("Rosinha").onclick = function () {
+        for (let i = 0; i < multcompra; i++)
+        {
         if (GOB < custorosinha) return;
 
         GOB -= custorosinha;
@@ -268,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie("gobValue", GOB);
         setCookie("rsValue", RS);
         setCookie("custorosinhaValue", custorosinha);
-
+        }
         audioPlayer.src = "mp3/compra.mp3";
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();
@@ -277,6 +300,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     document.getElementById("cavalo").onclick = function () {
+        for (let i = 0; i < multcompra; i++)
+        {
         if (ROSA < custocavalo) return;
 
         ROSA -= custocavalo;
@@ -298,6 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie("rosaValue", ROSA);
         setCookie("custocavaloValue", custocavalo);
         setCookie("cvlValue", CVL);
+        }
 
         audioPlayer.src = "mp3/compra.mp3";
         audioPlayer.volume = volumeControl.value;
