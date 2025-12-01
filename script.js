@@ -1007,7 +1007,7 @@ document.getElementById("Upgrade11").onclick = function () {
         setCookie("rosaValue", 0);
         setCookie("cbtmaValue", 0);
         setCookie("custochicomalhadoValue", 10000000);
-        setCookie("cbtmabonusValue", 1);
+        setCookie("cbtmabonusValue", 49);
         setCookie("custorosinhaValue", 1000); // valor inicial do Chico
 
 
@@ -1106,7 +1106,7 @@ document.getElementById("Upgrade11").onclick = function () {
         setCookie("custorosinhaValue", 1000); // valor inicial do Chico
         setCookie("cbtmaValue", 0);
         setCookie("custochicomalhadoValue", 10000000);
-        setCookie("cbtmabonusValue", 1);
+        setCookie("cbtmabonusValue", 49);
         setCookie("objetivoascendValue",objetivoascend)
 
 
