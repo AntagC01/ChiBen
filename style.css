@@ -136,14 +136,6 @@ body {
 #rosasdiv{
     display: none;
 }
-/* Container geral */
-#listaitens {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-}
 
 /* Container geral */
 #listaitens {
@@ -179,6 +171,10 @@ body {
 
 #listaitens button:active {
     transform: scale(0.95);
+}
+
+#CBMABLOCK{
+    display: none;
 }
 
 .descricaop {

@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const CAVALOS = document.getElementById("cavalos");
     const btncavalo = document.getElementById("cavalo");
 
+    const CBMABLOCK = document.getElementById("CBMABLOCK");
+    const CHICOSMA = document.getElementById("chicomalhados");
+    const btnchicosMA = document.getElementById("Chicomalhado");
+
     const ROSAS = document.getElementById("Rosas");
     const ROSASDPS = document.getElementById("Rosasdps");
     const rosasdiv = document.getElementById("rosasdiv");
@@ -727,6 +731,11 @@ if(ascendvar >= 10 || vcqt15 == 1){
         setCookie("vcqt15Value",1)
     }
 }
+
+if (ascendvar >= 2){
+    CBMABLOCK.style.display = 'flex';
+}
+
 if (lingua == 'en') {
 FAZENDINHA.textContent = 'Little Farm'
 
