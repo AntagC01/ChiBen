@@ -59,6 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const upgrade7 = document.getElementById("Upgrade7");
     const upgrade8 = document.getElementById("Upgrade8");
     const upgrade9 = document.getElementById("Upgrade9");
+    const upgrade10 = document.getElementById("Upgrade10");
+    const upgrade11 = document.getElementById("Upgrade11");
 
     toggleSidebar.addEventListener("click", () => {
     sidebar.classList.toggle("open");
@@ -127,7 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let CVL = parseInt(getCookie("cvlValue")) || 0;
     let custocavalo = parseInt(getCookie("custocavaloValue")) || 35;
-    let CVL_BONUS = parseFloat(getCookie("cvlbonusValue")) || 0.1
+    let CVL_BONUS = parseFloat(getCookie("cvlbonusValue")) || 0.1;
+
+    let CBTMA = parseInt(getCookie("cbtmaValue")) || 0;
+    let custochicomalhado = parseInt(getCookie("custochicomalhadoValue")) || 10000000;
+    let CBTMA_BONUS = parseInt(getCookie("cbtmabonusValue")) || 1;
 
     let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
     let GLOBAL_ROSA = parseFloat(getCookie("globalbonusrosaValue")) || 1;
@@ -147,6 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let up7 = parseInt(getCookie("up7Value")) || 0;
     let up8 = parseInt(getCookie("up8Value")) || 0;
     let up9 = parseInt(getCookie("up9Value")) || 0;
+    let up10 = parseInt(getCookie("up10Value")) || 0;
+    let up11 = parseInt(getCookie("up11Value")) || 0;
 
     // Achievements
     let vcqt1 = parseInt(getCookie("vcqt1Value")) || 0;
@@ -356,10 +364,48 @@ document.addEventListener("DOMContentLoaded", () => {
         rosasdiv.style.display = 'block';
     };
 
+        document.getElementById("chicomalhado").onclick = function () {
+        for (let i = 0; i < multcompra; i++)
+        {
+        if (GOB < custochicomalhado) return;
+
+        GOB -= custochicomalhado;
+        CBTMA++;
+        custochicomalhado = Math.trunc(custochicomalhado * escalamento) || 1;
+        if (custochicomalhado == Math.trunc(custochicomalhado * escalamento)){
+            custochicomalhado += 1;
+        }
+
+        if (lingua == 'en') {
+        CHICOS.textContent = CBT + " Chicos Bulked";
+        btnchicos.textContent = "+1 Chico " + custochicomalhado + " Guavas";
+        }
+        if (lingua == 'pt') {
+        CHICOS.textContent = CBT + " Chicos Malhados";
+        btnchicos.textContent = "+1 Chico " + custochicomalhado + " Goiabas";
+        }
+
+        setCookie("gobValue", GOB);
+        setCookie("cbtmaValue", CBTMA);
+        setCookie("custochicomalhadoValue", custochicomalhado);
+        }
+        audioPlayer.src = "mp3/compra.mp3";
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
+
+    };
+
     //==================== AUTOMATIC PRODUCTION ====================
     setInterval(() => {
         let BONUSCAVALO = 1 + (CVL * CVL_BONUS);
-        let GOBDPS = Math.trunc(((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS)) * GLOBAL * BONUSCAVALO);
+        let GOBDPS = Math.trunc(((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS) + (CBTMA * CBTMA_BONUS)) * GLOBAL * BONUSCAVALO);
+        
+        if (up10 == 1){
+            GOBDPS * (1 + (CBT * 0.02));
+        }
+        if (up11 == 1){
+            GOBDPS * (1 + (ROSA * 0.0001))
+        }
         GOB += GOBDPS;
 
         if (lingua == 'en') {
@@ -448,6 +494,12 @@ if (ZLL >= 15 && up8 == 0 && up2 == 1){
 }
 if (GOB >= 100000 && up9 == 0){
     upgrade9.style.display = 'block';
+}
+if (CBT >= 50 && up10 == 0){
+    upgrade10.style.display = 'block';
+}
+if (ROSA >= 100000 && up11 == 0){
+    upgrade11.style.display = 'block';
 }
 if(GOB >= 1 || vcqt1 == 1){
     cqt1.style.display = 'block';
@@ -833,6 +885,22 @@ document.getElementById("Upgrade9").onclick = function () {
     }
 };
 
+document.getElementById("Upgrade10").onclick = function () {
+    if (CBT >= 50){
+        setCookie("up10Value", 1);
+        up10 = 1;
+        upgrade10.style.display = 'none';
+    }
+};
+
+document.getElementById("Upgrade11").onclick = function () {
+    if (ROSA >= 100000){
+        setCookie("up11Value", 1);
+        up11 = 1;
+        upgrade11.style.display = 'none';
+    }
+};
+
     function mostrarConquista(texto) {
         const popup = document.getElementById("conquistaPopup");
         const textoElemento = document.getElementById("conquistaTexto");
@@ -890,6 +958,9 @@ document.getElementById("Upgrade9").onclick = function () {
         ROSA = 0;
         ROSADPS = 0;
         custorosinha = 1000;
+        CBTMA = 0;
+        CBTMA_BONUS = 1;
+        custochicomalhado = 10000000;
         GLOBAL = 1;
         CLICK = 1;
         ascendvar = 0;
@@ -917,6 +988,9 @@ document.getElementById("Upgrade9").onclick = function () {
         setCookie("custozeleleValue", 100); // valor inicial do Chico
         setCookie("rsValue", 0);
         setCookie("rosaValue", 0);
+        setCookie("cbtmaValue", 0);
+        setCookie("custochicomalhadoValue", 10000000);
+        setCookie("cbtmabonusValue", 1);
         setCookie("custorosinhaValue", 1000); // valor inicial do Chico
 
 
@@ -928,6 +1002,9 @@ document.getElementById("Upgrade9").onclick = function () {
         setCookie("up6Value",0);
         setCookie("up7Value",0);
         setCookie("up8Value",0);
+        setCookie("up9Value",0);
+        setCookie("up10Value",0);
+        setCookie("up11Value",0);
 
         setCookie("vcqt1Value",0);
         setCookie("vcqt2Value",0);
@@ -975,6 +1052,9 @@ document.getElementById("Upgrade9").onclick = function () {
         ROSA = 0;
         ROSADPS = 0;
         custorosinha = 1000;
+        CBTMA = 0;
+        CBTMA_BONUS = 1;
+        custochicomalhado = 10000000;
         GLOBAL = 1 + (ascendvar * 0.5); //bonus
         CLICK = 1 + (ascendvar); //bonus
         objetivo = 0;
@@ -1007,6 +1087,9 @@ document.getElementById("Upgrade9").onclick = function () {
         setCookie("rsValue", RS);
         setCookie("rosaValue", 0);
         setCookie("custorosinhaValue", 1000); // valor inicial do Chico
+        setCookie("cbtmaValue", 0);
+        setCookie("custochicomalhadoValue", 10000000);
+        setCookie("cbtmabonusValue", 1);
         setCookie("objetivoascendValue",objetivoascend)
 
 
@@ -1018,6 +1101,9 @@ document.getElementById("Upgrade9").onclick = function () {
         setCookie("up6Value",0);
         setCookie("up7Value",0);
         setCookie("up8Value",0);
+        setCookie("up9Value",0);
+        setCookie("up10Value",0);
+        setCookie("up11Value",0);
 
         // Atualiza os elementos da tela
         document.getElementById("Goiabas").textContent = "Guavas: 0";

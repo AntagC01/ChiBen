@@ -275,6 +275,12 @@ body {
 #Upgrade9{
     display: none;
 }
+#Upgrade10{
+    display: none;
+}
+#Upgrade11{
+    display: none;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; }
