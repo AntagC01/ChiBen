@@ -485,10 +485,10 @@ if (GOB >= 750 && up7 == 0){
 if (GOB >= objetivoascend && objetivo != 1)
 {
     if (lingua == 'en') {
-    showCustomAlert("Congratulations, you reached the end of the game, you ate so many guavas that you exploded and everything ended. Now you must ASCEND!!!!!");
+    showCustomAlert("Congratulations, you ate so many guavas that you exploded and everything ended. Now you must ASCEND!!!!!");
     }
     if (lingua == 'pt') {
-    showCustomAlert("Parabéns, você chegou ao fim do jogo, comeu tantas goiabas que explodiu e tudo acabou. Agora você deve ASCENDER!!!!!");
+    showCustomAlert("Parabéns, você comeu tantas goiabas que explodiu e tudo acabou. Agora você deve ASCENDER!!!!!");
     }
     btnascend.style.display = 'block';
     objetivo = 1;
