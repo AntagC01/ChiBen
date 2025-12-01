@@ -758,6 +758,8 @@ upgrade6.textContent = "Pick guavas with both hands (2x guavas per click)";
 upgrade7.textContent = "Punch the trees (10x guavas per click)";
 upgrade8.textContent = "Hunt the jaguar that ate Ze Lele (?)";
 upgrade9.textContent = "Feed the horses with guavas (10% more horse bonus)";
+upgrade10.textContent = 'Create a enterprise and manage the chicos (+2% GBPS per chico)'
+upgrade11.textContent = 'Invest the roses in the stockmarket (+1% GBPS per 1000 Roses)'
 }
 if (lingua == 'pt') {
 FAZENDINHA.textContent = 'Fazendinha';
@@ -782,6 +784,8 @@ upgrade6.textContent = 'Pegue goiabas com as duas mãos (2x goiabas por clique)'
 upgrade7.textContent = 'Soque as arvores (10x goiabas por clique)'
 upgrade8.textContent = 'Caçar a onça que comeu o Ze lele (?)'
 upgrade9.textContent = 'Alimentar os cavalos com goiabas (10% aumento no bonus dos cavalos)'
+upgrade10.textContent = 'Criar uma empresa e administrar os chicos (+2% GBPS per chico)'
+upgrade11.textContent = 'Inestir as rosas na bolsa (+1% GBPS por 1000 Rosas)'
 }
     }, 2500);
 
