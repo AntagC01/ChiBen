@@ -503,7 +503,7 @@ if (ZLL >= 15 && up8 == 0 && up2 == 1){
 if (GOB >= 100000 && up9 == 0){
     upgrade9.style.display = 'block';
 }
-if (CBT >= 50 && up10 == 0){
+if (CBT >= 60 && up10 == 0){
     upgrade10.style.display = 'block';
 }
 if (ROSA >= 100000 && up11 == 0){
@@ -903,7 +903,7 @@ document.getElementById("Upgrade9").onclick = function () {
 };
 
 document.getElementById("Upgrade10").onclick = function () {
-    if (CBT >= 50){
+    if (CBT >= 60){
         setCookie("up10Value", 1);
         up10 = 1;
         upgrade10.style.display = 'none';
