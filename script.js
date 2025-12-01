@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const btnmult = document.getElementById("multcompra");
     //==================== ELEMENTS ====================
+    const FAZENDINHA = document.getElementById("fazendinha")
     const GOIABAS = document.getElementById("Goiabas");
     const GOIABASDPS = document.getElementById("Goiabasdps");
     const CHICOS = document.getElementById("Chicos");
@@ -70,6 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const cqt5 = document.getElementById("cqt5");
     const cqt6 = document.getElementById("cqt6");
     const cqt7 = document.getElementById("cqt7");
+    const cqt8 = document.getElementById("cqt8");
+    const cqt9 = document.getElementById("cqt9");
+    const cqt10 = document.getElementById("cqt10");
+    const cqt11 = document.getElementById("cqt11");
+    const cqt12 = document.getElementById("cqt12");
+    const cqt13 = document.getElementById("cqt13");
+    const cqt14 = document.getElementById("cqt14");
+    const cqt15 = document.getElementById("cqt15");
     const totalcqtdiv = document.getElementById("totalcqtdiv");
 
     btnconquistas.addEventListener("click", () => {
@@ -147,6 +156,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let vcqt5 = parseInt(getCookie("vcqt5Value")) || 0;
     let vcqt6 = parseInt(getCookie("vcqt6Value")) || 0;
     let vcqt7 = parseInt(getCookie("vcqt7Value")) || 0;
+    let vcqt8 = parseInt(getCookie("vcqt8Value")) || 0;
+    let vcqt9 = parseInt(getCookie("vcqt9Value")) || 0;
+    let vcqt10 = parseInt(getCookie("vcqt10Value")) || 0;
+    let vcqt11 = parseInt(getCookie("vcqt11Value")) || 0;
+    let vcqt12 = parseInt(getCookie("vcqt12Value")) || 0;
+    let vcqt13 = parseInt(getCookie("vcqt13Value")) || 0;
+    let vcqt14 = parseInt(getCookie("vcqt14Value")) || 0;
+    let vcqt15 = parseInt(getCookie("vcqt15Value")) || 0;
     let totalcqt = parseInt(getCookie("totalcqtValue")) || 0;
     let objetivo = 0;
     let objetivoascend = parseInt(getCookie("objetivoascendValue")) || 10000000;
@@ -532,14 +549,136 @@ if(RS >= 10 || vcqt7 == 1){
         mostrarConquista("Roses for days");
         }
         if (lingua == 'pt') {
-        mostrarConquista("Roses for days");
+        mostrarConquista("Rosas pra mais de metro");
         }
         vcqt7 = 1;
         setCookie("vcqt7Value",1)
     }
 }
+if(CVL >= 1 || vcqt8 == 1){
+    cqt8.style.display = 'block';
+    if(vcqt8 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
+        mostrarConquista("Welcome, chestnut horse!");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Seja bem vindo Alazão");
+        }
+        vcqt8 = 1;
+        setCookie("vcqt8Value",1)
+    }
+}
+if(GOB >= 100000 || vcqt9 == 1){
+    cqt9.style.display = 'block';
+    if(vcqt9 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
+        mostrarConquista("A bunch os guavas");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Um punhado de goiabas");
+        }
+        vcqt9 = 1;
+        setCookie("vcqt9Value",1)
+    }
+}
+if(GOB >= 100000000 || vcqt10 == 1){
+    cqt10.style.display = 'block';
+    if(vcqt10 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
+        mostrarConquista("A lot of guavas");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("MUITAS GOIABAS");
+        }
+        vcqt10 = 1;
+        setCookie("vcqt10Value",1)
+    }
+}
+if(GOB >= 100000000000 || vcqt11 == 1){
+    cqt11.style.display = 'block';
+    if(vcqt11 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
+        mostrarConquista("A dozen of guavas for everyone on earth");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Uma duzia de goiabas pra todo mundo na terra");
+        }
+        vcqt11 = 1;
+        setCookie("vcqt11Value",1)
+    }
+}
+if(ascendvar >= 1 || vcqt12 == 1){
+    cqt12.style.display = 'block';
+    if(vcqt12 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
+        mostrarConquista("You fell the power");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Você sente o poder");
+        }
+        vcqt12 = 1;
+        setCookie("vcqt12Value",1)
+    }
+}
+if(ascendvar >= 2 || vcqt13 == 1){
+    cqt13.style.display = 'block';
+    if(vcqt13 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
+        mostrarConquista("Here we go again");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("E lá vamos nós");
+        }
+        vcqt13 = 1;
+        setCookie("vcqt13Value",1)
+    }
+}
+if(ascendvar >= 3 || vcqt14 == 1){
+    cqt14.style.display = 'block';
+    if(vcqt14 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
+        mostrarConquista("How much farther we need to go?");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("O quão longe ainda temos que ir?");
+        }
+        vcqt14 = 1;
+        setCookie("vcqt14Value",1)
+    }
+}
+if(ascendvar >= 10 || vcqt15 == 1){
+    cqt15.style.display = 'block';
+    if(vcqt15 == 0){
+        totalcqt += 1;
+        setCookie("totalcqtValue",totalcqt);
+        if (lingua == 'en') {
+        mostrarConquista("It has benn a long journey");
+        }
+        if (lingua == 'pt') {
+        mostrarConquista("Tem sido uma jornada longa");
+        }
+        vcqt15 = 1;
+        setCookie("vcqt15Value",1)
+    }
+}
 if (lingua == 'en') {
-totalcqtdiv.textContent = totalcqt + " of 7 achieved";
+FAZENDINHA.textContent = 'Little Farm'
+
+totalcqtdiv.textContent = totalcqt + " of 15 achieved";
 totalascension.textContent = ascendvar + " Ascensions giving:";
 acdb1.textContent = "+" + ascendvar * 200 + " Start Guavas";
 acdb2.textContent = "+" + ascendvar * 50 + "% GVPS";
@@ -548,9 +687,21 @@ acdb4.textContent = "+" + ascendvar * 1 + " Base Click";
 acdb5.textContent = "x" + GLOBAL_ROSA + " RPS";
 acdb7.textContent = "+" + ascendvar * 3 + " Initial Chicos";
 acdb8.textContent = "+" + ascendvar + " Initial Rosinhas";
+
+upgrade1.textContent = "Throw a guava party (2x Chico production)";
+upgrade2.textContent = "Jump in the river with Ze Lele (?)";
+upgrade3.textContent = "Spray insecticide to kill guava bugs (2x GBPS)";
+upgrade4.textContent = "Give roses to Chico (3x GBPS)";
+upgrade5.textContent = "Break Chico’s heart (10x GBPS!!!!!!!!!!!!!)";
+upgrade6.textContent = "Pick guavas with both hands (2x guavas per click)";
+upgrade7.textContent = "Punch the trees (10x guavas per click)";
+upgrade8.textContent = "Hunt the jaguar that ate Ze Lele (?)";
+upgrade9.textContent = "Feed the horses with guavas (10% more horse bonus)";
 }
 if (lingua == 'pt') {
-totalcqtdiv.textContent = totalcqt + " de 7 alcançados";
+FAZENDINHA.textContent = 'Fazendinha';
+
+totalcqtdiv.textContent = totalcqt + " de 15 alcançados";
 totalascension.textContent = ascendvar + " Ascensões dando:";
 acdb1.textContent = "+" + ascendvar * 200 + " Goiabas Iniciais";
 acdb2.textContent = "+" + ascendvar * 50 + "% GBPS";
@@ -560,6 +711,16 @@ acdb5.textContent = "x" + GLOBAL_ROSA + " RPS";
 acdb6.textContent = "+" + ascendvar * 5 + "% Bonus do cavalo";
 acdb7.textContent = "+" + ascendvar * 3 + " Chicos Iniciais";
 acdb8.textContent = "+" + ascendvar + " Rosinhas Iniciais";
+
+upgrade1.textContent = 'De uma festa de goiabas (2x Produção Chico)'
+upgrade2.textContent = 'Pular no rio com o Ze lele (?)'
+upgrade3.textContent = 'Passar inseticida para matar os bixos da goiaba (2x GBPS)'
+upgrade4.textContent = 'De rosas para o Chico (3x GBPS)'
+upgrade5.textContent = 'Quebre o coração do chico (10x GBPS!!!!!!!!!!!!!)'
+upgrade6.textContent = 'Pegue goiabas com as duas mãos (2x goiabas por clique)'
+upgrade7.textContent = 'Soque as arvores (10x goiabas por clique)'
+upgrade8.textContent = 'Caçar a onça que comeu o Ze lele (?)'
+upgrade9.textContent = 'Alimentar os cavalos com goiabas (10% aumento no bonus dos cavalos)'
 }
     }, 2500);
 
@@ -775,6 +936,14 @@ document.getElementById("Upgrade9").onclick = function () {
         setCookie("vcqt5Value",0);
         setCookie("vcqt6Value",0);
         setCookie("vcqt7Value",0);
+        setCookie("vcqt8Value",0);
+        setCookie("vcqt9Value",0);
+        setCookie("vcqt10Value",0);
+        setCookie("vcqt11Value",0);
+        setCookie("vcqt12Value",0);
+        setCookie("vcqt13Value",0);
+        setCookie("vcqt14Value",0);
+        setCookie("vcqt15Value",0);
         setCookie("totalcqtValue",0);
 
         setCookie("ascendValue",0);
