@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const CBMABLOCK = document.getElementById("CBMABLOCK");
     const CHICOSMA = document.getElementById("chicomalhados");
-    const btnchicosMA = document.getElementById("Chicomalhado");
+    const btnchicosMA = document.getElementById("chicomalhado");
 
     const ROSAS = document.getElementById("Rosas");
     const ROSASDPS = document.getElementById("Rosasdps");
@@ -368,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
         rosasdiv.style.display = 'block';
     };
 
-        document.getElementById("chicomalhado").onclick = function () {
+    document.getElementById("chicomalhado").onclick = function () {
         for (let i = 0; i < multcompra; i++)
         {
         if (GOB < custochicomalhado) return;
@@ -381,12 +381,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (lingua == 'en') {
-        CHICOS.textContent = CBT + " Chicos Bulked";
-        btnchicos.textContent = "+1 Chico " + custochicomalhado + " Guavas";
+        CHICOSMA.textContent = CBTMA + " Chicos Bulked";
+        btnchicosMA.textContent = "+1 Chico Bulked " + custochicomalhado + " Guavas";
         }
         if (lingua == 'pt') {
-        CHICOS.textContent = CBT + " Chicos Malhados";
-        btnchicos.textContent = "+1 Chico " + custochicomalhado + " Goiabas";
+        CHICOSMA.textContent = CBTMA + " Chicos Malhados";
+        btnchicosMA.textContent = "+1 Chico malhado " + custochicomalhado + " Goiabas";
         }
 
         setCookie("gobValue", GOB);
@@ -405,10 +405,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let GOBDPS = Math.trunc(((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS) + (CBTMA * CBTMA_BONUS)) * GLOBAL * BONUSCAVALO);
         
         if (up10 == 1){
-            GOBDPS * (1 + (CBT * 0.02));
+            GOBDPS = Math.trunc(GOBDPS * (1 + (CBT * 0.02)));
         }
         if (up11 == 1){
-            GOBDPS * (1 + (ROSA * 0.0001))
+            GOBDPS = Math.trunc(GOBDPS * (1 + (ROSA * 0.0001)));
         }
         GOB += GOBDPS;
 
@@ -446,6 +446,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Guavas";
         CAVALOS.textContent = CVL + " Cavalos";
         btncavalo.textContent = "+1 Cavalo " + custocavalo + " Roses";
+        CHICOSMA.textContent = CBTMA + " Chico Bulked";
+        btnchicosMA.textContent = "+1 Chico bulked " + custochicomalhado + " Guavas";
         }
         if (lingua == 'pt') {
         CHICOS.textContent = CBT + " Chicos";
@@ -456,6 +458,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btnrosinha.textContent = "+1 Rosinha " + custorosinha + " Goiabas";
         CAVALOS.textContent = CVL + " Cavalos";
         btncavalo.textContent = "+1 Cavalo " + custocavalo + " Rosas";
+        CHICOSMA.textContent = CBTMA + " Chicos Malhados";
+        btnchicosMA.textContent = "+1 Chico malhado " + custochicomalhado + " Goiabas";
         }
     }, 1000);
 
