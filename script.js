@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let CBTMA = parseInt(getCookie("cbtmaValue")) || 0;
     let custochicomalhado = parseInt(getCookie("custochicomalhadoValue")) || 10000000;
-    let CBTMA_BONUS = parseInt(getCookie("cbtmabonusValue")) || 1;
+    let CBTMA_BONUS = parseInt(getCookie("cbtmabonusValue")) || 49;
 
     let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
     let GLOBAL_ROSA = parseFloat(getCookie("globalbonusrosaValue")) || 1;
@@ -976,7 +976,7 @@ document.getElementById("Upgrade11").onclick = function () {
         ROSADPS = 0;
         custorosinha = 1000;
         CBTMA = 0;
-        CBTMA_BONUS = 1;
+        CBTMA_BONUS = 49;
         custochicomalhado = 10000000;
         GLOBAL = 1;
         CLICK = 1;
@@ -1070,7 +1070,7 @@ document.getElementById("Upgrade11").onclick = function () {
         ROSADPS = 0;
         custorosinha = 1000;
         CBTMA = 0;
-        CBTMA_BONUS = 1;
+        CBTMA_BONUS = 49;
         custochicomalhado = 10000000;
         GLOBAL = 1 + (ascendvar * 0.5); //bonus
         CLICK = 1 + (ascendvar); //bonus
