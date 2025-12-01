@@ -92,7 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function setCookie(name, value) {
-        document.cookie = `${name}=${value}; path=/`;
+    const anos = 10;
+    const maxAge = anos * 365 * 24 * 60 * 60; 
+    document.cookie = `${name}=${value}; path=/; max-age=${maxAge}`;
     }
 
     //==================== INITIAL VARIABLES ====================
