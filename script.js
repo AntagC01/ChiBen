@@ -846,6 +846,56 @@ document.getElementById("Upgrade9").onclick = function () {
         location.reload();
         
     }
+
+    document.getElementById("exporta").onclick = function () {
+        exportsave();
+    }
+
+    document.getElementById("importa").onclick = function () {
+        importsave();
+    }
+
+    function exportsave() {
+    const cookies = document.cookie.split("; ").join("\n");
+
+    const blob = new Blob([cookies], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "save.txt";
+    link.click();
+    }
+
+    function importsave() {
+    const fileInput = document.getElementById("cookieFile");
+    const file = fileInput.files[0];
+
+    if (!file) {
+        showCustomAlertalert("Selecione um arquivo TXT primeiro!");
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const conteudo = e.target.result;
+
+        // cada linha é um cookie
+        const linhas = conteudo.split("\n").map(l => l.trim()).filter(l => l.length > 0);
+
+        linhas.forEach(linha => {
+            const [nome, ...valorPartes] = linha.split("=");
+            const valor = valorPartes.join("=");
+
+            if (nome && valor) {
+                setCookie(nome, valor); // <<--- aqui chama sua função
+            }
+        });
+
+        location.reload();
+    };
+
+    reader.readAsText(file);
+}
 });
 
  function showCustomAlert(message) {

@@ -123,21 +123,37 @@
 </div>
 
 
-    <!-- Floating Window -->
-    <div id="configWindow" class="config-window">
-        <h3>Settings</h3>
-        <label>
-            Volume:
-            <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
-        </label>
-        <label>
-            <input type="button" id="trocalingua" value="Change language">
-        </label>
-        <label>
-            <input type="button" id="reset" value="Reset">
-        </label>
-        <br>
-        <button id="closeConfig">Close</button>
+<!-- Floating Window -->
+<div id="configWindow" class="config-window">
+
+    <h3>Settings</h3>
+
+    <label>
+        Volume:
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+    </label>
+
+    <label>
+        <input type="button" id="trocalingua" value="Change language">
+    </label>
+
+    <label>
+        <input type="button" id="exporta" value="Export">
+    </label>
+
+    <label>
+        <input type="button" id="reset" value="Reset">
+    </label>
+
+    <label>
+        <input type="file" id="cookieFile" accept=".txt">
+        <button id="importa">Importar Cookies</button>
+    </label>
+
+    <br>
+
+    <button id="closeConfig">Close</button>
+
     </div>
 
     <div id="paginaconquistas" class="pagina">
