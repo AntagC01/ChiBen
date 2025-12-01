@@ -43,6 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const acdb2 = document.getElementById("acdbonus2");
     const acdb3 = document.getElementById("acdbonus3");
     const acdb4 = document.getElementById("acdbonus4");
+    const acdb5 = document.getElementById("acdbonus5");
+    const acdb6 = document.getElementById("acdbonus6");
+    const acdb7 = document.getElementById("acdbonus7");
+    const acdb8 = document.getElementById("acdbonus8");
 
     // Upgrades
     const upgrade1 = document.getElementById("Upgrade1");
@@ -117,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let CVL_BONUS = parseFloat(getCookie("cvlbonusValue")) || 0.1
 
     let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
+    let GLOBAL_ROSA = parseFloat(getCookie("globalbonusrosaValue")) || 1;
     let CLICK = parseInt(getCookie("clickValue")) || 1;
 
     let escalamento = parseFloat(getCookie("escalamentoValue")) || 1.25;
@@ -351,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setCookie("gobValue", GOB);
 
-        let ROSADPS = RS;
+        let ROSADPS = RS * GLOBAL_ROSA;
         ROSA += ROSADPS;
 
         if (lingua == 'en') {
@@ -536,18 +541,25 @@ if(RS >= 10 || vcqt7 == 1){
 if (lingua == 'en') {
 totalcqtdiv.textContent = totalcqt + " of 7 achieved";
 totalascension.textContent = ascendvar + " Ascensions giving:";
-acdb1.textContent = "+" + ascendvar * 100 + " Start Guavas";
-acdb2.textContent = "+" + ascendvar * 10 + "% GVPS";
+acdb1.textContent = "+" + ascendvar * 200 + " Start Guavas";
+acdb2.textContent = "+" + ascendvar * 50 + "% GVPS";
 acdb3.textContent = "-" + ascendvar * 0.02 + " Scaling cost (capped at 1.1)";
 acdb4.textContent = "+" + ascendvar * 1 + " Base Click";
+acdb5.textContent = "x" + GLOBAL_ROSA + " RPS";
+acdb7.textContent = "+" + ascendvar * 3 + " Initial Chicos";
+acdb8.textContent = "+" + ascendvar + " Initial Rosinhas";
 }
 if (lingua == 'pt') {
 totalcqtdiv.textContent = totalcqt + " de 7 alcançados";
 totalascension.textContent = ascendvar + " Ascensões dando:";
-acdb1.textContent = "+" + ascendvar * 100 + " Goiabas Iniciais";
-acdb2.textContent = "+" + ascendvar * 10 + "% GBPS";
+acdb1.textContent = "+" + ascendvar * 200 + " Goiabas Iniciais";
+acdb2.textContent = "+" + ascendvar * 50 + "% GBPS";
 acdb3.textContent = "-" + ascendvar * 0.02 + " Escalonamento de custo (Limitado a 1.1)";
 acdb4.textContent = "+" + ascendvar * 1 + " Clique base";
+acdb5.textContent = "x" + GLOBAL_ROSA + " RPS";
+acdb6.textContent = "+" + ascendvar * 5 + "% Bonus do cavalo";
+acdb7.textContent = "+" + ascendvar * 3 + " Chicos Iniciais";
+acdb8.textContent = "+" + ascendvar + " Rosinhas Iniciais";
 }
     }, 2500);
 
@@ -725,8 +737,10 @@ document.getElementById("Upgrade9").onclick = function () {
         custocavalo = 35;
         objetivoascend = 10000000;
         CVL_BONUS = 0.1;
+        GLOBAL_ROSA = 1;
 
         
+        setCookie("globalbonusrosaValue",1)
         setCookie("cvlbonusValue",0.1);
         setCookie("cvlValue",0);
         setCookie("custocavaloValue",35);
@@ -781,19 +795,19 @@ document.getElementById("Upgrade9").onclick = function () {
 
     function ascend() {
           // Zera os cookies
-        GOB = 0 + (ascendvar * 100);
-        CBT = 0;
+        GOB = 0 + (ascendvar * 200);
+        CBT = ascendvar * 3;
         custochico = 10;
         CBT_BONUS = 0;
         ZLL = 0;
         custozelele = 100;
         ZLL_BONUS = 0;
-        RS = 0;
+        RS = ascendvar;
         ROSA = 0;
         ROSADPS = 0;
         custorosinha = 1000;
-        GLOBAL = 1 + (ascendvar * 0.1); //bonus
-        CLICK = 1 + (ascendvar + 1); //bonus
+        GLOBAL = 1 + (ascendvar * 0.5); //bonus
+        CLICK = 1 + (ascendvar); //bonus
         objetivo = 0;
         escalamento -= 0.02; //bonus
         if (escalamento < 1.1)
@@ -802,24 +816,26 @@ document.getElementById("Upgrade9").onclick = function () {
         }
         CVL = 0;
         custocavalo = 35;
-        objetivoascend = objetivoascend * 10;
-        CVL_BONUS = 0.1;
+        objetivoascend = objetivoascend * 5;
+        CVL_BONUS = 0.1 + (ascendvar * 0.05);
+        GLOBAL_ROSA = GLOBAL_ROSA * (ascendvar + 1);
 
         
-        setCookie("cvlbonusValue",0.1);
+        setCookie("globalbonusrosaValue",GLOBAL_ROSA)
+        setCookie("cvlbonusValue",CVL_BONUS);
         setCookie("cvlValue",0);
         setCookie("custocavaloValue",35);
         setCookie("escalamentoValue",escalamento);
         setCookie("clickValue",CLICK);
         setCookie("globalbonusValue",GLOBAL);
         setCookie("gobValue", GOB);
-        setCookie("cbtValue", 0);
+        setCookie("cbtValue", CBT);
         setCookie("custochicoValue", 10); // valor inicial do Chico
         setCookie("cbtbonusValue", 1); // valor inicial do Chico
         setCookie("zllValue", 0);
         setCookie("custozeleleValue", 100); // valor inicial do Chico
         setCookie("zllbonusValue", 7);
-        setCookie("rsValue", 0);
+        setCookie("rsValue", RS);
         setCookie("rosaValue", 0);
         setCookie("custorosinhaValue", 1000); // valor inicial do Chico
         setCookie("objetivoascendValue",objetivoascend)
