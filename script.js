@@ -1072,7 +1072,7 @@ document.getElementById("Upgrade9").onclick = function () {
             const valor = valorPartes.join("=");
 
             if (nome && valor) {
-                setCookie(nome, valor); // <<--- aqui chama sua função
+                setCookie(nome, valor);
             }
         });
 
