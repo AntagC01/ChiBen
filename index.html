@@ -165,31 +165,40 @@
 
     <h3>Settings</h3>
 
-    <label>
-        Volume:
+    <!-- Volume ocupa 100% -->
+    <div class="row-full">
+        <label for="volume">Volume:</label>
         <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
-    </label>
+    </div>
 
-    <label>
-        <input type="button" id="trocalingua" value="Change language">
-    </label>
+    <!-- Trocar idioma -->
+    <div class="row">
+        <button id="trocalingua">Change language</button>
+    </div>
 
-    <label>
-        <input type="button" id="exporta" value="Export">
-    </label>
+    <!-- Export -->
+    <div class="row">
+        <button id="exporta">Export</button>
+    </div>
 
-    <label>
-        <input type="button" id="reset" value="Reset">
-    </label>
-
-    <label>
+    <!-- Import + File -->
+    <div class="row">
         <input type="file" id="cookieFile" accept=".txt">
         <button id="importa">Import</button>
-    </label>
+    </div>
 
-    <br>
+    <!-- Reset -->
+    <div class="row">
+        <button id="reset">Reset</button>
+    </div>
 
-    <button id="closeConfig">Close</button>
+    <!-- Close -->
+    <div class="row">
+        <button id="closeConfig">Close</button>
+    </div>
+
+</div>
+
 
     </div>
 
