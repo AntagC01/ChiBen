@@ -754,6 +754,7 @@ acdb2.textContent = "+" + ascendvar * 50 + "% GVPS";
 acdb3.textContent = "-" + ascendvar * 0.02 + " Scaling cost (capped at 1.1)";
 acdb4.textContent = "+" + ascendvar * 1 + " Base Click";
 acdb5.textContent = "x" + GLOBAL_ROSA + " RPS";
+acdb6.textContent = "+" + ascendvar * 5 + "% Horse bonus";
 acdb7.textContent = "+" + ascendvar * 3 + " Initial Chicos";
 acdb8.textContent = "+" + ascendvar + " Initial Rosinhas";
 
