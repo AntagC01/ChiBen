@@ -369,6 +369,9 @@ body {
 #Upgrade11{
     display: none;
 }
+#Upgrade12{
+    display: none;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; }

@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const upgrade9 = document.getElementById("Upgrade9");
     const upgrade10 = document.getElementById("Upgrade10");
     const upgrade11 = document.getElementById("Upgrade11");
+    const upgrade12 = document.getElementById("Upgrade12");
 
     //stats
     const stt1 = document.getElementById("stt1");
@@ -192,6 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let up9 = parseInt(getCookie("up9Value")) || 0;
     let up10 = parseInt(getCookie("up10Value")) || 0;
     let up11 = parseInt(getCookie("up11Value")) || 0;
+    let up12 = parseInt(getCookie("up12Value")) || 0;
 
     // Achievements
     let vcqt1 = parseInt(getCookie("vcqt1Value")) || 0;
@@ -478,7 +480,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ROSADPS = RS * GLOBAL_ROSA;
         ROSADPSunitario = 1 * GLOBAL_ROSA;
-        ROSA += ROSADPS;
+
+        if(up12 == 1){
+            ROSADPS = Math.trunc(ROSADPS * (1 + (CBTMA * 0.03)))
+            ROSADPSunitario = Math.trunc(ROSADPSunitario * (1 + (CBTMA * 0.03)))
+        }
+        ROSA += Math.trunc(ROSADPS);
 
         if (lingua == 'en') {
         ROSAS.textContent = "Roses: " + ROSA.toLocaleString('pt-BR');
@@ -562,6 +569,9 @@ if (CBT >= 60 && up10 == 0){
 }
 if (ROSA >= 100000 && up11 == 0){
     upgrade11.style.display = 'block';
+}
+if (CBTMA >= 25 && up12 == 0){
+    upgrade12.style.display = 'block';
 }
 if(GOB >= 1 || vcqt1 == 1){
     cqt1.style.display = 'block';
@@ -819,6 +829,7 @@ upgrade8.textContent = "Hunt the jaguar that ate Ze Lele (?)";
 upgrade9.textContent = "Feed the horses with guavas (10% more horse bonus)";
 upgrade10.textContent = 'Create a enterprise and manage the chicos (+2% GBPS per chico)'
 upgrade11.textContent = 'Invest the roses in the stockmarket (+1% GBPS per 10000 Roses)'
+upgrade12.textContent = 'The Rosinhas start to work harder to impress the bulked chico (+3% RPS per Rosinha)';
 
 stt1.textContent = 'Each Chico is producing ' + CBTPSunitario.toLocaleString('en-US') + ' GBPS totaling ' + CBTPS.toLocaleString('en-US') + ' GBPS';
 stt2.textContent = 'Each Ze Lele is producing ' + ZLLPSunitario.toLocaleString('en-US') + ' GBPS totaling ' + ZLLPS.toLocaleString('en-US') + ' GBPS';
@@ -853,7 +864,8 @@ upgrade7.textContent = 'Soque as arvores (10x goiabas por clique)';
 upgrade8.textContent = 'Caçar a onça que comeu o Ze lele (?)';
 upgrade9.textContent = 'Alimentar os cavalos com goiabas (10% aumento no bonus dos cavalos)';
 upgrade10.textContent = 'Criar uma empresa e administrar os chicos (+2% GBPS per chico)';
-upgrade11.textContent = 'Inestir as rosas na bolsa (+1% GBPS por 10000 Rosas)';
+upgrade11.textContent = 'Investir as rosas na bolsa (+1% GBPS por 10000 Rosas)';
+upgrade12.textContent = 'As rosinhas começam a trabalhar mais pra impressionar os chicos malhados (+3% RPS per Rosinha)';
 
 stt1.textContent = 'Cada Chico esta produzindo ' + CBTPSunitario.toLocaleString('pt-BR') + ' GBPS totalizando '+ CBTPS.toLocaleString('pt-BR') + ' GBPS';
 stt2.textContent = 'Cada Ze lele esta produzindo ' + ZLLPSunitario.toLocaleString('pt-BR') + ' GBPS totalizando '+ ZLLPS.toLocaleString('pt-BR') + ' GBPS';
@@ -908,6 +920,9 @@ stt8.textContent = '';
 
     document.getElementById("Upgrade11").onclick = function () {
         upgrade11Func();
+    };
+    document.getElementById("Upgrade12").onclick = function () {
+        upgrade12Func();
     };
 
 function upgrade1Func() {
@@ -1027,6 +1042,14 @@ function upgrade11Func() {
     }
 }
 
+function upgrade12Func() {
+    if (CBTMA >= 25 && up12 == 0){
+        setCookie("up12Value", 1);
+        up12 = 1;
+        upgrade12.style.display = 'none';
+    }
+}
+
 document.getElementById("ApplyAllButton").onclick = function () {
 upgreideiatudo();
 }
@@ -1044,6 +1067,7 @@ function upgreideiatudo() {
     upgrade9Func();
     upgrade10Func();
     upgrade11Func();
+    upgrade12Func();
 }
     function mostrarConquista(texto) {
         const popup = document.getElementById("conquistaPopup");
@@ -1149,6 +1173,7 @@ function upgreideiatudo() {
         setCookie("up9Value",0);
         setCookie("up10Value",0);
         setCookie("up11Value",0);
+        setCookie("up12Value",0);
 
         setCookie("vcqt1Value",0);
         setCookie("vcqt2Value",0);
@@ -1248,6 +1273,7 @@ function upgreideiatudo() {
         setCookie("up9Value",0);
         setCookie("up10Value",0);
         setCookie("up11Value",0);
+        setCookie("up12Value",0);
 
         // Atualiza os elementos da tela
         document.getElementById("Goiabas").textContent = "Guavas: 0";
