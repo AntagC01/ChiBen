@@ -457,11 +457,17 @@ document.addEventListener("DOMContentLoaded", () => {
             CBTPS = Math.trunc(CBTPS * (1 + (CBT * 0.02)));
             ZLLPS = Math.trunc(ZLLPS * (1 + (CBT * 0.02)));
             CBTMAPS = Math.trunc(CBTMAPS * (1 + (CBT * 0.02)));
+            CBTPSunitario = Math.trunc(CBTPSunitario * (1 + (CBT * 0.02)));
+            ZLLPSunitario = Math.trunc(ZLLPSunitario * (1 + (CBT * 0.02)));
+            CBTMAPSunitario = Math.trunc(CBTMAPSunitario * (1 + (CBT * 0.02)));
         }
         if (up11 == 1){
             CBTPS = Math.trunc(CBTPS * (1 + (ROSA * 0.000001)));
             ZLLPS = Math.trunc(ZLLPS * (1 + (ROSA * 0.000001)));
             CBTMAPS = Math.trunc(CBTMAPS * (1 + (ROSA * 0.000001)));
+            CBTPSunitario = Math.trunc(CBTPSunitario * (1 + (ROSA * 0.000001)));
+            ZLLPSunitario = Math.trunc(ZLLPSunitario * (1 + (ROSA * 0.000001)));
+            CBTMAPSunitario = Math.trunc(CBTMAPSunitario * (1 + (ROSA * 0.000001)));
         }
 
         let GOBDPS = CBTPS + ZLLPS + CBTMAPS;
