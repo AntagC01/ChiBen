@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let CBTMA = parseInt(getCookie("cbtmaValue")) || 0;
     let custochicomalhado = parseInt(getCookie("custochicomalhadoValue")) || 10000000;
-    let CBTMA_BONUS = parseInt(getCookie("cbtmabonusValue")) || 49;
+    let CBTMA_BONUS = parseInt(getCookie("cbtmabonusValue")) || 343;
 
     let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
     let GLOBAL_ROSA = parseFloat(getCookie("globalbonusrosaValue")) || 1;
@@ -976,7 +976,7 @@ document.getElementById("Upgrade11").onclick = function () {
         ROSADPS = 0;
         custorosinha = 1000;
         CBTMA = 0;
-        CBTMA_BONUS = 49;
+        CBTMA_BONUS = 343;
         custochicomalhado = 10000000;
         GLOBAL = 1;
         CLICK = 1;
@@ -1007,7 +1007,7 @@ document.getElementById("Upgrade11").onclick = function () {
         setCookie("rosaValue", 0);
         setCookie("cbtmaValue", 0);
         setCookie("custochicomalhadoValue", 10000000);
-        setCookie("cbtmabonusValue", 49);
+        setCookie("cbtmabonusValue", 343);
         setCookie("custorosinhaValue", 1000); // valor inicial do Chico
 
 
@@ -1070,7 +1070,7 @@ document.getElementById("Upgrade11").onclick = function () {
         ROSADPS = 0;
         custorosinha = 1000;
         CBTMA = 0;
-        CBTMA_BONUS = 49;
+        CBTMA_BONUS = 343;
         custochicomalhado = 10000000;
         GLOBAL = 1 + (ascendvar * 0.5); //bonus
         CLICK = 1 + (ascendvar); //bonus
@@ -1106,7 +1106,7 @@ document.getElementById("Upgrade11").onclick = function () {
         setCookie("custorosinhaValue", 1000); // valor inicial do Chico
         setCookie("cbtmaValue", 0);
         setCookie("custochicomalhadoValue", 10000000);
-        setCookie("cbtmabonusValue", 49);
+        setCookie("cbtmabonusValue", 343);
         setCookie("objetivoascendValue",objetivoascend)
 
 
