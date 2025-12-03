@@ -465,8 +465,8 @@ body {
 #conquistas button {
     flex: 1 1 140px;  /* adaptável ao tamanho do container */
     padding: 12px 15px;
-    background-color: #ffe8b3;
-    border: 2px solid #8b6f4f;
+    background-color: #fff4cc;     /* dourado claro */
+    border: 2px solid #d1a84a;     /* dourado médio */
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
@@ -475,14 +475,14 @@ body {
 
 /* Hover nos botões */
 #conquistas button:hover {
-    background-color: #ffd966;
+    background-color: #ffeb99;     /* dourado suave */
     transform: scale(1.05);
 }
 
 /* Botão de voltar */
 #fecharconquistas {
     padding: 12px 25px;
-    background-color: #8b6f4f;
+    background-color: #b8860b;     /* dourado forte / marrom dourado */
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -492,9 +492,10 @@ body {
 }
 
 #fecharconquistas:hover {
-    background-color: #6e5744;
+    background-color: #c09338;     /* dourado mais vivo */
     transform: scale(1.05);
 }
+
 #cqt1{
     display: none;
 }
@@ -633,13 +634,12 @@ body {
     max-width: 700px;
     margin-bottom: 30px;
 }
-
 /* Botões de bônus */
 #ascendbonus button {
     flex: 1 1 140px;
     padding: 12px 15px;
-    background-color: #ffe8b3;
-    border: 2px solid #8b6f4f;
+    background-color: #d9ecff;      /* azul muito claro */
+    border: 2px solid #5b8bbd;      /* azul médio */
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
@@ -648,14 +648,14 @@ body {
 
 /* Hover nos botões */
 #ascendbonus button:hover {
-    background-color: #ffd966;
+    background-color: #b3dbff;      /* azul claro */
     transform: scale(1.05);
 }
 
 /* Botão de voltar */
 #fecharascension {
     padding: 12px 25px;
-    background-color: #8b6f4f;
+    background-color: #5b8bbd;      /* azul médio */
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -665,25 +665,25 @@ body {
 }
 
 #fecharascension:hover {
-    background-color: #6e5744;
+    background-color: #4a78a5;      /* azul mais escuro */
     transform: scale(1.05);
 }
 
 #stats {
     display: flex;
-    flex-direction: column; /* <-- deixa um embaixo do outro */
+    flex-direction: column;
     gap: 15px;
     width: 100%;
     max-width: 700px;
     margin-bottom: 30px;
-    align-items: center; /* opcional para centralizar */
+    align-items: center;
 }
 
 #stats button {
-    width: 100%; /* botão ocupa toda a largura disponível */
+    width: 100%;
     padding: 12px 15px;
-    background-color: #ffe8b3;
-    border: 2px solid #8b6f4f;
+    background-color: #e6fff3;     /* menta bem clara */
+    border: 2px solid #5cbf99;     /* verde médio */
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
@@ -692,14 +692,14 @@ body {
 
 /* Hover nos botões */
 #stats button:hover {
-    background-color: #ffd966;
+    background-color: #ccffe7;     /* menta suave */
     transform: scale(1.05);
 }
 
 /* Botão de voltar */
-#fecharstats{
+#fecharstats {
     padding: 12px 25px;
-    background-color: #8b6f4f;
+    background-color: #3a8c6c;     /* verde profundo */
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -709,6 +709,7 @@ body {
 }
 
 #fecharstats:hover {
-    background-color: #6e5744;
+    background-color: #49a983;     /* verde escuro suave */
     transform: scale(1.05);
 }
+
