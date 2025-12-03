@@ -145,7 +145,9 @@ body {
     margin-top: 20px;
     justify-content: center; /* Centraliza o grid */
 }
-
+#listaitens p{
+    font-size: 14px;
+} 
 /* Cada item */
 #listaitens .item { 
     display: flex; 
