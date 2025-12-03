@@ -40,6 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnascension = document.getElementById("btnascension");
     const fecharascension = document.getElementById("fecharascension");
 
+    const paginastats = document.getElementById("paginastats");
+    const btnstats = document.getElementById("btnstats");
+    const fecharstats = document.getElementById("fecharstats");
+
 
     //Ascension
     const btnascend = document.getElementById("ascend");
@@ -65,6 +69,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const upgrade9 = document.getElementById("Upgrade9");
     const upgrade10 = document.getElementById("Upgrade10");
     const upgrade11 = document.getElementById("Upgrade11");
+
+    //stats
+    const stt1 = document.getElementById("stt1");
+    const stt2 = document.getElementById("stt2");
+    const stt3 = document.getElementById("stt3");
+    const stt4 = document.getElementById("stt4");
+    const stt5 = document.getElementById("stt5");
+    const stt6 = document.getElementById("stt6");
+    const stt7 = document.getElementById("stt7");
+    const stt8 = document.getElementById("stt8");
+
+    let BONUSCAVALO = 0;
+    let CBTPSunitario = 0;
+    let CBTPS = 0;
+    let ZLLPS = 0;
+    let ZLLPSunitario = 0;
+    let CBTMAPS = 0;
+    let CBTMAPSunitario = 0;
+    let ROSADPS = 0;
+    let ROSADPSunitario = 0;
+
 
     toggleSidebar.addEventListener("click", () => {
     sidebar.classList.toggle("open");
@@ -101,6 +126,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fecharascension.addEventListener("click", () => {
     paginaascension.classList.remove("show");
+    });
+
+    btnstats.addEventListener("click", () => {
+    paginastats.classList.add("show");
+    });
+
+    fecharstats.addEventListener("click", () => {
+    paginastats.classList.remove("show");
     });
     //==================== COOKIES ====================
     function getCookie(name) {
@@ -405,15 +438,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //==================== AUTOMATIC PRODUCTION ====================
     setInterval(() => {
-        let BONUSCAVALO = 1 + (CVL * CVL_BONUS);
-        let GOBDPS = Math.trunc(((CBT * CBT_BONUS) + (ZLL * ZLL_BONUS) + (CBTMA * CBTMA_BONUS)) * GLOBAL * BONUSCAVALO);
+
+        BONUSCAVALO = 1 + (CVL * CVL_BONUS);
+
+        CBTPS = Math.trunc(CBT * CBT_BONUS * GLOBAL * BONUSCAVALO);
+        CBTPSunitario = Math.trunc(1 * CBT_BONUS * GLOBAL * BONUSCAVALO);
+
+        ZLLPS = Math.trunc(ZLL * ZLL_BONUS * GLOBAL * BONUSCAVALO);
+        ZLLPSunitario = Math.trunc(1 * ZLL_BONUS * GLOBAL * BONUSCAVALO);
+
+        CBTMAPS = Math.trunc(CBTMA * CBTMA_BONUS * GLOBAL * BONUSCAVALO);
+        CBTMAPSunitario = Math.trunc(1 * CBTMA_BONUS * GLOBAL * BONUSCAVALO);
+        
         
         if (up10 == 1){
-            GOBDPS = Math.trunc(GOBDPS * (1 + (CBT * 0.02)));
+            CBTPS = Math.trunc(CBTPS * (1 + (CBT * 0.02)));
+            ZLLPS = Math.trunc(ZLLPS * (1 + (CBT * 0.02)));
+            CBTMAPS = Math.trunc(CBTMAPS * (1 + (CBT * 0.02)));
         }
         if (up11 == 1){
-            GOBDPS = Math.trunc(GOBDPS * (1 + (ROSA * 0.000001)));
+            CBTPS = Math.trunc(CBTPS * (1 + (ROSA * 0.000001)));
+            ZLLPS = Math.trunc(ZLLPS * (1 + (ROSA * 0.000001)));
+            CBTMAPS = Math.trunc(CBTMAPS * (1 + (ROSA * 0.000001)));
         }
+
+        let GOBDPS = CBTPS + ZLLPS + CBTMAPS;
         GOB += GOBDPS;
 
         if (lingua == 'en') {
@@ -427,7 +476,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setCookie("gobValue", GOB);
 
-        let ROSADPS = RS * GLOBAL_ROSA;
+        ROSADPS = RS * GLOBAL_ROSA;
+        ROSADPSunitario = 1 * GLOBAL_ROSA;
         ROSA += ROSADPS;
 
         if (lingua == 'en') {
@@ -769,6 +819,15 @@ upgrade8.textContent = "Hunt the jaguar that ate Ze Lele (?)";
 upgrade9.textContent = "Feed the horses with guavas (10% more horse bonus)";
 upgrade10.textContent = 'Create a enterprise and manage the chicos (+2% GBPS per chico)'
 upgrade11.textContent = 'Invest the roses in the stockmarket (+1% GBPS per 10000 Roses)'
+
+stt1.textContent = 'Each Chico is producing ' + CBTPSunitario.toLocaleString('en-US') + ' GBPS totaling ' + CBTPS.toLocaleString('en-US') + ' GBPS';
+stt2.textContent = 'Each Ze Lele is producing ' + ZLLPSunitario.toLocaleString('en-US') + ' GBPS totaling ' + ZLLPS.toLocaleString('en-US') + ' GBPS';
+stt3.textContent = 'Each Rosinha is producing ' + ROSADPSunitario.toLocaleString('en-US') + ' RPS totaling ' + ROSADPS.toLocaleString('en-US') + ' RPS';
+stt4.textContent = 'Each Horse is increasing GBPS by ' + (CVL_BONUS * 100).toLocaleString('en-US') + '% totaling ' + (BONUSCAVALO * 100).toLocaleString('en-US') + '% GBPS';
+stt5.textContent = 'Each Spotted Chico is producing ' + CBTMAPSunitario.toLocaleString('en-US') + ' GBPS totaling ' + CBTMAPS.toLocaleString('en-US') + ' GBPS';
+stt6.textContent = '';
+stt7.textContent = '';
+stt8.textContent = '';
 }
 if (lingua == 'pt') {
 FAZENDINHA.textContent = 'Fazendinha';
@@ -784,17 +843,26 @@ acdb6.textContent = "+" + ascendvar * 5 + "% Bonus do cavalo";
 acdb7.textContent = "+" + ascendvar * 3 + " Chicos Iniciais";
 acdb8.textContent = "+" + ascendvar + " Rosinhas Iniciais";
 
-upgrade1.textContent = 'De uma festa de goiabas (2x Produção Chico)'
-upgrade2.textContent = 'Pular no rio com o Ze lele (?)'
-upgrade3.textContent = 'Passar inseticida para matar os bixos da goiaba (2x GBPS)'
-upgrade4.textContent = 'De rosas para o Chico (3x GBPS)'
-upgrade5.textContent = 'Quebre o coração do chico (10x GBPS!!!!!!!!!!!!!)'
-upgrade6.textContent = 'Pegue goiabas com as duas mãos (2x goiabas por clique)'
-upgrade7.textContent = 'Soque as arvores (10x goiabas por clique)'
-upgrade8.textContent = 'Caçar a onça que comeu o Ze lele (?)'
-upgrade9.textContent = 'Alimentar os cavalos com goiabas (10% aumento no bonus dos cavalos)'
-upgrade10.textContent = 'Criar uma empresa e administrar os chicos (+2% GBPS per chico)'
-upgrade11.textContent = 'Inestir as rosas na bolsa (+1% GBPS por 10000 Rosas)'
+upgrade1.textContent = 'De uma festa de goiabas (2x Produção Chico)';
+upgrade2.textContent = 'Pular no rio com o Ze lele (?)';
+upgrade3.textContent = 'Passar inseticida para matar os bixos da goiaba (2x GBPS)';
+upgrade4.textContent = 'De rosas para o Chico (3x GBPS)';
+upgrade5.textContent = 'Quebre o coração do chico (10x GBPS!!!!!!!!!!!!!)';
+upgrade6.textContent = 'Pegue goiabas com as duas mãos (2x goiabas por clique)';
+upgrade7.textContent = 'Soque as arvores (10x goiabas por clique)';
+upgrade8.textContent = 'Caçar a onça que comeu o Ze lele (?)';
+upgrade9.textContent = 'Alimentar os cavalos com goiabas (10% aumento no bonus dos cavalos)';
+upgrade10.textContent = 'Criar uma empresa e administrar os chicos (+2% GBPS per chico)';
+upgrade11.textContent = 'Inestir as rosas na bolsa (+1% GBPS por 10000 Rosas)';
+
+stt1.textContent = 'Cada Chico esta produzindo ' + CBTPSunitario.toLocaleString('pt-BR') + ' GBPS totalizando '+ CBTPS.toLocaleString('pt-BR') + ' GBPS';
+stt2.textContent = 'Cada Ze lele esta produzindo ' + ZLLPSunitario.toLocaleString('pt-BR') + ' GBPS totalizando '+ ZLLPS.toLocaleString('pt-BR') + ' GBPS';
+stt3.textContent = 'Cada Rosinha esta produzindo ' + ROSADPSunitario.toLocaleString('pt-BR') + ' RPS totalizando '+ ROSADPS.toLocaleString('pt-BR') + ' RPS';
+stt4.textContent = 'Cada Cavalo esta aumentando em  ' + (CVL_BONUS * 100).toLocaleString('pt-BR') + '% o GBPS totalizando '+ (BONUSCAVALO * 100).toLocaleString('pt-BR') + '% GBPS';
+stt5.textContent = 'Cada Chico Malhado esta produzindo ' + CBTMAPSunitario.toLocaleString('pt-BR') + ' GBPS totalizando '+ CBTMAPS.toLocaleString('pt-BR') + ' GBPS';
+stt6.textContent = '';
+stt7.textContent = '';
+stt8.textContent = '';
 }
     }, 2500);
 
