@@ -842,7 +842,7 @@ upgrade11.textContent = 'Inestir as rosas na bolsa (+1% GBPS por 10000 Rosas)'
     };
 
 function upgrade1Func() {
-    if (GOB >= 80){
+    if (GOB >= 80 && up1 == 0){
         setCookie("up1Value", 1);
         setCookie("cbtbonusValue", CBT_BONUS * 2);
         CBT_BONUS *= 2;
@@ -852,7 +852,7 @@ function upgrade1Func() {
 }
 
 function upgrade2Func() {
-    if (ZLL >= 1){
+    if (ZLL >= 1 && up2 == 0){
         setCookie("up2Value", 1);
         setCookie("zllValue", ZLL - 1);
         ZLL -= 1;
@@ -865,7 +865,7 @@ function upgrade2Func() {
 }
 
 function upgrade3Func() {
-    if (GOB >= 500){
+    if (GOB >= 500 && up3 == 0){
         GOB -= 500;
         setCookie("up3Value", 1);
         setCookie("globalbonusValue", GLOBAL * 2);
@@ -876,7 +876,7 @@ function upgrade3Func() {
 }
 
 function upgrade4Func() {
-    if (ROSA >= 50){
+    if (ROSA >= 50  && up4 == 0){
         ROSA -= 50;
         setCookie("up4Value", 1);
         setCookie("globalbonusValue", GLOBAL * 3);
@@ -887,7 +887,7 @@ function upgrade4Func() {
 }
 
 function upgrade5Func() {
-    if (RS >= 10){
+    if (RS >= 10 && up5 == 0){
         setCookie("up5Value", 1);
         setCookie("globalbonusValue", GLOBAL * 10);
         GLOBAL *= 10;
@@ -897,7 +897,7 @@ function upgrade5Func() {
 }
 
 function upgrade6Func() {
-    if (GOB >= 30){
+    if (GOB >= 30 && up6 == 0){
         GOB -= 30;
         setCookie("up6Value", 1);
         setCookie("clickValue", CLICK * 2);
@@ -908,7 +908,7 @@ function upgrade6Func() {
 }
 
 function upgrade7Func() {
-    if (GOB >= 750){
+    if (GOB >= 750 && up7 == 0){
         GOB -= 750;
         setCookie("up7Value", 1);
         setCookie("clickValue", CLICK * 10);
@@ -919,7 +919,7 @@ function upgrade7Func() {
 }
 
 function upgrade8Func() {
-    if (ZLL >= 15){
+    if (ZLL >= 15 && up8 == 0){
         setCookie("zllValue", ZLL + 1);
         ZLL += 1;
         setCookie("up8Value", 1);
@@ -933,7 +933,7 @@ function upgrade8Func() {
 }
 
 function upgrade9Func() {
-    if (GOB >= 100000){
+    if (GOB >= 100000 && up9 == 0){
         CVL_BONUS += 0.1;
         setCookie("cvlbonusValue", CVL_BONUS);
         setCookie("up9Value", 1);
@@ -943,7 +943,7 @@ function upgrade9Func() {
 }
 
 function upgrade10Func() {
-    if (CBT >= 60){
+    if (CBT >= 60  && up10 == 0){
         setCookie("up10Value", 1);
         up10 = 1;
         upgrade10.style.display = 'none';
@@ -951,7 +951,7 @@ function upgrade10Func() {
 }
 
 function upgrade11Func() {
-    if (ROSA >= 100000){
+    if (ROSA >= 100000 && up11 == 0){
         setCookie("up11Value", 1);
         up11 = 1;
         upgrade11.style.display = 'none';
