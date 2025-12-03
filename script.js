@@ -221,6 +221,10 @@ document.addEventListener("DOMContentLoaded", () => {
             btnmult.textContent = 'x' + multcompra;
         }
         else if(multcompra == 10){
+            multcompra = 100;
+            btnmult.textContent = 'x' + multcompra;
+        }
+        else if(multcompra == 100){
             multcompra = 1;
             btnmult.textContent = 'x' + multcompra;
         }
