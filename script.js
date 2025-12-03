@@ -1143,7 +1143,7 @@ function upgreideiatudo() {
         custocavalo = 35;
         objetivoascend = objetivoascend * 5;
         CVL_BONUS = 0.1 + (ascendvar * 0.05);
-        GLOBAL_ROSA = GLOBAL_ROSA * (ascendvar + 1);
+        GLOBAL_ROSA = ascendvar * 2;
 
         
         setCookie("globalbonusrosaValue",GLOBAL_ROSA)
