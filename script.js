@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //Ascension
     const btnascend = document.getElementById("ascend");
     const totalascension = document.getElementById("totalascension");
+    const objetivoascender = document.getElementById("objetivoascender");
     const acdb1 = document.getElementById("acdbonus1");
     const acdb2 = document.getElementById("acdbonus2");
     const acdb3 = document.getElementById("acdbonus3");
@@ -815,6 +816,7 @@ FAZENDINHA.textContent = 'Little Farm'
 
 totalcqtdiv.textContent = totalcqt + " of 15 achieved";
 totalascension.textContent = ascendvar + " Ascensions giving:";
+objetivoascender.textContent = "You need " + objetivoascend.toLocaleString('en') + " guavas to the next ascension";
 acdb1.textContent = "+" + ascendvar * 200 + " Start Guavas";
 acdb2.textContent = "+" + ascendvar * 50 + "% GVPS";
 acdb3.textContent = "-" + ascendvar * 0.02 + " Scaling cost (capped at 1.1)";
@@ -851,6 +853,7 @@ FAZENDINHA.textContent = 'Fazendinha';
 
 totalcqtdiv.textContent = totalcqt + " de 15 alcançados";
 totalascension.textContent = ascendvar + " Ascensões dando:";
+objetivoascender.textContent = "Você precisa de " + objetivoascend.toLocaleString('pt-BR') + " goiabas para a proxima ascensão";
 acdb1.textContent = "+" + ascendvar * 200 + " Goiabas Iniciais";
 acdb2.textContent = "+" + ascendvar * 50 + "% GBPS";
 acdb3.textContent = "-" + ascendvar * 0.02 + " Escalonamento de custo (Limitado a 1.1)";
