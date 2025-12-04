@@ -588,7 +588,7 @@ if (ascendvar >= objetivotranscend && objetivot != 1)
     if (lingua == 'pt') {
     showCustomAlert("Você alcançou algo que apenas alguns alcançaram. Agora você deve TRANSCENDER!!!!!");
     }
-    btnascend.style.display = 'block';
+    btntranscend.style.display = 'block';
     objetivot = 1;
 }
 if (ZLL >= 15 && up8 == 0 && up2 == 1){
