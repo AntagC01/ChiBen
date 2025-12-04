@@ -513,7 +513,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setCookie("gobValue", GOB);
 
-        ROSADPS = RS * GLOBAL_ROSA;
+        ROSADPS = Math.trunc(RS * GLOBAL_ROSA);
         ROSADPSunitario = 1 * GLOBAL_ROSA;
 
         if(up12 == 1){
@@ -867,6 +867,13 @@ acdb5.textContent = "x" + GLOBAL_ROSA + " RPS";
 acdb6.textContent = "+" + ascendvar * 5 + "% Horse bonus";
 acdb7.textContent = "+" + ascendvar * 3 + " Initial Chicos";
 acdb8.textContent = "+" + ascendvar + " Initial Rosinhas";
+
+totaltranscend.textContent = transcendvar + " Transcendencias giving:";
+objetivotranscendhtml.textContent = "You need " + objetivotranscend.toLocaleString('en') + " ascensions for the next transcend";
+tcd1.textContent = "x" + (1 - (transcendvar * 0.07)) + " GVPS";
+tcd2.textContent = "x" + (1 - (transcendvar * 0.07)) + " RPS";
+tcd3.textContent = "+" + transcendvar * 0.025 + " Cost scaling";
+tcd4.textContent = "+" + transcendvar * 2 + " Ascensions nedeed";
 
 upgrade1.textContent = "Throw a guava party (2x Chico production)";
 upgrade2.textContent = "Jump in the river with Ze Lele (?)";
@@ -1387,7 +1394,7 @@ function upgreideiatudo() {
         CVL_BONUS = 0.1 + (ascendvar * 0.05);
         GLOBAL_ROSA = 1 * (1 - (transcendvar * 0.07));
 
-        
+        setCookie("ascendValue",ascendvar);
         setCookie("objetivotranscendValue",objetivotranscend)
         setCookie("globalbonusrosaValue",GLOBAL_ROSA)
         setCookie("cvlbonusValue",CVL_BONUS);
