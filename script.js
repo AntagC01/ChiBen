@@ -44,6 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnstats = document.getElementById("btnstats");
     const fecharstats = document.getElementById("fecharstats");
 
+    const paginatranscend = document.getElementById("paginatranscend");
+    const btntranscend = document.getElementById("btntranscend");
+    const fechartranscend = document.getElementById("fechartranscend");
+
 
     //Ascension
     const btnascend = document.getElementById("ascend");
@@ -137,6 +141,14 @@ document.addEventListener("DOMContentLoaded", () => {
     fecharstats.addEventListener("click", () => {
     paginastats.classList.remove("show");
     });
+
+    btntranscend.addEventListener("click", () => {
+    paginatranscend.classList.add("show");
+    });
+
+    fechartranscend.addEventListener("click", () => {
+    paginatranscend.classList.remove("show");
+    });
     //==================== COOKIES ====================
     function getCookie(name) {
         const value = `; ${document.cookie}`;
@@ -181,6 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let escalamento = parseFloat(getCookie("escalamentoValue")) || 1.25;
 
     let ascendvar = parseInt(getCookie("ascendValue")) || 0;
+    let transcendvar = parseInt(getCookie("transcendvarValue")) || 0;
 
     // Upgrades active
     let up1 = parseInt(getCookie("up1Value")) || 0;
@@ -214,7 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let vcqt15 = parseInt(getCookie("vcqt15Value")) || 0;
     let totalcqt = parseInt(getCookie("totalcqtValue")) || 0;
     let objetivo = 0;
+    let objetivot = 0;
     let objetivoascend = parseInt(getCookie("objetivoascendValue")) || 10000000;
+    let objetivotranscend = parseInt(getCookie("objetivotranscendValue")) || 10;
     let multcompra = 1;
 
 
@@ -561,6 +576,17 @@ if (GOB >= objetivoascend && objetivo != 1)
     }
     if (lingua == 'pt') {
     showCustomAlert("Parabéns, você comeu tantas goiabas que explodiu e tudo acabou. Agora você deve ASCENDER!!!!!");
+    }
+    btnascend.style.display = 'block';
+    objetivo = 1;
+}
+if (ascendvar >= objetivotranscend && objetivot != 1)
+{
+    if (lingua == 'en') {
+    showCustomAlert("You reached something only a few dudes ever reached. Now you must TRANSCEND!!!!!");
+    }
+    if (lingua == 'pt') {
+    showCustomAlert("Você alcançou algo que apenas alguns alcançaram. Agora você deve TRANSCENDER!!!!!");
     }
     btnascend.style.display = 'block';
     objetivo = 1;
