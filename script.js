@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const CAVALOS = document.getElementById("cavalos");
     const btncavalo = document.getElementById("cavalo");
 
+    const MONICABLOCK = document.getElementById("MONICABLOCK");
+    const MONICAS = document.getElementById("monicas");
+    const btnmonica = document.getElementById("monica");
+
     const CBMABLOCK = document.getElementById("CBMABLOCK");
     const CHICOSMA = document.getElementById("chicomalhados");
     const btnchicosMA = document.getElementById("chicomalhado");
@@ -47,6 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const paginatranscend = document.getElementById("paginatranscend");
     const btntranscend = document.getElementById("btntranscend");
     const fechartranscend = document.getElementById("fechartranscend");
+
+    //Transcend
+    const btntranscender = document.getElementById("transcend");
+    const totaltranscend = document.getElementById("totaltranscend");
+    const objetivotranscendhtml = document.getElementById("objetivotranscender");
+    const tcd1 = document.getElementById("tcdbonus1");
+    const tcd2 = document.getElementById("tcdbonus2");
+    const tcd3 = document.getElementById("tcdbonus3");
+    const tcd4 = document.getElementById("tcdbonus4");
 
 
     //Ascension
@@ -193,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let escalamento = parseFloat(getCookie("escalamentoValue")) || 1.25;
 
     let ascendvar = parseInt(getCookie("ascendValue")) || 0;
-    let transcendvar = parseInt(getCookie("transcendvarValue")) || 0;
+    let transcendvar = parseInt(getCookie("transcendValue")) || 0;
 
     // Upgrades active
     let up1 = parseInt(getCookie("up1Value")) || 0;
@@ -588,7 +601,7 @@ if (ascendvar >= objetivotranscend && objetivot != 1)
     if (lingua == 'pt') {
     showCustomAlert("Você alcançou algo que apenas alguns alcançaram. Agora você deve TRANSCENDER!!!!!");
     }
-    btntranscend.style.display = 'block';
+    btntranscender.style.display = 'block';
     objetivot = 1;
 }
 if (ZLL >= 15 && up8 == 0 && up2 == 1){
@@ -836,6 +849,9 @@ if(ascendvar >= 10 || vcqt15 == 1){
 if (ascendvar >= 2){
     CBMABLOCK.style.display = 'flex';
 }
+if (transcendvar >= 1){
+    MONICABLOCK.style.display = 'flex';
+}
 
 if (lingua == 'en') {
 FAZENDINHA.textContent = 'Little Farm'
@@ -888,6 +904,13 @@ acdb5.textContent = "x" + GLOBAL_ROSA + " RPS";
 acdb6.textContent = "+" + ascendvar * 5 + "% Bonus do cavalo";
 acdb7.textContent = "+" + ascendvar * 3 + " Chicos Iniciais";
 acdb8.textContent = "+" + ascendvar + " Rosinhas Iniciais";
+
+totaltranscend.textContent = transcendvar + " Transcendencias dando:";
+objetivotranscendhtml.textContent = "Você precisa de " + objetivotranscend.toLocaleString('pt-BR') + " ascensoes para a proxima transcendencia";
+tcd1.textContent = "x" + (1 - (transcendvar * 0.07)) + " GBPS";
+tcd2.textContent = "x" + (1 - (transcendvar * 0.07)) + " RPS";
+tcd3.textContent = "+" + transcendvar * 0.025 + " Escalonamento de custo";
+tcd4.textContent = "+" + transcendvar * 2 + " Ascensoes nescessarias";
 
 upgrade1.textContent = 'De uma festa de goiabas (2x Produção Chico)';
 upgrade2.textContent = 'Pular no rio com o Ze lele (?)';
@@ -1125,6 +1148,13 @@ function upgreideiatudo() {
         ascend();
     }
 
+    document.getElementById("transcend").onclick = function () {
+        transcendvar += 1;
+        setCookie("transcendValue",transcendvar);
+        btntranscend.style.display = 'none';
+        transcend();
+    }
+
     //==================== CONFIG ====================
     btnConfig.addEventListener('click', () => configWindow.style.display = 'block');
     closeConfig.addEventListener('click', () => configWindow.style.display = 'none');
@@ -1173,8 +1203,11 @@ function upgreideiatudo() {
         objetivoascend = 10000000;
         CVL_BONUS = 0.1;
         GLOBAL_ROSA = 1;
-
+        objetivot = 0;
+        transcendvar = 0;
         
+        setCookie("transcendValue",transcendvar);
+        setCookie("objetivotranscendValue",10)
         setCookie("globalbonusrosaValue",1)
         setCookie("cvlbonusValue",0.1);
         setCookie("cvlValue",0);
@@ -1274,6 +1307,88 @@ function upgreideiatudo() {
         GLOBAL_ROSA = ascendvar * 2;
 
         
+        setCookie("globalbonusrosaValue",GLOBAL_ROSA)
+        setCookie("cvlbonusValue",CVL_BONUS);
+        setCookie("cvlValue",0);
+        setCookie("custocavaloValue",35);
+        setCookie("escalamentoValue",escalamento);
+        setCookie("clickValue",CLICK);
+        setCookie("globalbonusValue",GLOBAL);
+        setCookie("gobValue", GOB);
+        setCookie("cbtValue", CBT);
+        setCookie("custochicoValue", 10); // valor inicial do Chico
+        setCookie("cbtbonusValue", 1); // valor inicial do Chico
+        setCookie("zllValue", 0);
+        setCookie("custozeleleValue", 100); // valor inicial do Chico
+        setCookie("zllbonusValue", 7);
+        setCookie("rsValue", RS);
+        setCookie("rosaValue", 0);
+        setCookie("custorosinhaValue", 1000); // valor inicial do Chico
+        setCookie("cbtmaValue", 0);
+        setCookie("custochicomalhadoValue", 10000000);
+        setCookie("cbtmabonusValue", 100);
+        setCookie("objetivoascendValue",objetivoascend)
+
+
+        setCookie("up1Value",0);
+        setCookie("up2Value",0);
+        setCookie("up3Value",0);
+        setCookie("up4Value",0);
+        setCookie("up5Value",0);
+        setCookie("up6Value",0);
+        setCookie("up7Value",0);
+        setCookie("up8Value",0);
+        setCookie("up9Value",0);
+        setCookie("up10Value",0);
+        setCookie("up11Value",0);
+        setCookie("up12Value",0);
+
+        // Atualiza os elementos da tela
+        document.getElementById("Goiabas").textContent = "Guavas: 0";
+        document.getElementById("Chicos").textContent = "0 Chicos";
+        document.getElementById("Chico").textContent = "+1 Chico 10 Guavas";
+        document.getElementById("Zeleles").textContent = "0 Zeleles";
+        document.getElementById("Zelele").textContent = "+1 Zelele 100 Guavas";
+        document.getElementById("Rosinhas").textContent = "0 Rosinhas";
+        document.getElementById("Rosinha").textContent = "+1 Rosinha 1000 Guavas";
+        
+        location.reload();
+        
+    }
+
+    function transcend() {
+
+        ascendvar = 0;
+        objetivotranscend += 2;
+        objetivot = 0;
+
+          // Zera os cookies
+        GOB = 0 + (ascendvar * 200);
+        CBT = ascendvar * 3;
+        custochico = 10;
+        CBT_BONUS = 0;
+        ZLL = 0;
+        custozelele = 100;
+        ZLL_BONUS = 0;
+        RS = ascendvar;
+        ROSA = 0;
+        ROSADPS = 0;
+        custorosinha = 1000;
+        CBTMA = 0;
+        CBTMA_BONUS = 100;
+        custochicomalhado = 10000000;
+        GLOBAL = 1 * (1 - (transcendvar * 0.07)); //bonus
+        CLICK = 1 + (ascendvar); //bonus
+        objetivo = 0;
+        escalamento = 1.25 + (transcendvar * 0.025); //bonus
+        CVL = 0;
+        custocavalo = 35;
+        objetivoascend = 10000000;
+        CVL_BONUS = 0.1 + (ascendvar * 0.05);
+        GLOBAL_ROSA = 1 * (1 - (transcendvar * 0.07));
+
+        
+        setCookie("objetivotranscendValue",objetivotranscend)
         setCookie("globalbonusrosaValue",GLOBAL_ROSA)
         setCookie("cvlbonusValue",CVL_BONUS);
         setCookie("cvlValue",0);
