@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (RS > 0) rosasdiv.style.display = 'block';
 
+
+
     //==================== CLICKS ====================
     document.getElementById("Aperta").onclick = function () {
         GOB += CLICK;
