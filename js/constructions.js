@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("monica").onclick = function () {
         for (let i = 0; i < multcompra; i++) {
-            if (GOB < customonica) return;
+            if (ROSA < customonica) return;
 
             ROSA -= customonica;
             MON++;
