@@ -122,6 +122,10 @@
     let CBTMAPSunitario = 0;
     let ROSADPS = 0;
     let ROSADPSunitario = 0;
+    let MONGPS = 0;
+    let MONGPSunitario = 0;
+    let MONRPS = 0;
+    let MONRPSunitario = 0;
 
     // Achievements
     const cqt1 = document.getElementById("cqt1");
@@ -163,6 +167,11 @@
     let CBTMA = parseInt(getCookie("cbtmaValue")) || 0;
     let custochicomalhado = parseInt(getCookie("custochicomalhadoValue")) || 10000000;
     let CBTMA_BONUS = parseInt(getCookie("cbtmabonusValue")) || 100;
+
+    let MON = parseInt(getCookie("monicaValue")) || 0;
+    let customonica = parseInt(getCookie("customonicaValue")) || 10000;
+    let MONICA_BONUS_G = parseInt(getCookie("monicabonusGValue")) || 250;
+    let MONICA_BONUS_R = parseInt(getCookie("monicabonusRValue")) || 7;
 
     let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
     let GLOBAL_ROSA = parseFloat(getCookie("globalbonusrosaValue")) || 1;

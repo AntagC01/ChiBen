@@ -112,6 +112,28 @@
 
     };
 
+        document.getElementById("monica").onclick = function () {
+        for (let i = 0; i < multcompra; i++)
+        {
+        if (GOB < customonica) return;
+
+        ROSA -= customonica;
+        MON++;
+        customonica = Math.trunc(customonica * escalamento) || 1;
+        if (customonica == Math.trunc(customonica * escalamento)){
+            customonica += 1;
+        }
+
+        setCookie("rosaValue", ROSA);
+        setCookie("monicaValue", MON);
+        setCookie("customonicaValue", customonica);
+        }
+        audioPlayer.src = "mp3/compra.mp3";
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
+
+    };
+
 
     document.getElementById("multcompra").onclick = function () {
         if(multcompra == 1){

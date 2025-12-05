@@ -68,38 +68,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
         CBTMAPS = Math.trunc(CBTMA * CBTMA_BONUS * GLOBAL * BONUSCAVALO);
         CBTMAPSunitario = Math.trunc(1 * CBTMA_BONUS * GLOBAL * BONUSCAVALO);
+
+        MONGPS = Math.trunc(MON * MONICA_BONUS_G * GLOBAL * BONUSCAVALO);
+        MONGPSunitario = Math.trunc(1 * MONICA_BONUS_G * GLOBAL * BONUSCAVALO);
         
         
         if (up10 == 1){
             CBTPS = Math.trunc(CBTPS * (1 + (CBT * 0.02)));
             ZLLPS = Math.trunc(ZLLPS * (1 + (CBT * 0.02)));
             CBTMAPS = Math.trunc(CBTMAPS * (1 + (CBT * 0.02)));
+            MONGPS = Math.trunc(MONGPS * (1 + (CBT * 0.02)));
             CBTPSunitario = Math.trunc(CBTPSunitario * (1 + (CBT * 0.02)));
             ZLLPSunitario = Math.trunc(ZLLPSunitario * (1 + (CBT * 0.02)));
             CBTMAPSunitario = Math.trunc(CBTMAPSunitario * (1 + (CBT * 0.02)));
+            MONGPSunitario = Math.trunc(MONGPSunitario * (1 + (CBT * 0.02)));
         }
         if (up11 == 1){
             CBTPS = Math.trunc(CBTPS * (1 + (ROSA * 0.000001)));
             ZLLPS = Math.trunc(ZLLPS * (1 + (ROSA * 0.000001)));
             CBTMAPS = Math.trunc(CBTMAPS * (1 + (ROSA * 0.000001)));
+            MONGPS = Math.trunc(MONGPS * (1 + (ROSA * 0.000001)));
             CBTPSunitario = Math.trunc(CBTPSunitario * (1 + (ROSA * 0.000001)));
             ZLLPSunitario = Math.trunc(ZLLPSunitario * (1 + (ROSA * 0.000001)));
             CBTMAPSunitario = Math.trunc(CBTMAPSunitario * (1 + (ROSA * 0.000001)));
+            MONGPSunitario = Math.trunc(MONGPSunitario * (1 + (ROSA * 0.000001)));
         }
 
-        GOBDPS = CBTPS + ZLLPS + CBTMAPS;
+        GOBDPS = CBTPS + ZLLPS + CBTMAPS + MONGPS;
         GOB += GOBDPS;
 
         setCookie("gobValue", GOB);
 
         ROSADPS = Math.trunc(RS * GLOBAL_ROSA);
+        MONRPS = Math.trunc(MON * MONICA_BONUS_R * GLOBAL_ROSA);
         ROSADPSunitario = 1 * GLOBAL_ROSA;
+        MONRPSunitario = Math.trunc(1 * MONICA_BONUS_R * GLOBAL_ROSA)
 
         if(up12 == 1){
             ROSADPS = Math.trunc(ROSADPS * (1 + (CBTMA * 0.03)))
             ROSADPSunitario = Math.trunc(ROSADPSunitario * (1 + (CBTMA * 0.03)))
         }
-        ROSA += Math.trunc(ROSADPS);
+        ROSA += Math.trunc(ROSADPS + MONRPS);
 
         setCookie("rosaValue", ROSA);
     }, 1000);
@@ -203,7 +212,11 @@ if (ascendvar >= objetivotranscend && objetivot != 1)
         setCookie("custorosinhaValue", 1000); // valor inicial do Chico
         setCookie("custochicomalhadoValue", 10000000);
         setCookie("cbtmabonusValue", 100);
-        setCookie("custocavaloValue",35)
+        setCookie("custocavaloValue",35);
+        setCookie("monicaValue",0);
+        setCookie("customonicaValue",10000);
+        setCookie("monicabonusGValue",250);
+        setCookie("monicabonusRValue",7);
     }
     function reseta() {
         // Zera os cookies
