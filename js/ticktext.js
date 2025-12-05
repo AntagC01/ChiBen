@@ -48,14 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         CHICOS.textContent = CBT + " Chicos";
                         btnchicos.textContent = "+1 Chico " + custochico.toLocaleString('en') + " Guavas";
+
                         ZELELES.textContent = ZLL + " Ze leles";
                         btnZELELES.textContent = "+1 Ze lele " + custozelele.toLocaleString('en') + " Guavas";
+
                         ROSINHAS.textContent = RS + " Rosinhas";
                         btnrosinha.textContent = "+1 Rosinha " + custorosinha.toLocaleString('en') + " Guavas";
-                        CAVALOS.textContent = CVL + " Cavalos";
-                        btncavalo.textContent = "+1 Cavalo " + custocavalo.toLocaleString('en') + " Roses";
+
+                        CAVALOS.textContent = CVL + " Horses";
+                        btncavalo.textContent = "+1 Horse " + custocavalo.toLocaleString('en') + " Roses";
+
                         CHICOSMA.textContent = CBTMA + " Chico Bulked";
                         btnchicosMA.textContent = "+1 Chico bulked " + custochicomalhado.toLocaleString('en') + " Guavas";
+
+                        MONICAS.textContent = MON + " Monicas";
+                        btnmonica.textContent = "+1 Monica " + customonica.toLocaleString('pt-BR') + " Roses";
 
                         GOIABAS.textContent = "Guavas: " + GOB.toLocaleString('en');
                         GOIABASDPS.textContent = "Guavas per second: " + GOBDPS.toLocaleString('en');
@@ -111,14 +118,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         CHICOS.textContent = CBT + " Chicos";
                         btnchicos.textContent = "+1 Chico " + custochico.toLocaleString('pt-BR') + " Goiabas";
+
                         ZELELES.textContent = ZLL + " Ze leles";
                         btnZELELES.textContent = "+1 Ze lele " + custozelele.toLocaleString('pt-BR') + " Goiabas";
+
                         ROSINHAS.textContent = RS + " Rosinhas";
                         btnrosinha.textContent = "+1 Rosinha " + custorosinha.toLocaleString('pt-BR') + " Goiabas";
+
                         CAVALOS.textContent = CVL + " Cavalos";
                         btncavalo.textContent = "+1 Cavalo " + custocavalo.toLocaleString('pt-BR') + " Rosas";
+
                         CHICOSMA.textContent = CBTMA + " Chicos Malhados";
                         btnchicosMA.textContent = "+1 Chico malhado " + custochicomalhado.toLocaleString('pt-BR') + " Goiabas";
+
+                        MONICAS.textContent = MON + " Monicas";
+                        btnmonica.textContent = "+1 Monica " + customonica.toLocaleString('pt-BR') + " Rosas";
 
 
                         GOIABAS.textContent = "Goiabas: " + GOB.toLocaleString('pt-BR');
