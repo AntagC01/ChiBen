@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                         ROSAS.textContent = "Roses: " + ROSA.toLocaleString('pt-BR');
-                        ROSASDPS.textContent = "Roses per second: " + ROSADPS.toLocaleString('en');
+                        ROSASDPS.textContent = "Roses per second: " + ROSACALCDPS.toLocaleString('en');
                 }
                 if (lingua == 'pt') {
                         FAZENDINHA.textContent = 'Fazendinha';
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                         ROSAS.textContent = "Rosas: " + ROSA.toLocaleString('pt-BR');
-                        ROSASDPS.textContent = "Rosas por segundo: " + ROSADPS.toLocaleString('pt-BR');
+                        ROSASDPS.textContent = "Rosas por segundo: " + ROSACALCDPS.toLocaleString('pt-BR');
                 }
         }, 500);
 });

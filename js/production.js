@@ -52,8 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
             ROSADPS = Math.trunc(ROSADPS * (1 + (CBTMA * 0.03)))
             ROSADPSunitario = Math.trunc(ROSADPSunitario * (1 + (CBTMA * 0.03)))
         }
-        
-        ROSA += Math.trunc((ROSADPS + MONRPS) * MULTTRANS);
+
+        ROSACALCDPS = Math.trunc((ROSADPS + MONRPS) * MULTTRANS);
+        ROSA += ROSACALCDPS;
 
         setCookie("rosaValue", ROSA);
     }, 1000);
