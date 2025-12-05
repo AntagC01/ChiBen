@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (lingua == 'pt') {
             GOIABAS.textContent = "Goiabas: " + GOB.toLocaleString('pt-BR');
         }
-        setCookie("gobValue", GOB);
+        setCookieBIG("gobValue", GOB);
 
         const audio = "mp3/click_satisfatorio.wav";
         audioPlayer.src = audio;
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         GOBDPS = (CBTPS + ZLLPS + CBTMAPS + MONGPS) * MULTTRANS;
         GOB += GOBDPS;
 
-        setCookie("gobValue", GOB);
+        setCookieBIG("gobValue", GOB);
 
         ROSADPS = Math.trunc(RS * GLOBAL_ROSA);
         MONRPS = Math.trunc(MON * MONICA_BONUS_R * GLOBAL_ROSA);
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie("escalamentoValue", 1.25);
         setCookie("clickValue", 1);
         setCookie("globalbonusValue", 1);
-        setCookie("gobValue", 0);
+        setCookieBIG("gobValue", 0);
         setCookie("rsValue", 0);
         setCookie("rosaValue", 0);
         setCookie("cbtValue", 0);
@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie("escalamentoValue", escalamento);
         setCookie("clickValue", CLICK);
         setCookie("globalbonusValue", GLOBAL);
-        setCookie("gobValue", GOB);
+        setCookieBIG("gobValue", GOB);
         setCookie("cbtValue", CBT);
         setCookie("zllValue", 0);
         setCookie("rsValue", RS);
@@ -357,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie("escalamentoValue", escalamento);
         setCookie("clickValue", CLICK);
         setCookie("globalbonusValue", GLOBAL);
-        setCookie("gobValue", GOB);
+        setCookieBIG("gobValue", GOB);
         setCookie("cbtValue", CBT);
         setCookie("rsValue", RS);
         setCookie("cvlValue", 0);

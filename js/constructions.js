@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 custochico += 1;
             }
 
-            setCookie("gobValue", GOB);
+            setCookieBIG("gobValue", GOB);
             setCookie("cbtValue", CBT);
             setCookie("custochicoValue", custochico);
         }
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 custozelele += 1;
             }
 
-            setCookie("gobValue", GOB);
+            setCookieBIG("gobValue", GOB);
             setCookie("zllValue", ZLL);
             setCookie("custozeleleValue", custozelele);
         }
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 custorosinha += 1;
             }
 
-            setCookie("gobValue", GOB);
+            setCookieBIG("gobValue", GOB);
             setCookie("rsValue", RS);
             setCookie("custorosinhaValue", custorosinha);
         }
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 custochicomalhado += 1;
             }
 
-            setCookie("gobValue", GOB);
+            setCookieBIG("gobValue", GOB);
             setCookie("cbtmaValue", CBTMA);
             setCookie("custochicomalhadoValue", custochicomalhado);
         }
