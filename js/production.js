@@ -61,5 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setInterval(() => {
         MON = MON + (CEB * CEB_BONUS);
+        setCookie("monicaValue", MON);
     }, 2000);
 });
