@@ -75,6 +75,5 @@ function transcend() {
     resetaupgrades();
 
     location.reload();
-
 }
 });
