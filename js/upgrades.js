@@ -42,49 +42,61 @@ if (CBTMA >= 25 && up12 == 0){
 
     document.getElementById("Upgrade1").onclick = function () {
         upgrade1Func();
+        somupgrade();
     };
 
     document.getElementById("Upgrade2").onclick = function () {
         upgrade2Func();
+        somupgrade();
     };
 
     document.getElementById("Upgrade3").onclick = function () {
         upgrade3Func();
+        somupgrade();
     };
 
     document.getElementById("Upgrade4").onclick = function () {
         upgrade4Func();
+        somupgrade();
     };
 
     document.getElementById("Upgrade5").onclick = function () {
         upgrade5Func();
+        somupgrade();
     };
 
     document.getElementById("Upgrade6").onclick = function () {
         upgrade6Func();
+        somupgrade();
     };
 
     document.getElementById("Upgrade7").onclick = function () {
         upgrade7Func();
+        somupgrade();
     };
 
     document.getElementById("Upgrade8").onclick = function () {
         upgrade8Func();
+        somupgrade();
     };
 
     document.getElementById("Upgrade9").onclick = function () {
         upgrade9Func();
+        somupgrade();
     };
 
     document.getElementById("Upgrade10").onclick = function () {
         upgrade10Func();
+        somupgrade();
     };
 
     document.getElementById("Upgrade11").onclick = function () {
         upgrade11Func();
+        somupgrade();
     };
     document.getElementById("Upgrade12").onclick = function () {
         upgrade12Func();
+        somupgrade();
     };
 
 function upgrade1Func() {
@@ -214,6 +226,7 @@ function upgrade12Func() {
 
 document.getElementById("ApplyAllButton").onclick = function () {
 upgreideiatudo();
+somupgrade();
 }
 
 // Função para chamar todos os upgrades
@@ -230,5 +243,12 @@ function upgreideiatudo() {
     upgrade10Func();
     upgrade11Func();
     upgrade12Func();
+}
+
+function somupgrade()
+{
+        audioPlayer.src = "mp3/upgrade.mp3";
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
 }
 });
