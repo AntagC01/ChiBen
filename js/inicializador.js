@@ -182,6 +182,8 @@ let escalamento = parseFloat(getCookie("escalamentoValue")) || 1.25;
 let ascendvar = parseInt(getCookie("ascendValue")) || 0;
 let transcendvar = parseInt(getCookie("transcendValue")) || 0;
 
+let MULTTRANS = parseFloat(getCookie("multtransValue")) || 1;
+
 // Achievements
 let vcqt1 = parseInt(getCookie("vcqt1Value")) || 0;
 let vcqt2 = parseInt(getCookie("vcqt2Value")) || 0;
