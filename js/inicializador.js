@@ -146,7 +146,7 @@ const cqt15 = document.getElementById("cqt15");
 const totalcqtdiv = document.getElementById("totalcqtdiv");
 
 //==================== INITIAL VARIABLES ====================
-let GOB = parseInt(getCookie("gobValue")) || 0;
+let GOB = Number(getCookie("gobValue")) || 0;
 let ROSA = parseInt(getCookie("rosaValue")) || 0;
 
 let CBT = parseInt(getCookie("cbtValue")) || 0;
