@@ -161,6 +161,7 @@ if (ascendvar >= objetivotranscend && objetivot != 1)
 
     //==================== RESET ====================
     const RESET = document.getElementById("reset");
+    RESET.addEventListener("click", reseta);
 
     function resetaupgrades(){
         setCookie("up1Value",0);
@@ -255,9 +256,6 @@ if (ascendvar >= objetivotranscend && objetivot != 1)
         setCookie("objetivoascendValue",10000000)
         location.reload();
     }
-
-    RESET.addEventListener("click", reseta);
-
     function ascend() {
           // Zera os cookies
         GOB = 0 + (ascendvar * 200);
@@ -310,7 +308,6 @@ if (ascendvar >= objetivotranscend && objetivot != 1)
         location.reload();
         
     }
-
     function transcend() {
 
         ascendvar = 0;
