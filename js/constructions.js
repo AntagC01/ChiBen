@@ -1,4 +1,6 @@
-    document.getElementById("Chico").onclick = function () {
+ document.addEventListener("DOMContentLoaded", () => {
+ 
+ document.getElementById("Chico").onclick = function () {
         for (let i = 0; i < multcompra; i++)
         {
         if (GOB < custochico) return;
@@ -8,15 +10,6 @@
         custochico = Math.trunc(custochico * escalamento) || 1;
         if (custochico == Math.trunc(custochico * escalamento)){
             custochico += 1;
-        }
-
-        if (lingua == 'en') {
-        CHICOS.textContent = CBT + " Chicos";
-        btnchicos.textContent = "+1 Chico " + custochico.toLocaleString('en') + " Guavas";
-        }
-        if (lingua == 'pt') {
-        CHICOS.textContent = CBT + " Chicos";
-        btnchicos.textContent = "+1 Chico " + custochico.toLocaleString('pt-BR') + " Goiabas";
         }
 
         setCookie("gobValue", GOB);
@@ -40,15 +33,6 @@
         if (custozelele == Math.trunc(custozelele * escalamento)){
             custozelele += 1;
         }
-        
-        if (lingua == 'en') {
-        ZELELES.textContent = ZLL + " Ze leles";
-        btnZELELES.textContent = "+1 Ze lele " + custozelele.toLocaleString('en') + " Guavas";
-        }
-        if (lingua == 'pt') {
-        ZELELES.textContent = ZLL + " Ze leles";
-        btnZELELES.textContent = "+1 Ze lele " + custozelele.toLocaleString('pt-BR') + " Goiabas";
-        }
 
         setCookie("gobValue", GOB);
         setCookie("zllValue", ZLL);
@@ -69,15 +53,6 @@
         custorosinha = Math.trunc(custorosinha * escalamento) || 1;
         if (custorosinha == Math.trunc(custorosinha * escalamento)){
             custorosinha += 1;
-        }
-
-        if (lingua == 'en') {
-        ROSINHAS.textContent = RS + " Rosinhas";
-        btnrosinha.textContent = "+1 Rosinha " + custorosinha.toLocaleString('en') + " Guavas";
-        }
-        if (lingua == 'pt') {
-        ROSINHAS.textContent = RS + " Rosinhas";
-        btnrosinha.textContent = "+1 Rosinha " + custorosinha.toLocaleString('pt-BR') + " Goiabas";
         }
 
         setCookie("gobValue", GOB);
@@ -103,15 +78,6 @@
             custocavalo += 1;
         }
 
-        if (lingua == 'en') {
-        CAVALOS.textContent = CVL + " Cavalos";
-        btncavalo.textContent = "+1 Cavalo " + custocavalo.toLocaleString('en') + " Roses";
-        }
-        if (lingua == 'pt') {
-        CAVALOS.textContent = CVL + " Cavalos";
-        btncavalo.textContent = "+1 Cavalo " + custocavalo.toLocaleString('pt-BR') + " Rosas";
-        }
-
         setCookie("rosaValue", ROSA);
         setCookie("custocavaloValue", custocavalo);
         setCookie("cvlValue", CVL);
@@ -134,15 +100,6 @@
         custochicomalhado = Math.trunc(custochicomalhado * escalamento) || 1;
         if (custochicomalhado == Math.trunc(custochicomalhado * escalamento)){
             custochicomalhado += 1;
-        }
-
-        if (lingua == 'en') {
-        CHICOSMA.textContent = CBTMA + " Chicos Bulked";
-        btnchicosMA.textContent = "+1 Chico Bulked " + custochicomalhado.toLocaleString('en') + " Guavas";
-        }
-        if (lingua == 'pt') {
-        CHICOSMA.textContent = CBTMA + " Chicos Malhados";
-        btnchicosMA.textContent = "+1 Chico malhado " + custochicomalhado.toLocaleString('pt-BR') + " Goiabas";
         }
 
         setCookie("gobValue", GOB);
@@ -183,3 +140,5 @@ if (transcendvar >= 1){
     MONICABLOCK.style.display = 'flex';
 }
     }, 2500);
+
+});

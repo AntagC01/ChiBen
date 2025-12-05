@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 setInterval(() => {
 if (lingua == 'en') {
 FAZENDINHA.textContent = 'Little Farm'
@@ -55,6 +57,12 @@ stt8.textContent = '';
         CHICOSMA.textContent = CBTMA + " Chico Bulked";
         btnchicosMA.textContent = "+1 Chico bulked " + custochicomalhado.toLocaleString('en') + " Guavas";
 
+        GOIABAS.textContent = "Guavas: " + GOB.toLocaleString('en');
+        GOIABASDPS.textContent = "Guavas per second: " + GOBDPS.toLocaleString('en');
+
+
+        ROSAS.textContent = "Roses: " + ROSA.toLocaleString('pt-BR');
+        ROSASDPS.textContent = "Roses per second: " + ROSADPS.toLocaleString('en');
 }
 if (lingua == 'pt') {
 FAZENDINHA.textContent = 'Fazendinha';
@@ -111,5 +119,14 @@ stt8.textContent = '';
         btncavalo.textContent = "+1 Cavalo " + custocavalo.toLocaleString('pt-BR') + " Rosas";
         CHICOSMA.textContent = CBTMA + " Chicos Malhados";
         btnchicosMA.textContent = "+1 Chico malhado " + custochicomalhado.toLocaleString('pt-BR') + " Goiabas";
+
+    
+        GOIABAS.textContent = "Goiabas: " + GOB.toLocaleString('pt-BR');
+        GOIABASDPS.textContent = "Goiabas por segundo: " + GOBDPS.toLocaleString('pt-BR');
+
+
+        ROSAS.textContent = "Rosas: " + ROSA.toLocaleString('pt-BR');
+        ROSASDPS.textContent = "Rosas por segundo: " + ROSADPS.toLocaleString('pt-BR');
 }  
-    }, 1000);
+    }, 500);
+});

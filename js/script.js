@@ -87,17 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
             CBTMAPSunitario = Math.trunc(CBTMAPSunitario * (1 + (ROSA * 0.000001)));
         }
 
-        let GOBDPS = CBTPS + ZLLPS + CBTMAPS;
+        GOBDPS = CBTPS + ZLLPS + CBTMAPS;
         GOB += GOBDPS;
-
-        if (lingua == 'en') {
-        GOIABAS.textContent = "Guavas: " + GOB.toLocaleString('en');
-        GOIABASDPS.textContent = "Guavas per second: " + GOBDPS.toLocaleString('en');
-        }
-        if (lingua == 'pt') {
-        GOIABAS.textContent = "Goiabas: " + GOB.toLocaleString('pt-BR');
-        GOIABASDPS.textContent = "Goiabas por segundo: " + GOBDPS.toLocaleString('pt-BR');
-        }
 
         setCookie("gobValue", GOB);
 
@@ -109,15 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ROSADPSunitario = Math.trunc(ROSADPSunitario * (1 + (CBTMA * 0.03)))
         }
         ROSA += Math.trunc(ROSADPS);
-
-        if (lingua == 'en') {
-        ROSAS.textContent = "Roses: " + ROSA.toLocaleString('pt-BR');
-        ROSASDPS.textContent = "Roses per second: " + ROSADPS.toLocaleString('en');
-        }
-        if (lingua == 'pt') {
-        ROSAS.textContent = "Rosas: " + ROSA.toLocaleString('pt-BR');
-        ROSASDPS.textContent = "Rosas por segundo: " + ROSADPS.toLocaleString('pt-BR');
-        }
 
         setCookie("rosaValue", ROSA);
     }, 1000);

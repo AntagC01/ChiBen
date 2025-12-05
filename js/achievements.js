@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 setInterval(() => {
 if(GOB >= 1 || vcqt1 == 1){
     cqt1.style.display = 'block';
@@ -240,3 +241,4 @@ function mostrarConquista(texto) {
 
         setTimeout(() => popup.classList.remove("show"), 5000);
     }
+});

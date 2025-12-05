@@ -196,6 +196,7 @@
     let objetivotranscend = parseInt(getCookie("objetivotranscendValue")) || 10;
     let multcompra = 1;
 
+    let GOBDPS = 0;
     const audio = document.querySelector("audio");
     const volumeControl = document.getElementById("volume");
     volumeControl.addEventListener("input", () => audio.volume = volumeControl.value);
@@ -233,7 +234,7 @@ function setCookie(name, value) {
   function closeCustomAlert() {
     document.getElementById('customAlertOverlay').style.display = 'none';
   }
-   
+
     //==================== INITIAL ALERT ====================
     if (lingua == 'en') {
         showCustomAlert("You are just a guava thief farmer dreaming of " + objetivoascend.toLocaleString('en-US') + " guavas, this is your goal");
