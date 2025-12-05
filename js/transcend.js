@@ -70,7 +70,7 @@ function transcend() {
     setCookie("objetivoascendValue", objetivoascend);
 
 
-
+    setCookie("playPrestigio", 1);
     resetacustosebonus();
     resetaupgrades();
 
