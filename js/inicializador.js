@@ -45,6 +45,10 @@ const btnrosinha = document.getElementById("Rosinha");
 const CAVALOS = document.getElementById("cavalos");
 const btncavalo = document.getElementById("cavalo");
 
+const CEBOLINHABLOCK = document.getElementById("CEBOLINHABLOCK");
+const CEBOLINHAS = document.getElementById("cebolinhas");
+const btncebolinha = document.getElementById("cebolinha");
+
 const MONICABLOCK = document.getElementById("MONICABLOCK");
 const MONICAS = document.getElementById("monicas");
 const btnmonica = document.getElementById("monica");
@@ -172,6 +176,10 @@ let MON = parseInt(getCookie("monicaValue")) || 0;
 let customonica = parseInt(getCookie("customonicaValue")) || 10000;
 let MONICA_BONUS_G = parseInt(getCookie("monicabonusGValue")) || 250;
 let MONICA_BONUS_R = parseInt(getCookie("monicabonusRValue")) || 7;
+
+let CEB = parseInt(getCookie("cebolinhaValue")) || 0;
+let custocebolinha = parseInt(getCookie("custocebolinhaValue")) || 15;
+let CEB_BONUS = parseInt(getCookie("cebolinhabonusValue")) || 1;
 
 let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
 let GLOBAL_ROSA = parseFloat(getCookie("globalbonusrosaValue")) || 1;

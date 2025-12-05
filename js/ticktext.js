@@ -62,13 +62,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         btnchicosMA.textContent = "+1 Chico bulked " + custochicomalhado.toLocaleString('en') + " Guavas";
 
                         MONICAS.textContent = MON + " Monicas";
-                        btnmonica.textContent = "+1 Monica " + customonica.toLocaleString('pt-BR') + " Roses";
+                        btnmonica.textContent = "+1 Monica " + customonica.toLocaleString('en') + " Roses";
+
+                        CEBOLINHAS.textContent = CEB + " Cebolinhas";
+                        btncebolinha.textContent = "+1 Cebolinha " + custocebolinha.toLocaleString('en') + " Monicas";
 
                         GOIABAS.textContent = "Guavas: " + GOB.toLocaleString('en');
                         GOIABASDPS.textContent = "Guavas per second: " + GOBDPS.toLocaleString('en');
 
 
-                        ROSAS.textContent = "Roses: " + ROSA.toLocaleString('pt-BR');
+                        ROSAS.textContent = "Roses: " + ROSA.toLocaleString('en');
                         ROSASDPS.textContent = "Roses per second: " + ROSACALCDPS.toLocaleString('en');
                 }
                 if (lingua == 'pt') {
@@ -133,6 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         MONICAS.textContent = MON + " Monicas";
                         btnmonica.textContent = "+1 Monica " + customonica.toLocaleString('pt-BR') + " Rosas";
+
+                        CEBOLINHAS.textContent = CEB + " Cebolinhas";
+                        btncebolinha.textContent = "+1 Cebolinha " + custocebolinha.toLocaleString('pt-BR') + " Monicas";
 
 
                         GOIABAS.textContent = "Goiabas: " + GOB.toLocaleString('pt-BR');

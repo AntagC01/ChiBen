@@ -168,6 +168,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie("customonicaValue", 10000);
         setCookie("monicabonusGValue", 250);
         setCookie("monicabonusRValue", 7);
+        setCookie("custocebolinhaValue",15);
+        setCookie("cebolinhaValue",0)
     }
     function reseta() {
         // Zera os cookies

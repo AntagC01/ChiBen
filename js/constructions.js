@@ -128,6 +128,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
+    document.getElementById("cebolinha").onclick = function () {
+        for (let i = 0; i < multcompra; i++) {
+            if (MON <= custocebolinha) return;
+
+            MON -= custocebolinha;
+            CEB++;
+            custocebolinha = Math.trunc(custocebolinha * escalamento * 1.2) || 1;
+            if (custocebolinha == Math.trunc(custocebolinha * escalamento * 1.2)) {
+                custocebolinha += 1;
+            }
+
+            setCookie("monicaValue", MON);
+            setCookie("cebolinhaValue", CEB);
+            setCookie("custocebolinhaValue", custocebolinha);
+        }
+        audioPlayer.src = "mp3/compra.mp3";
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
+
+    };
+
 
     document.getElementById("multcompra").onclick = function () {
         if (multcompra == 1) {
@@ -154,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         if (transcendvar >= 1) {
             MONICABLOCK.style.display = 'flex';
+            CEBOLINHABLOCK.style.display = 'flex';
         }
     }, 2500);
 

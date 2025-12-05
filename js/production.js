@@ -58,4 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setCookie("rosaValue", ROSA);
     }, 1000);
+
+    setInterval(() => {
+        MON = MON + (CEB * CEB_BONUS);
+    }, 2000);
 });
