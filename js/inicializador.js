@@ -223,3 +223,21 @@ function setCookie(name, value) {
     const maxAge = anos * 365 * 24 * 60 * 60; 
     document.cookie = `${name}=${value}; path=/; max-age=${maxAge}`;
     }
+
+ 
+ function showCustomAlert(message) {
+    document.getElementById('customAlertMessage').textContent = message;
+    document.getElementById('customAlertOverlay').style.display = 'flex';
+  }
+
+  function closeCustomAlert() {
+    document.getElementById('customAlertOverlay').style.display = 'none';
+  }
+   
+    //==================== INITIAL ALERT ====================
+    if (lingua == 'en') {
+        showCustomAlert("You are just a guava thief farmer dreaming of " + objetivoascend.toLocaleString('en-US') + " guavas, this is your goal");
+    }
+    if (lingua == 'pt') {
+        showCustomAlert("Você é só um ladrão de goiabas com um sonho de  " + objetivoascend.toLocaleString('pt-BR') + " goiabas, essa é sua meta");
+    }

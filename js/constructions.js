@@ -174,3 +174,12 @@
             btnmult.textContent = 'x' + multcompra;
         }
     }
+
+setInterval(() => {
+if (ascendvar >= 2){
+    CBMABLOCK.style.display = 'flex';
+}
+if (transcendvar >= 1){
+    MONICABLOCK.style.display = 'flex';
+}
+    }, 2500);
