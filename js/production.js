@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             MONGPSunitario = Math.trunc(MONGPSunitario * (1 + (ROSA * 0.000001)));
         }
 
-        GOBDPS = (CBTPS + ZLLPS + CBTMAPS + MONGPS) * MULTTRANS;
+        GOBDPS = Math.trunc((CBTPS + ZLLPS + CBTMAPS + MONGPS) * MULTTRANS);
         GOB += GOBDPS;
 
         setCookieBIG("gobValue", GOB);

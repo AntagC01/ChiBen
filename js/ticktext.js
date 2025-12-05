@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         stt3.textContent = 'Each Rosinha is producing ' + ROSADPSunitario.toLocaleString('en-US') + ' RPS totaling ' + ROSADPS.toLocaleString('en-US') + ' RPS';
                         stt4.textContent = 'Each Horse is increasing GBPS by ' + (CVL_BONUS * 100).toLocaleString('en-US') + '% totaling ' + (BONUSCAVALO * 100).toLocaleString('en-US') + '% GBPS';
                         stt5.textContent = 'Each Spotted Chico is producing ' + CBTMAPSunitario.toLocaleString('en-US') + ' GBPS totaling ' + CBTMAPS.toLocaleString('en-US') + ' GBPS';
-                        stt6.textContent = 'Each Monica is producing ' + MONGPSunitario.toLocaleString('en-US') + ' GBPS and ' + MONRPSunitario.toLocaleString('en-US') + ' RPS totalizing ' + MONGPS + ' GVPS and ' + MONRPS + ' RPS';
+                        stt6.textContent = 'Each Monica is producing ' + MONGPSunitario.toLocaleString('en-US') + ' GBPS and ' + MONRPSunitario.toLocaleString('en-US') + ' RPS totalizing ' + MONGPS.toLocaleString('en-US') + ' GVPS and ' + MONRPS.toLocaleString('en-US') + ' RPS';
                         stt7.textContent = '';
                         stt8.textContent = '';
 
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         stt3.textContent = 'Cada Rosinha esta produzindo ' + ROSADPSunitario.toLocaleString('pt-BR') + ' RPS totalizando ' + ROSADPS.toLocaleString('pt-BR') + ' RPS';
                         stt4.textContent = 'Cada Cavalo esta aumentando em  ' + (CVL_BONUS * 100).toLocaleString('pt-BR') + '% o GBPS totalizando ' + (BONUSCAVALO * 100).toLocaleString('pt-BR') + '% GBPS';
                         stt5.textContent = 'Cada Chico Malhado esta produzindo ' + CBTMAPSunitario.toLocaleString('pt-BR') + ' GBPS totalizando ' + CBTMAPS.toLocaleString('pt-BR') + ' GBPS';
-                        stt6.textContent = 'Cada Monica esta produzindo ' + MONGPSunitario.toLocaleString('pt-BR') + ' GBPS e ' + MONRPSunitario.toLocaleString('pt-BR') + ' RPS totalizando ' + MONGPS + ' GBPS e ' + MONRPS + ' RPS';
+                        stt6.textContent = 'Cada Monica esta produzindo ' + MONGPSunitario.toLocaleString('pt-BR') + ' GBPS e ' + MONRPSunitario.toLocaleString('pt-BR') + ' RPS totalizando ' + MONGPS.toLocaleString('pt-BR') + ' GBPS e ' + MONRPS.toLocaleString('pt-BR') + ' RPS';
                         stt7.textContent = '';
                         stt8.textContent = '';
 
