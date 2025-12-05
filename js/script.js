@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
             MONGPSunitario = Math.trunc(MONGPSunitario * (1 + (ROSA * 0.000001)));
         }
 
-        GOBDPS = CBTPS + ZLLPS + CBTMAPS + MONGPS;
+        GOBDPS = (CBTPS + ZLLPS + CBTMAPS + MONGPS) * MULTTRANS;
         GOB += GOBDPS;
 
         setCookie("gobValue", GOB);
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ROSADPS = Math.trunc(ROSADPS * (1 + (CBTMA * 0.03)))
             ROSADPSunitario = Math.trunc(ROSADPSunitario * (1 + (CBTMA * 0.03)))
         }
-        ROSA += Math.trunc(ROSADPS + MONRPS);
+        ROSA += Math.trunc((ROSADPS + MONRPS) * MULTTRANS);
 
         setCookie("rosaValue", ROSA);
     }, 1000);
@@ -242,6 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
         objetivot = 0;
         transcendvar = 0;
 
+        setCookie("multtransValue",1)
         setCookie("transcendValue", transcendvar);
         setCookie("objetivotranscendValue", 10)
         setCookie("globalbonusrosaValue", 1)
@@ -281,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
         CBTMA = 0;
         CBTMA_BONUS = 100;
         custochicomalhado = 10000000;
-        GLOBAL = MULTTRANS + (ascendvar * 0.5); //bonus
+        GLOBAL = 1 + (ascendvar * 0.5); //bonus
         CLICK = 1 + (ascendvar); //bonus
         objetivo = 0;
         escalamento -= 0.02; //bonus
@@ -292,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
         custocavalo = 35;
         objetivoascend = objetivoascend * 5;
         CVL_BONUS = 0.1 + (ascendvar * 0.05);
-        GLOBAL_ROSA = MULTTRANS + ascendvar * 2;
+        GLOBAL_ROSA = ascendvar * 2;
 
 
         setCookie("globalbonusrosaValue", GLOBAL_ROSA)
@@ -337,7 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
         CBTMA = 0;
         CBTMA_BONUS = 100;
         custochicomalhado = 10000000;
-        GLOBAL = 1 * (1 - (transcendvar * 0.07)); //bonus
+        GLOBAL = 1; //bonus
         CLICK = 1 + (ascendvar); //bonus
         objetivo = 0;
         escalamento = 1.25 + (transcendvar * 0.025); //bonus
@@ -345,9 +346,10 @@ document.addEventListener("DOMContentLoaded", () => {
         custocavalo = 35;
         objetivoascend = 10000000;
         CVL_BONUS = 0.1 + (ascendvar * 0.05);
-        GLOBAL_ROSA = 1 * (1 - (transcendvar * 0.07));
+        GLOBAL_ROSA = 1;
         MULTTRANS = 1 * (1 - (transcendvar * 0.07));
 
+        setCookie("multtransValue",MULTTRANS);
         setCookie("ascendValue", ascendvar);
         setCookie("objetivotranscendValue", objetivotranscend)
         setCookie("globalbonusrosaValue", GLOBAL_ROSA)
