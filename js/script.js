@@ -162,8 +162,50 @@ if (ascendvar >= objetivotranscend && objetivot != 1)
     //==================== RESET ====================
     const RESET = document.getElementById("reset");
 
+    function resetaupgrades(){
+        setCookie("up1Value",0);
+        setCookie("up2Value",0);
+        setCookie("up3Value",0);
+        setCookie("up4Value",0);
+        setCookie("up5Value",0);
+        setCookie("up6Value",0);
+        setCookie("up7Value",0);
+        setCookie("up8Value",0);
+        setCookie("up9Value",0);
+        setCookie("up10Value",0);
+        setCookie("up11Value",0);
+        setCookie("up12Value",0);
+    }
+    function resetaachievements(){
+        setCookie("vcqt1Value",0);
+        setCookie("vcqt2Value",0);
+        setCookie("vcqt3Value",0);
+        setCookie("vcqt4Value",0);
+        setCookie("vcqt5Value",0);
+        setCookie("vcqt6Value",0);
+        setCookie("vcqt7Value",0);
+        setCookie("vcqt8Value",0);
+        setCookie("vcqt9Value",0);
+        setCookie("vcqt10Value",0);
+        setCookie("vcqt11Value",0);
+        setCookie("vcqt12Value",0);
+        setCookie("vcqt13Value",0);
+        setCookie("vcqt14Value",0);
+        setCookie("vcqt15Value",0);
+        setCookie("totalcqtValue",0);
+    }
+    function resetacustosebonus(){
+        setCookie("custochicoValue", 10); // valor inicial do Chico
+        setCookie("cbtbonusValue", 1); // valor inicial do Chico 
+        setCookie("custozeleleValue", 100); // valor inicial do Chico
+        setCookie("zllbonusValue", 7);
+        setCookie("custorosinhaValue", 1000); // valor inicial do Chico
+        setCookie("custochicomalhadoValue", 10000000);
+        setCookie("cbtmabonusValue", 100);
+        setCookie("custocavaloValue",35)
+    }
     function reseta() {
-          // Zera os cookies
+        // Zera os cookies
         GOB = 0;
         CBT = 0;
         custochico = 10;
@@ -195,54 +237,19 @@ if (ascendvar >= objetivotranscend && objetivot != 1)
         setCookie("globalbonusrosaValue",1)
         setCookie("cvlbonusValue",0.1);
         setCookie("cvlValue",0);
-        setCookie("custocavaloValue",35);
         setCookie("escalamentoValue",1.25);
         setCookie("clickValue",1);
         setCookie("globalbonusValue",1);
         setCookie("gobValue", 0);
-        setCookie("cbtValue", 0);
-        setCookie("custochicoValue", 10); // valor inicial do Chico
-        setCookie("cbtbonusValue", 1); // valor inicial do Chico
-        setCookie("zllValue", 0);
-        setCookie("zllbonusValue", 7);
-        setCookie("custozeleleValue", 100); // valor inicial do Chico
         setCookie("rsValue", 0);
         setCookie("rosaValue", 0);
+        setCookie("cbtValue", 0);
+        setCookie("zllValue", 0);
         setCookie("cbtmaValue", 0);
-        setCookie("custochicomalhadoValue", 10000000);
-        setCookie("cbtmabonusValue", 100);
-        setCookie("custorosinhaValue", 1000); // valor inicial do Chico
 
-
-        setCookie("up1Value",0);
-        setCookie("up2Value",0);
-        setCookie("up3Value",0);
-        setCookie("up4Value",0);
-        setCookie("up5Value",0);
-        setCookie("up6Value",0);
-        setCookie("up7Value",0);
-        setCookie("up8Value",0);
-        setCookie("up9Value",0);
-        setCookie("up10Value",0);
-        setCookie("up11Value",0);
-        setCookie("up12Value",0);
-
-        setCookie("vcqt1Value",0);
-        setCookie("vcqt2Value",0);
-        setCookie("vcqt3Value",0);
-        setCookie("vcqt4Value",0);
-        setCookie("vcqt5Value",0);
-        setCookie("vcqt6Value",0);
-        setCookie("vcqt7Value",0);
-        setCookie("vcqt8Value",0);
-        setCookie("vcqt9Value",0);
-        setCookie("vcqt10Value",0);
-        setCookie("vcqt11Value",0);
-        setCookie("vcqt12Value",0);
-        setCookie("vcqt13Value",0);
-        setCookie("vcqt14Value",0);
-        setCookie("vcqt15Value",0);
-        setCookie("totalcqtValue",0);
+        resetacustosebonus();
+        resetaupgrades();
+        resetaachievements();
 
         setCookie("ascendValue",0);
         setCookie("objetivoascendValue",10000000)
@@ -291,32 +298,14 @@ if (ascendvar >= objetivotranscend && objetivot != 1)
         setCookie("globalbonusValue",GLOBAL);
         setCookie("gobValue", GOB);
         setCookie("cbtValue", CBT);
-        setCookie("custochicoValue", 10); // valor inicial do Chico
-        setCookie("cbtbonusValue", 1); // valor inicial do Chico
         setCookie("zllValue", 0);
-        setCookie("custozeleleValue", 100); // valor inicial do Chico
-        setCookie("zllbonusValue", 7);
         setCookie("rsValue", RS);
         setCookie("rosaValue", 0);
-        setCookie("custorosinhaValue", 1000); // valor inicial do Chico
         setCookie("cbtmaValue", 0);
-        setCookie("custochicomalhadoValue", 10000000);
-        setCookie("cbtmabonusValue", 100);
         setCookie("objetivoascendValue",objetivoascend)
 
-
-        setCookie("up1Value",0);
-        setCookie("up2Value",0);
-        setCookie("up3Value",0);
-        setCookie("up4Value",0);
-        setCookie("up5Value",0);
-        setCookie("up6Value",0);
-        setCookie("up7Value",0);
-        setCookie("up8Value",0);
-        setCookie("up9Value",0);
-        setCookie("up10Value",0);
-        setCookie("up11Value",0);
-        setCookie("up12Value",0);
+        resetacustosebonus();
+        resetaupgrades();
 
         location.reload();
         
@@ -357,39 +346,21 @@ if (ascendvar >= objetivotranscend && objetivot != 1)
         setCookie("objetivotranscendValue",objetivotranscend)
         setCookie("globalbonusrosaValue",GLOBAL_ROSA)
         setCookie("cvlbonusValue",CVL_BONUS);
-        setCookie("cvlValue",0);
-        setCookie("custocavaloValue",35);
         setCookie("escalamentoValue",escalamento);
         setCookie("clickValue",CLICK);
         setCookie("globalbonusValue",GLOBAL);
         setCookie("gobValue", GOB);
         setCookie("cbtValue", CBT);
         setCookie("rsValue", RS);
-        setCookie("custochicoValue", 10); // valor inicial do Chico
-        setCookie("cbtbonusValue", 1); // valor inicial do Chico
+        setCookie("cvlValue",0);
         setCookie("zllValue", 0);
-        setCookie("custozeleleValue", 100); // valor inicial do Chico
-        setCookie("zllbonusValue", 7);
         setCookie("rosaValue", 0);
-        setCookie("custorosinhaValue", 1000); // valor inicial do Chico
         setCookie("cbtmaValue", 0);
-        setCookie("custochicomalhadoValue", 10000000);
-        setCookie("cbtmabonusValue", 100);
         setCookie("objetivoascendValue",objetivoascend)
-
-
-        setCookie("up1Value",0);
-        setCookie("up2Value",0);
-        setCookie("up3Value",0);
-        setCookie("up4Value",0);
-        setCookie("up5Value",0);
-        setCookie("up6Value",0);
-        setCookie("up7Value",0);
-        setCookie("up8Value",0);
-        setCookie("up9Value",0);
-        setCookie("up10Value",0);
-        setCookie("up11Value",0);
-        setCookie("up12Value",0);
+        
+        
+        resetacustosebonus();
+        resetaupgrades();
 
         location.reload();
         
