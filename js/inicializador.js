@@ -11,6 +11,7 @@ const upgrade9 = document.getElementById("Upgrade9");
 const upgrade10 = document.getElementById("Upgrade10");
 const upgrade11 = document.getElementById("Upgrade11");
 const upgrade12 = document.getElementById("Upgrade12");
+const upgrade13 = document.getElementById("Upgrade13");
 
 // Upgrades active
 let up1 = parseInt(getCookie("up1Value")) || 0;
@@ -25,6 +26,7 @@ let up9 = parseInt(getCookie("up9Value")) || 0;
 let up10 = parseInt(getCookie("up10Value")) || 0;
 let up11 = parseInt(getCookie("up11Value")) || 0;
 let up12 = parseInt(getCookie("up12Value")) || 0;
+let up13 = parseInt(getCookie("up13Value")) || 0;
 
 
 

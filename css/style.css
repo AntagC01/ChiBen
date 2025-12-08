@@ -407,6 +407,9 @@ body {
 #Upgrade12 {
     display: none;
 }
+#Upgrade13 {
+    display: none;
+}
 
 @keyframes fadeIn {
     from {

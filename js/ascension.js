@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         CVL = 0;
         custocavalo = 35;
-        objetivoascend = objetivoascend * 5;
+        objetivoascend = 10000000 * (5 ** ascendvar);
         CVL_BONUS = 0.1 + (ascendvar * 0.05);
         GLOBAL_ROSA = ascendvar * 2;
 

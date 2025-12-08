@@ -37,6 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (CBTMA >= 25 && up12 == 0) {
             upgrade12.style.display = 'block';
         }
+        if (MON >= 1000 && up13 == 0)
+        {
+             upgrade13.style.display = 'block';
+        }
     }, 2500)
 
 
@@ -96,6 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     document.getElementById("Upgrade12").onclick = function () {
         upgrade12Func();
+        somupgrade();
+    };
+    document.getElementById("Upgrade13").onclick = function () {
+        upgrade13Func();
         somupgrade();
     };
 
@@ -224,6 +232,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function upgrade13Func() {
+        if (MON >= 1000 && up13 == 0) {
+            objetivoascend = 10000000 * (4 ** ascendvar);
+            setCookie("up13Value", 1);
+            up13 = 1;
+            upgrade13.style.display = 'none';
+        }
+    }
+
     document.getElementById("ApplyAllButton").onclick = function () {
         upgreideiatudo();
         somupgrade();
@@ -243,6 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
         upgrade10Func();
         upgrade11Func();
         upgrade12Func();
+        upgrade13Func();
     }
 
     function somupgrade() {
