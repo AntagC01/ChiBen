@@ -67,7 +67,7 @@ function transcend() {
     setCookie("zllValue", 0);
     setCookie("rosaValue", 0);
     setCookie("cbtmaValue", 0);
-    setCookie("objetivoascendValue", objetivoascend);
+    setCookieBIG("objetivoascendValue", objetivoascend);
 
 
     setCookie("playPrestigio", 1);

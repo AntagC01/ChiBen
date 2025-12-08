@@ -223,6 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
         resetaachievements();
 
         setCookie("ascendValue", 0);
-        setCookie("objetivoascendValue", 10000000)
+        setCookieBIG("objetivoascendValue", 10000000)
         location.reload();
     }

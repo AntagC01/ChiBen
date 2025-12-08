@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie("rsValue", RS);
         setCookie("rosaValue", 0);
         setCookie("cbtmaValue", 0);
-        setCookie("objetivoascendValue", objetivoascend)
+        setCookieBIG("objetivoascendValue", objetivoascend);
 
         resetacustosebonus();
         resetaupgrades();

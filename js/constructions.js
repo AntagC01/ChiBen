@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setCookie("rsValue", RS);
             setCookie("custorosinhaValue", custorosinha);
         }
+        rosasdiv.style.display = 'block';
         audioPlayer.src = "mp3/compra.mp3";
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();

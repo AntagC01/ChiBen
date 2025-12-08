@@ -236,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (MON >= 1000 && up13 == 0) {
             objetivoascend = 10000000 * (4 ** ascendvar);
             setCookie("up13Value", 1);
+            setCookieBIG("objetivoascendValue", objetivoascend);
             up13 = 1;
             upgrade13.style.display = 'none';
         }

@@ -214,7 +214,7 @@ let vcqt15 = parseInt(getCookie("vcqt15Value")) || 0;
 let totalcqt = parseInt(getCookie("totalcqtValue")) || 0;
 let objetivo = 0;
 let objetivot = 0;
-let objetivoascend = parseInt(getCookie("objetivoascendValue")) || 10000000;
+let objetivoascend = Number(getCookie("objetivoascendValue")) || 10000000;
 let objetivotranscend = parseInt(getCookie("objetivotranscendValue")) || 10;
 let multcompra = 1;
 
