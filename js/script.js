@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie("up10Value", 0);
         setCookie("up11Value", 0);
         setCookie("up12Value", 0);
+        setCookie("up13Value", 0);
     }
     function resetaachievements() {
         setCookie("vcqt1Value", 0);
