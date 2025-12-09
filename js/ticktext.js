@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         objetivotranscendhtml.textContent = "You need " + objetivotranscend.toLocaleString('en') + " ascensions for the next transcend";
                         tcd1.textContent = "x" + (1 - (transcendvar * 0.07)) + " GVPS";
                         tcd2.textContent = "x" + (1 - (transcendvar * 0.07)) + " RPS";
-                        tcd3.textContent = "+" + transcendvar * 0.025 + " Cost scaling";
+                        tcd3.textContent = "+" + (transcendvar * 0.025).toFixed(3) + " Cost scaling";
                         tcd4.textContent = "+" + transcendvar * 2 + " Ascensions nedeed";
 
                         upgrade1.textContent = "Throw a guava party (2x Chico production)";
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         objetivotranscendhtml.textContent = "Você precisa de " + objetivotranscend.toLocaleString('pt-BR') + " ascensoes para a proxima transcendencia";
                         tcd1.textContent = "x" + (1 - (transcendvar * 0.07)) + " GBPS";
                         tcd2.textContent = "x" + (1 - (transcendvar * 0.07)) + " RPS";
-                        tcd3.textContent = "+" + transcendvar * 0.025 + " Escalonamento de custo";
+                        tcd3.textContent = "+" + (transcendvar * 0.025).toFixed(3) + " Escalonamento de custo";
                         tcd4.textContent = "+" + transcendvar * 2 + " Ascensoes nescessarias";
 
                         upgrade1.textContent = 'De uma festa de goiabas (2x Produção Chico)';
