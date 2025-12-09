@@ -230,6 +230,7 @@ let GOBDPS = 0;
 const audio = document.querySelector("audio");
 const volumeControl = document.getElementById("volume");
 volumeControl.addEventListener("input", () => audio.volume = volumeControl.value);
+const XOR_KEY = "SEUMIXIRIQUINHO";
 
 const audios = [
     { src: "mp3/click_satisfatorio.wav", peso: 2 }
