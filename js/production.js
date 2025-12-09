@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         GOBDPS = Math.trunc((CBTPS + ZLLPS + CBTMAPS + MONGPS) * MULTTRANS);
         GOB += GOBDPS;
 
+        atualizarBarra(GOB,objetivoascend);
+
         setCookieBIG("gobValue", GOB);
 
         ROSADPS = Math.trunc(RS * GLOBAL_ROSA);

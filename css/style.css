@@ -897,3 +897,36 @@ body {
     /* roxo mais escuro */
     transform: scale(1.05);
 }
+/* Contêiner da barra */
+.progress-container {
+    width: 90%;               /* ocupa 90% da tela → perfeito para celular */
+    max-width: 400px;         /* limite para telas grandes */
+    height: 8px;              /* BARRA BEM FINA */
+    background: #2a2a2a;
+    border-radius: 4px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+/* Barra preenchida */
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #4CAF50, #8AFF8A);
+    transition: width 0.25s ease;
+}
+
+/* Texto da porcentagem */
+.progress-label {
+    text-align: center;
+    font-size: 14px;          /* tamanho bom para celular */
+    color: black;
+    margin-top: 5px;
+}
+
+/* Ajuste adicional para telas muito pequenas */
+@media (max-width: 360px) {
+    .progress-label {
+        font-size: 12px;
+    }
+}

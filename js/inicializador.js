@@ -269,3 +269,11 @@ if (lingua == 'en') {
 if (lingua == 'pt') {
     showCustomAlert("Você é só um ladrão de goiabas com um sonho de  " + objetivoascend.toLocaleString('pt-BR') + " goiabas, essa é sua meta");
 }
+
+function atualizarBarra(valor, objetivo) {
+    let porcentagem = (valor / objetivo) * 100;
+    if (porcentagem > 100) porcentagem = 100; // evita passar do limite
+
+    document.getElementById("progressoacd").style.width = porcentagem + "%";
+    document.getElementById("progressacdtexto").innerText = porcentagem.toFixed(2) + "% Ascend";
+}
