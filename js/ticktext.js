@@ -67,8 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         CEBOLINHAS.textContent = CEB + " Cebolinhas";
                         btncebolinha.textContent = "+1 Cebolinha " + custocebolinha.toLocaleString('en') + " Monicas";
 
-                        GOIABAS.textContent = "Guavas: " + GOB.toLocaleString('en');
-                        GOIABASDPS.textContent = "Guavas per second: " + GOBDPS.toLocaleString('en');
+
+                        if (GOB > 99999999999) {
+                                GOIABAS.textContent = "Guavas: " + GOB.toExponential(2);
+                                GOIABASDPS.textContent = "Guavas per second: " + GOBDPS.toExponential(2);
+                        } else {
+                                GOIABAS.textContent = "Guavas: " + GOB.toLocaleString('en');
+                                GOIABASDPS.textContent = "Guavas per second: " + GOBDPS.toLocaleString('en');
+                        }
 
 
                         ROSAS.textContent = "Roses: " + ROSA.toLocaleString('en');
@@ -140,9 +146,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         CEBOLINHAS.textContent = CEB + " Cebolinhas";
                         btncebolinha.textContent = "+1 Cebolinha " + custocebolinha.toLocaleString('pt-BR') + " Monicas";
 
+                        if (GOB > 99999999999) {
+                                GOIABAS.textContent = "Goiabas: " + GOB.toExponential(2);
+                                GOIABASDPS.textContent = "Goiabas por segundo: " + GOBDPS.toExponential(2);
+                        } else {
+                                GOIABAS.textContent = "Goiabas: " + GOB.toLocaleString('pt-BR');
+                                GOIABASDPS.textContent = "Goiabas por segundo: " + GOBDPS.toLocaleString('pt-BR');
+                        }
 
-                        GOIABAS.textContent = "Goiabas: " + GOB.toLocaleString('pt-BR');
-                        GOIABASDPS.textContent = "Goiabas por segundo: " + GOBDPS.toLocaleString('pt-BR');
+
 
 
                         ROSAS.textContent = "Rosas: " + ROSA.toLocaleString('pt-BR');
