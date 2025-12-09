@@ -183,6 +183,10 @@ let CEB = parseInt(getCookie("cebolinhaValue")) || 0;
 let custocebolinha = parseInt(getCookie("custocebolinhaValue")) || 15;
 let CEB_BONUS = parseInt(getCookie("cebolinhabonusValue")) || 1;
 
+let SAN = parseInt(getCookie("sansaoValue")) || 0;
+let custosansao = parseInt(getCookie("custosansaoValue")) || 15;
+let SAN_BONUS = parseInt(getCookie("sansaobonusValue")) || 1;
+
 let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
 let GLOBAL_ROSA = parseFloat(getCookie("globalbonusrosaValue")) || 1;
 let CLICK = parseInt(getCookie("clickValue")) || 1;

@@ -150,6 +150,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
+    document.getElementById("sansao").onclick = function () {
+        for (let i = 0; i < multcompra; i++) {
+            if (custosansao > CBT || 
+                custosansao > ZLL || 
+                custosansao > RS || 
+                custosansao > CVL || 
+                custosansao > CBTMA || 
+                custosansao > MON || 
+                custosansao > CEB) return;
+
+            CBT -= custosansao;
+            ZLL -= custosansao;
+            RS -= custosansao;
+            CVL -= custosansao;
+            CBTMA -= custosansao;
+            MON -= custosansao;
+            CEB -= custosansao;
+            SAN++;
+            custosansao = Math.trunc(custosansao * escalamento) || 1;
+            if (custosansao == Math.trunc(custosansao * escalamento)) {
+                custosansao += 1;
+            }
+
+            setCookie("sansaoValue", SAN);
+            setCookie("custosansaoValue", custosansao);
+        }
+        audioPlayer.src = "mp3/compra.mp3";
+        audioPlayer.volume = volumeControl.value;
+        audioPlayer.play();
+
+    };
+
 
     document.getElementById("multcompra").onclick = function () {
         if (multcompra == 1) {
