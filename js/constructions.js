@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     document.getElementById("sansao").onclick = function () {
+        /*
         for (let i = 0; i < multcompra; i++) {
             if (custosansao > CBT ||
                 custosansao > ZLL ||
@@ -178,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
         audioPlayer.src = "mp3/compra.mp3";
         audioPlayer.volume = volumeControl.value;
         audioPlayer.play();
+        */
 
     };
 
