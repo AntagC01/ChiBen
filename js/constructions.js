@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             GOB -= custochico;
             CBT++;
-            custochico = Math.trunc(custochico * escalamento) || 1;
+            custochico = Math.trunc(custochico * escalamento);
             if (custochico == Math.trunc(custochico * escalamento)) {
                 custochico += 1;
             }
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             GOB -= custorosinha;
             RS++;
-            custorosinha = Math.trunc(custorosinha * escalamento) || 1;
+            custorosinha = Math.trunc(custorosinha * escalamento);
             if (custorosinha == Math.trunc(custorosinha * escalamento)) {
                 custorosinha += 1;
             }
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             ROSA -= custocavalo;
             CVL++;
-            custocavalo = Math.trunc(custocavalo * escalamento) || 1;
+            custocavalo = Math.trunc(custocavalo * escalamento);
             if (custocavalo == Math.trunc(custocavalo * escalamento)) {
                 custocavalo += 1;
             }
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             GOB -= custochicomalhado;
             CBTMA++;
-            custochicomalhado = Math.trunc(custochicomalhado * escalamento) || 1;
+            custochicomalhado = Math.trunc(custochicomalhado * escalamento);
             if (custochicomalhado == Math.trunc(custochicomalhado * escalamento)) {
                 custochicomalhado += 1;
             }
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             ROSA -= customonica;
             MON++;
-            customonica = Math.trunc(customonica * escalamento) || 1;
+            customonica = Math.trunc(customonica * escalamento);
             if (customonica == Math.trunc(customonica * escalamento)) {
                 customonica += 1;
             }
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             MON -= custocebolinha;
             CEB++;
-            custocebolinha = Math.trunc(custocebolinha * escalamento * 1.2) || 1;
+            custocebolinha = Math.trunc(custocebolinha * escalamento * 1.2);
             if (custocebolinha == Math.trunc(custocebolinha * escalamento * 1.2)) {
                 custocebolinha += 1;
             }
@@ -152,12 +152,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("sansao").onclick = function () {
         for (let i = 0; i < multcompra; i++) {
-            if (custosansao > CBT || 
-                custosansao > ZLL || 
-                custosansao > RS || 
-                custosansao > CVL || 
-                custosansao > CBTMA || 
-                custosansao > MON || 
+            if (custosansao > CBT ||
+                custosansao > ZLL ||
+                custosansao > RS ||
+                custosansao > CVL ||
+                custosansao > CBTMA ||
+                custosansao > MON ||
                 custosansao > CEB) return;
 
             CBT -= custosansao;
@@ -168,11 +168,10 @@ document.addEventListener("DOMContentLoaded", () => {
             MON -= custosansao;
             CEB -= custosansao;
             SAN++;
-            custosansao = Math.trunc(custosansao * escalamento) || 1;
-            if (custosansao == Math.trunc(custosansao * escalamento)) {
-                custosansao += 1;
-            }
+            custosansao = Math.trunc(custosansao * 1.5);
+            MULTTRANS = 1 * (1 - (transcendvar * 0.07) + (SAN * 0.035));
 
+            setCookie("multtransValue", MULTTRANS);
             setCookie("sansaoValue", SAN);
             setCookie("custosansaoValue", custosansao);
         }
@@ -209,6 +208,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (transcendvar >= 1) {
             MONICABLOCK.style.display = 'flex';
             CEBOLINHABLOCK.style.display = 'flex';
+        }
+        if (transcendvar >= 2) {
+            SANSAOBLOCK.style.display = 'flex';
         }
     }, 2500);
 

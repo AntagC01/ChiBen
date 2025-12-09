@@ -50,7 +50,7 @@ function transcend() {
     objetivoascend = 10000000;
     CVL_BONUS = 0.1 + (ascendvar * 0.05);
     GLOBAL_ROSA = 1;
-    MULTTRANS = 1 * (1 - (transcendvar * 0.07));
+    MULTTRANS = 1 * (1 - (transcendvar * 0.07) + (SAN * 0.035));
 
     setCookie("multtransValue", MULTTRANS);
     setCookie("ascendValue", ascendvar);

@@ -47,6 +47,10 @@ const btnrosinha = document.getElementById("Rosinha");
 const CAVALOS = document.getElementById("cavalos");
 const btncavalo = document.getElementById("cavalo");
 
+const SANSAOBLOCK = document.getElementById("SANSAOBLOCK");
+const SANSAOS = document.getElementById("sansaos");
+const btnsansao = document.getElementById("sansao");
+
 const CEBOLINHABLOCK = document.getElementById("CEBOLINHABLOCK");
 const CEBOLINHAS = document.getElementById("cebolinhas");
 const btncebolinha = document.getElementById("cebolinha");
@@ -184,7 +188,7 @@ let custocebolinha = parseInt(getCookie("custocebolinhaValue")) || 15;
 let CEB_BONUS = parseInt(getCookie("cebolinhabonusValue")) || 1;
 
 let SAN = parseInt(getCookie("sansaoValue")) || 0;
-let custosansao = parseInt(getCookie("custosansaoValue")) || 15;
+let custosansao = parseInt(getCookie("custosansaoValue")) || 2;
 let SAN_BONUS = parseInt(getCookie("sansaobonusValue")) || 1;
 
 let GLOBAL = parseFloat(getCookie("globalbonusValue")) || 1;
