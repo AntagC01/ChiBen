@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("cebolinha").onclick = function () {
         for (let i = 0; i < multcompra; i++) {
-            if (MON <= custocebolinha) return;
+            if (MON < custocebolinha) return;
 
             MON -= custocebolinha;
             CEB++;
