@@ -1,164 +1,213 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+
         setInterval(() => {
-                if (lingua == 'en') {
-                        FAZENDINHA.textContent = 'Little Farm'
 
-                        totalcqtdiv.textContent = totalcqt + " of 15 achieved";
-                        totalascension.textContent = ascendvar + " Ascensions giving:";
-                        objetivoascender.textContent = "You need " + objetivoascend.toLocaleString('en') + " guavas to the next ascension";
-                        acdb1.textContent = "+" + ascendvar * 200 + " Start Guavas";
-                        acdb2.textContent = "+" + ascendvar * 50 + "% GVPS";
-                        acdb3.textContent = "-" + ascendvar * 0.02 + " Scaling cost (capped at 1.1)";
-                        acdb4.textContent = "+" + ascendvar * 1 + " Base Click";
-                        acdb5.textContent = "x" + GLOBAL_ROSA + " RPS";
-                        acdb6.textContent = "+" + ascendvar * 5 + "% Horse bonus";
-                        acdb7.textContent = "+" + ascendvar * 3 + " Initial Chicos";
-                        acdb8.textContent = "+" + ascendvar + " Initial Rosinhas";
+                        const textos = {
+                en: {
+                        FAZENDINHA: 'Little Farm',
+                        totalcqtdiv: totalcqt + " of 15 achieved",
+                        totalascension: formata(ascendvar) + " Ascensions giving:",
+                        objetivoascender: "You need " + formata(objetivoascend) + " guavas to the next ascension",
+                        acdb1: "+" + formata(ascendvar * 200) + " Start Guavas",
+                        acdb2: "+" + formata(ascendvar * 50) + "% GVPS",
+                        acdb3: "-" + (ascendvar * 0.02).toFixed(2) + " Scaling cost (capped at 1.1)",
+                        acdb4: "+" + formata(ascendvar * 1) + " Base Click",
+                        acdb5: "x" + formata(GLOBAL_ROSA) + " RPS",
+                        acdb6: "+" + formata(ascendvar * 5) + "% Horse bonus",
+                        acdb7: "+" + formata(ascendvar * 3) + " Initial Chicos",
+                        acdb8: "+" + formata(ascendvar) + " Initial Rosinhas",
 
-                        totaltranscend.textContent = transcendvar + " Transcendencias giving:";
-                        objetivotranscendhtml.textContent = "You need " + objetivotranscend.toLocaleString('en') + " ascensions for the next transcend";
-                        tcd1.textContent = "x" + (1 - (transcendvar * 0.07)) + " GVPS";
-                        tcd2.textContent = "x" + (1 - (transcendvar * 0.07)) + " RPS";
-                        tcd3.textContent = "+" + (transcendvar * 0.025).toFixed(3) + " Cost scaling";
-                        tcd4.textContent = "+" + transcendvar * 2 + " Ascensions nedeed";
+                        totaltranscend: formata(transcendvar) + " Transcendences giving:",
+                        objetivotranscendhtml: "You need " + formata(objetivotranscend) + " ascensions for the next transcend",
+                        tcd1: "x" + (1 - (transcendvar * 0.07)),
+                        tcd2: "x" + (1 - (transcendvar * 0.07)),
+                        tcd3: "+" + (transcendvar * 0.025).toFixed(3) + " Cost scaling",
+                        tcd4: "+" + formata(transcendvar * 2) + " Ascensions needed",
 
-                        upgrade1.textContent = "Throw a guava party (2x Chico production)";
-                        upgrade2.textContent = "Jump in the river with Ze Lele (?)";
-                        upgrade3.textContent = "Spray insecticide to kill guava bugs (2x GBPS)";
-                        upgrade4.textContent = "Give roses to Chico (3x GBPS)";
-                        upgrade5.textContent = "Break Chico’s heart (10x GBPS!!!!!!!!!!!!!)";
-                        upgrade6.textContent = "Pick guavas with both hands (2x guavas per click)";
-                        upgrade7.textContent = "Punch the trees (10x guavas per click)";
-                        upgrade8.textContent = "Hunt the jaguar that ate Ze Lele (?)";
-                        upgrade9.textContent = "Feed the horses with guavas (10% more horse bonus)";
-                        upgrade10.textContent = 'Create a enterprise and manage the chicos (+2% GBPS per chico)'
-                        upgrade11.textContent = 'Invest the roses in the stockmarket (+1% GBPS per 10000 Roses)'
-                        upgrade12.textContent = 'The Rosinhas start to work harder to impress the bulked chico (+3% RPS per Rosinha)';
+                        upgrades: [
+                                "Throw a guava party (2x Chico production)",
+                                "Jump in the river with Ze Lele (?)",
+                                "Spray insecticide to kill guava bugs (2x GBPS)",
+                                "Give roses to Chico (3x GBPS)",
+                                "Break Chico’s heart (10x GBPS!!!!!!!!!!!!!)",
+                                "Pick guavas with both hands (2x guavas per click)",
+                                "Punch the trees (10x guavas per click)",
+                                "Hunt the jaguar that ate Ze Lele (?)",
+                                "Feed the horses with guavas (10% more horse bonus)",
+                                "Create a enterprise and manage the chicos (+2% GBPS per chico)",
+                                "Invest the roses in the stockmarket (+1% GBPS per 10000 Roses)",
+                                "The Rosinhas start to work harder to impress the bulked chico (+3% RPS per Rosinha)"
+                        ],
 
-                        stt1.textContent = 'Each Chico is producing ' + CBTPSunitario.toLocaleString('en-US') + ' GBPS totaling ' + CBTPS.toLocaleString('en-US') + ' GBPS';
-                        stt2.textContent = 'Each Ze Lele is producing ' + ZLLPSunitario.toLocaleString('en-US') + ' GBPS totaling ' + ZLLPS.toLocaleString('en-US') + ' GBPS';
-                        stt3.textContent = 'Each Rosinha is producing ' + ROSADPSunitario.toLocaleString('en-US') + ' RPS totaling ' + ROSADPS.toLocaleString('en-US') + ' RPS';
-                        stt4.textContent = 'Each Horse is increasing GBPS by ' + (CVL_BONUS * 100).toLocaleString('en-US') + '% totaling ' + (BONUSCAVALO * 100).toLocaleString('en-US') + '% GBPS';
-                        stt5.textContent = 'Each Spotted Chico is producing ' + CBTMAPSunitario.toLocaleString('en-US') + ' GBPS totaling ' + CBTMAPS.toLocaleString('en-US') + ' GBPS';
-                        stt6.textContent = 'Each Monica is producing ' + MONGPSunitario.toLocaleString('en-US') + ' GBPS and ' + MONRPSunitario.toLocaleString('en-US') + ' RPS totalizing ' + MONGPS.toLocaleString('en-US') + ' GVPS and ' + MONRPS.toLocaleString('en-US') + ' RPS';
-                        stt7.textContent = '';
-                        stt8.textContent = '';
+                        stt: [
+                                'Each Chico is producing ' + formata(CBTPSunitario) + ' GBPS totaling ' + formata(CBTPS) + ' GBPS',
+                                'Each Ze Lele is producing ' + formata(ZLLPSunitario) + ' GBPS totaling ' + formata(ZLLPS) + ' GBPS',
+                                'Each Rosinha is producing ' + formata(ROSADPSunitario) + ' RPS totaling ' + formata(ROSADPS) + ' RPS',
+                                'Each Horse is increasing GBPS by ' + formata(CVL_BONUS * 100) + '% totaling ' + formata(BONUSCAVALO * 100) + '% GBPS',
+                                'Each Spotted Chico is producing ' + formata(CBTMAPSunitario) + ' GBPS totaling ' + formata(CBTMAPS) + ' GBPS',
+                                'Each Monica is producing ' + formata(MONGPSunitario) + ' GBPS and ' + formata(MONRPSunitario) + ' RPS totalizing ' + formata(MONGPS) + ' GVPS and ' + formata(MONRPS) + ' RPS',
+                                '',
+                                ''
+                        ],
 
+                        CHICOS: formata(CBT) + " Chicos",
+                        btnchicos: "+1 Chico " + formata(custochico) + " Guavas",
+                        ZELELES: formata(ZLL) + " Ze leles",
+                        btnZELELES: "+1 Ze lele " + formata(custozelele) + " Guavas",
+                        ROSINHAS: formata(RS) + " Rosinhas",
+                        btnrosinha: "+1 Rosinha " + formata(custorosinha) + " Guavas",
+                        CAVALOS: formata(CVL) + " Horses",
+                        btncavalo: "+1 Horse " + formata(custocavalo) + " Roses",
+                        CHICOSMA: formata(CBTMA) + " Chico Bulked",
+                        btnchicosMA: "+1 Chico bulked " + formata(custochicomalhado) + " Guavas",
+                        MONICAS: formata(MON) + " Monicas",
+                        btnmonica: "+1 Monica " + formata(customonica) + " Roses",
+                        CEBOLINHAS: formata(CEB) + " Cebolinhas",
+                        btncebolinha: "+1 Cebolinha " + formata(custocebolinha) + " Monicas",
 
-                        CHICOS.textContent = CBT + " Chicos";
-                        btnchicos.textContent = "+1 Chico " + custochico.toLocaleString('en') + " Guavas";
+                        GOIABAS: "Guavas: " + formata(GOB),
+                        GOIABASDPS: "Guavas per second: " + formata(GOBDPS),
+                        ROSAS: "Roses: " + formata(ROSA),
+                        ROSASDPS: "Roses per second: " + formata(ROSACALCDPS)
+                },
 
-                        ZELELES.textContent = ZLL + " Ze leles";
-                        btnZELELES.textContent = "+1 Ze lele " + custozelele.toLocaleString('en') + " Guavas";
+                pt: {
+                        FAZENDINHA: 'Fazendinha',
+                        totalcqtdiv: totalcqt + " de 15 alcançados",
+                        totalascension: formata(ascendvar) + " Ascensões dando:",
+                        objetivoascender: "Você precisa de " + formata(objetivoascend) + " goiabas para a proxima ascensão",
+                        acdb1: "+" + formata(ascendvar * 200) + " Goiabas Iniciais",
+                        acdb2: "+" + formata(ascendvar * 50) + "% GBPS",
+                        acdb3: "-" + (ascendvar * 0.02).toFixed(2) + " Escalonamento de custo (Limitado a 1.1)",
+                        acdb4: "+" + formata(ascendvar * 1) + " Clique base",
+                        acdb5: "x" + formata(GLOBAL_ROSA) + " RPS",
+                        acdb6: "+" + formata(ascendvar * 5) + "% Bonus do cavalo",
+                        acdb7: "+" + formata(ascendvar * 3) + " Chicos Iniciais",
+                        acdb8: "+" + formata(ascendvar) + " Rosinhas Iniciais",
 
-                        ROSINHAS.textContent = RS + " Rosinhas";
-                        btnrosinha.textContent = "+1 Rosinha " + custorosinha.toLocaleString('en') + " Guavas";
+                        totaltranscend: formata(transcendvar) + " Transcendencias dando:",
+                        objetivotranscendhtml: "Você precisa de " + formata(objetivotranscend) + " ascensoes para a proxima transcendencia",
+                        tcd1: "x" + (1 - (transcendvar * 0.07)),
+                        tcd2: "x" + (1 - (transcendvar * 0.07)),
+                        tcd3: "+" + (transcendvar * 0.025).toFixed(3) + " Escalonamento de custo",
+                        tcd4: "+" + formata(transcendvar * 2) + " Ascensoes nescessarias",
 
-                        CAVALOS.textContent = CVL + " Horses";
-                        btncavalo.textContent = "+1 Horse " + custocavalo.toLocaleString('en') + " Roses";
+                        upgrades: [
+                                'De uma festa de goiabas (2x Produção Chico)',
+                                'Pular no rio com o Ze lele (?)',
+                                'Passar inseticida para matar os bixos da goiaba (2x GBPS)',
+                                'De rosas para o Chico (3x GBPS)',
+                                'Quebre o coração do chico (10x GBPS!!!!!!!!!!!!!)',
+                                'Pegue goiabas com as duas mãos (2x goiabas por clique)',
+                                'Soque as arvores (10x goiabas por clique)',
+                                'Caçar a onça que comeu o Ze lele (?)',
+                                'Alimentar os cavalos com goiabas (10% aumento no bonus dos cavalos)',
+                                'Criar uma empresa e administrar os chicos (+2% GBPS per chico)',
+                                'Investir as rosas na bolsa (+1% GBPS por 10000 Rosas)',
+                                'As rosinhas começam a trabalhar mais pra impressionar os chicos malhados (+3% RPS per Rosinha)'
+                        ],
 
-                        CHICOSMA.textContent = CBTMA + " Chico Bulked";
-                        btnchicosMA.textContent = "+1 Chico bulked " + custochicomalhado.toLocaleString('en') + " Guavas";
+                        stt: [
+                                'Cada Chico esta produzindo ' + formata(CBTPSunitario) + ' GBPS totalizando ' + formata(CBTPS) + ' GBPS',
+                                'Cada Ze lele esta produzindo ' + formata(ZLLPSunitario) + ' GBPS totalizando ' + formata(ZLLPS) + ' GBPS',
+                                'Cada Rosinha esta produzindo ' + formata(ROSADPSunitario) + ' RPS totalizando ' + formata(ROSADPS) + ' RPS',
+                                'Cada Cavalo esta aumentando em  ' + formata(CVL_BONUS * 100) + '% o GBPS totalizando ' + formata(BONUSCAVALO * 100) + '% GBPS',
+                                'Cada Chico Malhado esta produzindo ' + formata(CBTMAPSunitario) + ' GBPS totalizando ' + formata(CBTMAPS) + ' GBPS',
+                                'Cada Monica esta produzindo ' + formata(MONGPSunitario) + ' GBPS e ' + formata(MONRPSunitario) + ' RPS totalizando ' + formata(MONGPS) + ' GBPS e ' + formata(MONRPS) + ' RPS',
+                                '',
+                                ''
+                        ],
 
-                        MONICAS.textContent = MON + " Monicas";
-                        btnmonica.textContent = "+1 Monica " + customonica.toLocaleString('en') + " Roses";
+                        CHICOS: formata(CBT) + " Chicos",
+                        btnchicos: "+1 Chico " + formata(custochico) + " Goiabas",
+                        ZELELES: formata(ZLL) + " Ze leles",
+                        btnZELELES: "+1 Ze lele " + formata(custozelele) + " Goiabas",
+                        ROSINHAS: formata(RS) + " Rosinhas",
+                        btnrosinha: "+1 Rosinha " + formata(custorosinha) + " Goiabas",
+                        CAVALOS: formata(CVL) + " Cavalos",
+                        btncavalo: "+1 Cavalo " + formata(custocavalo) + " Rosas",
+                        CHICOSMA: formata(CBTMA) + " Chicos Malhados",
+                        btnchicosMA: "+1 Chico malhado " + formata(custochicomalhado) + " Goiabas",
+                        MONICAS: formata(MON) + " Monicas",
+                        btnmonica: "+1 Monica " + formata(customonica) + " Rosas",
+                        CEBOLINHAS: formata(CEB) + " Cebolinhas",
+                        btncebolinha: "+1 Cebolinha " + formata(custocebolinha) + " Monicas",
 
-                        CEBOLINHAS.textContent = CEB + " Cebolinhas";
-                        btncebolinha.textContent = "+1 Cebolinha " + custocebolinha.toLocaleString('en') + " Monicas";
-
-
-                        if (GOB > 99999999999) {
-                                GOIABAS.textContent = "Guavas: " + GOB.toExponential(2);
-                                GOIABASDPS.textContent = "Guavas per second: " + GOBDPS.toExponential(2);
-                        } else {
-                                GOIABAS.textContent = "Guavas: " + GOB.toLocaleString('en');
-                                GOIABASDPS.textContent = "Guavas per second: " + GOBDPS.toLocaleString('en');
-                        }
-
-
-                        ROSAS.textContent = "Roses: " + ROSA.toLocaleString('en');
-                        ROSASDPS.textContent = "Roses per second: " + ROSACALCDPS.toLocaleString('en');
+                        GOIABAS: "Goiabas: " + formata(GOB),
+                        GOIABASDPS: "Goiabas por segundo: " + formata(GOBDPS),
+                        ROSAS: "Rosas: " + formata(ROSA),
+                        ROSASDPS: "Rosas por segundo: " + formata(ROSACALCDPS)
                 }
-                if (lingua == 'pt') {
-                        FAZENDINHA.textContent = 'Fazendinha';
-
-                        totalcqtdiv.textContent = totalcqt + " de 15 alcançados";
-                        totalascension.textContent = ascendvar + " Ascensões dando:";
-                        objetivoascender.textContent = "Você precisa de " + objetivoascend.toLocaleString('pt-BR') + " goiabas para a proxima ascensão";
-                        acdb1.textContent = "+" + ascendvar * 200 + " Goiabas Iniciais";
-                        acdb2.textContent = "+" + ascendvar * 50 + "% GBPS";
-                        acdb3.textContent = "-" + ascendvar * 0.02 + " Escalonamento de custo (Limitado a 1.1)";
-                        acdb4.textContent = "+" + ascendvar * 1 + " Clique base";
-                        acdb5.textContent = "x" + GLOBAL_ROSA + " RPS";
-                        acdb6.textContent = "+" + ascendvar * 5 + "% Bonus do cavalo";
-                        acdb7.textContent = "+" + ascendvar * 3 + " Chicos Iniciais";
-                        acdb8.textContent = "+" + ascendvar + " Rosinhas Iniciais";
-
-                        totaltranscend.textContent = transcendvar + " Transcendencias dando:";
-                        objetivotranscendhtml.textContent = "Você precisa de " + objetivotranscend.toLocaleString('pt-BR') + " ascensoes para a proxima transcendencia";
-                        tcd1.textContent = "x" + (1 - (transcendvar * 0.07)) + " GBPS";
-                        tcd2.textContent = "x" + (1 - (transcendvar * 0.07)) + " RPS";
-                        tcd3.textContent = "+" + (transcendvar * 0.025).toFixed(3) + " Escalonamento de custo";
-                        tcd4.textContent = "+" + transcendvar * 2 + " Ascensoes nescessarias";
-
-                        upgrade1.textContent = 'De uma festa de goiabas (2x Produção Chico)';
-                        upgrade2.textContent = 'Pular no rio com o Ze lele (?)';
-                        upgrade3.textContent = 'Passar inseticida para matar os bixos da goiaba (2x GBPS)';
-                        upgrade4.textContent = 'De rosas para o Chico (3x GBPS)';
-                        upgrade5.textContent = 'Quebre o coração do chico (10x GBPS!!!!!!!!!!!!!)';
-                        upgrade6.textContent = 'Pegue goiabas com as duas mãos (2x goiabas por clique)';
-                        upgrade7.textContent = 'Soque as arvores (10x goiabas por clique)';
-                        upgrade8.textContent = 'Caçar a onça que comeu o Ze lele (?)';
-                        upgrade9.textContent = 'Alimentar os cavalos com goiabas (10% aumento no bonus dos cavalos)';
-                        upgrade10.textContent = 'Criar uma empresa e administrar os chicos (+2% GBPS per chico)';
-                        upgrade11.textContent = 'Investir as rosas na bolsa (+1% GBPS por 10000 Rosas)';
-                        upgrade12.textContent = 'As rosinhas começam a trabalhar mais pra impressionar os chicos malhados (+3% RPS per Rosinha)';
-
-                        stt1.textContent = 'Cada Chico esta produzindo ' + CBTPSunitario.toLocaleString('pt-BR') + ' GBPS totalizando ' + CBTPS.toLocaleString('pt-BR') + ' GBPS';
-                        stt2.textContent = 'Cada Ze lele esta produzindo ' + ZLLPSunitario.toLocaleString('pt-BR') + ' GBPS totalizando ' + ZLLPS.toLocaleString('pt-BR') + ' GBPS';
-                        stt3.textContent = 'Cada Rosinha esta produzindo ' + ROSADPSunitario.toLocaleString('pt-BR') + ' RPS totalizando ' + ROSADPS.toLocaleString('pt-BR') + ' RPS';
-                        stt4.textContent = 'Cada Cavalo esta aumentando em  ' + (CVL_BONUS * 100).toLocaleString('pt-BR') + '% o GBPS totalizando ' + (BONUSCAVALO * 100).toLocaleString('pt-BR') + '% GBPS';
-                        stt5.textContent = 'Cada Chico Malhado esta produzindo ' + CBTMAPSunitario.toLocaleString('pt-BR') + ' GBPS totalizando ' + CBTMAPS.toLocaleString('pt-BR') + ' GBPS';
-                        stt6.textContent = 'Cada Monica esta produzindo ' + MONGPSunitario.toLocaleString('pt-BR') + ' GBPS e ' + MONRPSunitario.toLocaleString('pt-BR') + ' RPS totalizando ' + MONGPS.toLocaleString('pt-BR') + ' GBPS e ' + MONRPS.toLocaleString('pt-BR') + ' RPS';
-                        stt7.textContent = '';
-                        stt8.textContent = '';
+        };
 
 
-                        CHICOS.textContent = CBT + " Chicos";
-                        btnchicos.textContent = "+1 Chico " + custochico.toLocaleString('pt-BR') + " Goiabas";
+                const lang = textos[lingua];
 
-                        ZELELES.textContent = ZLL + " Ze leles";
-                        btnZELELES.textContent = "+1 Ze lele " + custozelele.toLocaleString('pt-BR') + " Goiabas";
+                FAZENDINHA.textContent = lang.FAZENDINHA;
+                totalcqtdiv.textContent = lang.totalcqtdiv;
+                totalascension.textContent = lang.totalascension;
+                objetivoascender.textContent = lang.objetivoascender;
+                acdb1.textContent = lang.acdb1;
+                acdb2.textContent = lang.acdb2;
+                acdb3.textContent = lang.acdb3;
+                acdb4.textContent = lang.acdb4;
+                acdb5.textContent = lang.acdb5;
+                acdb6.textContent = lang.acdb6;
+                acdb7.textContent = lang.acdb7;
+                acdb8.textContent = lang.acdb8;
 
-                        ROSINHAS.textContent = RS + " Rosinhas";
-                        btnrosinha.textContent = "+1 Rosinha " + custorosinha.toLocaleString('pt-BR') + " Goiabas";
+                totaltranscend.textContent = lang.totaltranscend;
+                objetivotranscendhtml.textContent = lang.objetivotranscendhtml;
+                tcd1.textContent = lang.tcd1;
+                tcd2.textContent = lang.tcd2;
+                tcd3.textContent = lang.tcd3;
+                tcd4.textContent = lang.tcd4;
 
-                        CAVALOS.textContent = CVL + " Cavalos";
-                        btncavalo.textContent = "+1 Cavalo " + custocavalo.toLocaleString('pt-BR') + " Rosas";
+                // upgrades
+                upgrade1.textContent = lang.upgrades[0];
+                upgrade2.textContent = lang.upgrades[1];
+                upgrade3.textContent = lang.upgrades[2];
+                upgrade4.textContent = lang.upgrades[3];
+                upgrade5.textContent = lang.upgrades[4];
+                upgrade6.textContent = lang.upgrades[5];
+                upgrade7.textContent = lang.upgrades[6];
+                upgrade8.textContent = lang.upgrades[7];
+                upgrade9.textContent = lang.upgrades[8];
+                upgrade10.textContent = lang.upgrades[9];
+                upgrade11.textContent = lang.upgrades[10];
+                upgrade12.textContent = lang.upgrades[11];
 
-                        CHICOSMA.textContent = CBTMA + " Chicos Malhados";
-                        btnchicosMA.textContent = "+1 Chico malhado " + custochicomalhado.toLocaleString('pt-BR') + " Goiabas";
+                // stt
+                stt1.textContent = lang.stt[0];
+                stt2.textContent = lang.stt[1];
+                stt3.textContent = lang.stt[2];
+                stt4.textContent = lang.stt[3];
+                stt5.textContent = lang.stt[4];
+                stt6.textContent = lang.stt[5];
+                stt7.textContent = lang.stt[6];
+                stt8.textContent = lang.stt[7];
 
-                        MONICAS.textContent = MON + " Monicas";
-                        btnmonica.textContent = "+1 Monica " + customonica.toLocaleString('pt-BR') + " Rosas";
+                // personagens e botões
+                CHICOS.textContent = lang.CHICOS;
+                btnchicos.textContent = lang.btnchicos;
+                ZELELES.textContent = lang.ZELELES;
+                btnZELELES.textContent = lang.btnZELELES;
+                ROSINHAS.textContent = lang.ROSINHAS;
+                btnrosinha.textContent = lang.btnrosinha;
+                CAVALOS.textContent = lang.CAVALOS;
+                btncavalo.textContent = lang.btncavalo;
+                CHICOSMA.textContent = lang.CHICOSMA;
+                btnchicosMA.textContent = lang.btnchicosMA;
+                MONICAS.textContent = lang.MONICAS;
+                btnmonica.textContent = lang.btnmonica;
+                CEBOLINHAS.textContent = lang.CEBOLINHAS;
+                btncebolinha.textContent = lang.btncebolinha;
 
-                        CEBOLINHAS.textContent = CEB + " Cebolinhas";
-                        btncebolinha.textContent = "+1 Cebolinha " + custocebolinha.toLocaleString('pt-BR') + " Monicas";
+                GOIABAS.textContent = lang.GOIABAS;
+                GOIABASDPS.textContent = lang.GOIABASDPS;
+                ROSAS.textContent = lang.ROSAS;
+                ROSASDPS.textContent = lang.ROSASDPS;
 
-                        if (GOB > 99999999999) {
-                                GOIABAS.textContent = "Goiabas: " + GOB.toExponential(2);
-                                GOIABASDPS.textContent = "Goiabas por segundo: " + GOBDPS.toExponential(2);
-                        } else {
-                                GOIABAS.textContent = "Goiabas: " + GOB.toLocaleString('pt-BR');
-                                GOIABASDPS.textContent = "Goiabas por segundo: " + GOBDPS.toLocaleString('pt-BR');
-                        }
-
-
-
-
-                        ROSAS.textContent = "Rosas: " + ROSA.toLocaleString('pt-BR');
-                        ROSASDPS.textContent = "Rosas por segundo: " + ROSACALCDPS.toLocaleString('pt-BR');
-                }
         }, 500);
 });

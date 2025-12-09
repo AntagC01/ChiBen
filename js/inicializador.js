@@ -286,3 +286,14 @@ function atualizarBarra(valor, objetivo) {
     document.getElementById("progressoacd").style.width = porcentagem + "%";
     document.getElementById("progressacdtexto").innerText = porcentagem.toFixed(2) + "% Ascend";
 }
+
+
+function formata(num) {
+    if (num >= 9e11) { // 900.000.000.000
+        return num.toExponential(2);
+    } else if(lingua == 'en') {
+        return num.toLocaleString('en');
+    } else if (lingua == 'pt'){
+        return num.toLocaleString('pt');
+    }
+}
