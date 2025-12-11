@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 objetivotranscendhtml: "You need " + formata(objetivotranscend) + " ascensions for the next transcend",
 
                                 tcd: [
-                                        "x" + (1 - transcendvar * 0.07),
-                                        "x" + (1 - transcendvar * 0.07),
+                                        "x" + (1 - transcendvar * 0.07) + ' GVPS',
+                                        "x" + (1 - transcendvar * 0.07) + ' RPS',
                                         "+" + (transcendvar * 0.025).toFixed(3) + " Cost scaling",
                                         "+" + formata(transcendvar * 2) + " Ascensions needed"
                                 ],
@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 objetivotranscendhtml: "Você precisa de " + formata(objetivotranscend) + " ascensões para a próxima transcendência",
 
                                 tcd: [
-                                        "x" + (1 - transcendvar * 0.07),
-                                        "x" + (1 - transcendvar * 0.07),
+                                        "x" + (1 - transcendvar * 0.07) + ' GBPS',
+                                        "x" + (1 - transcendvar * 0.07) + ' RPS',
                                         "+" + (transcendvar * 0.025).toFixed(3) + " Escalonamento de custo",
                                         "+" + formata(transcendvar * 2) + " Ascensões necessárias"
                                 ],
