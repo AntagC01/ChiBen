@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("Aperta").onclick = function () {
         GOB += CLICK;
         if (lingua == 'en') {
-            GOIABAS.textContent = "Guavas: " + GOB.toLocaleString('en');
+            GOIABAS.textContent = "Guavas: " + formata(GOB);
         }
         if (lingua == 'pt') {
-            GOIABAS.textContent = "Goiabas: " + GOB.toLocaleString('pt-BR');
+            GOIABAS.textContent = "Goiabas: " + formata(GOB);
         }
         setCookieBIG("gobValue", GOB);
 
