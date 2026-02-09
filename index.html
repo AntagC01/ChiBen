@@ -14,6 +14,7 @@
     <div id="sidebar" class="sidebar">
         <h2>Menu</h2>
         <button>Home</button>
+        <button id="btnapostas">Gambling</button>
         <button id="btnascension">Ascension</button>
         <button id="btntranscend">Transcend</button>
         <button id="btnconquistas">Achievements</button>
@@ -212,6 +213,22 @@
 
     </div>
 
+    <div id="paginaapostas" class="pagina">
+        <h1>APOSTAS</h1>
+        <h2>ROLETA</h2>
+
+        <div id="jogos">
+            <div class="container">
+                <div class="ponteiro"></div>
+                <canvas id="roleta" width="500" height="500"></canvas>
+                <div id="resultado"></div>
+            </div>
+            <button id="giraroleta" onclick="girar()" title="spin">GIRA!</button>
+        </div>
+
+        <button id="fecharapostas">Back</button>
+    </div>
+
     <div id="paginaconquistas" class="pagina">
         <h1>ACHIEVEMENTS</h1>
         <h2 id="totalcqtdiv">0 of 7 unlocked</h2>
@@ -313,6 +330,7 @@
     <script src="js/production.js"></script>
     <script src="js/ascension.js"></script>
     <script src="js/transcend.js"></script>
+    <script src="js/gambling.js"></script>
 
 </body>
 

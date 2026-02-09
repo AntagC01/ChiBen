@@ -934,3 +934,66 @@ body {
         font-size: 12px;
     }
 }
+
+#giraroleta {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#fecharapostas {
+    margin-top: 10px;
+}
+
+#roleta {
+    transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+.ponteiro {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid rgb(231, 217, 28);
+    margin: auto;
+    position: relative;
+    top: 10px;
+    z-index: 10;
+}
+
+#jogos button {
+    flex: 1 1 140px;
+    /* adaptável ao tamanho do container */
+    padding: 12px 15px;
+    background-color: #7fc0a6;
+    /* dourado médio */
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover nos botões */
+#jogos button:hover {
+    background-color: #49a983;
+    /* dourado suave */
+    transform: scale(1.05);
+}
+
+/* Botão de voltar */
+#fecharapostas{
+    padding: 12px 25px;
+    background-color: #3a8c6c;
+    /* verde profundo */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#fecharapostas:hover {
+    background-color: #49a983;
+    /* verde escuro suave */
+    transform: scale(1.05);
+}

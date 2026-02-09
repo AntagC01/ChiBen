@@ -3,6 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
         sidebar.classList.toggle("open");
     });
 
+    btnapostas.addEventListener("click", () => {
+        desenhar();
+        paginaapostas.classList.add("show");
+    });
+
+    fecharapostas.addEventListener("click", () => {
+        paginaapostas.classList.remove("show");
+    });
+
     btnconquistas.addEventListener("click", () => {
         paginaconquistas.classList.add("show");
     });
