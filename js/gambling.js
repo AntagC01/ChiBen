@@ -66,7 +66,7 @@ function girar() {
 
     setTimeout(() => {
         mostrarResultado();
-    }, 4000);
+    }, 6000);
 }
 
 function mostrarResultado() {
@@ -83,12 +83,12 @@ function mostrarResultado() {
 
     const index = Math.floor(ajustado / setor);
 
-    document.getElementById("resultado").innerText =
-        "Resultado: " + premios[index];
+    document.getElementById("resultado").innerText = "Resultado: " + premios[index];
 
     audioPlayer.src = "mp3/perde.mp3";
     audioPlayer.volume = volumeControl.value;
     audioPlayer.play();
+
     setTimeout(() => {
     girando = false; // libera novo giro
     }, 1300);
