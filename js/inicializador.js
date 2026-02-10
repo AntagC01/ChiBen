@@ -303,7 +303,7 @@ function tocarSom(nomeArquivo, volume = 1) {
     audio.volume = volume;
     audio.play();
 
-    // opcional: limpar da memória quando terminar
+    // limpar da memória quando terminar
     audio.addEventListener("ended", () => {
         audio.remove();
     });

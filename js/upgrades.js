@@ -46,65 +46,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("Upgrade1").onclick = function () {
         upgrade1Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     document.getElementById("Upgrade2").onclick = function () {
         upgrade2Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     document.getElementById("Upgrade3").onclick = function () {
         upgrade3Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     document.getElementById("Upgrade4").onclick = function () {
         upgrade4Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     document.getElementById("Upgrade5").onclick = function () {
         upgrade5Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     document.getElementById("Upgrade6").onclick = function () {
         upgrade6Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     document.getElementById("Upgrade7").onclick = function () {
         upgrade7Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     document.getElementById("Upgrade8").onclick = function () {
         upgrade8Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     document.getElementById("Upgrade9").onclick = function () {
         upgrade9Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     document.getElementById("Upgrade10").onclick = function () {
         upgrade10Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     document.getElementById("Upgrade11").onclick = function () {
         upgrade11Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
     document.getElementById("Upgrade12").onclick = function () {
         upgrade12Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
     document.getElementById("Upgrade13").onclick = function () {
         upgrade13Func();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     };
 
     function upgrade1Func() {
