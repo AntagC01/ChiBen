@@ -59,10 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         setCookieBIG("gobValue", GOB);
 
-        const audio = "mp3/click_satisfatorio.wav";
-        audioPlayer.src = audio;
-        audioPlayer.volume = volumeControl.value * 0.85;
-        audioPlayer.play();
+        tocarSom("click_satisfatorio", volumeControl.value);
     };
 
     //==================== CONFIG ====================

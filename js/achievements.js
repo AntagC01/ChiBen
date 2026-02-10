@@ -234,9 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
         textoElemento.textContent = texto;
         popup.classList.add("show");
 
-        audioPlayer.src = "mp3/achievement.mp3";
-        audioPlayer.volume = volumeControl.value * 0.85;
-        audioPlayer.play();
+        tocarSom("achievement", volumeControl.value);
 
         setTimeout(() => popup.classList.remove("show"), 5000);
     }

@@ -15,9 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setCookie("cbtValue", CBT);
             setCookie("custochicoValue", custochico);
         }
-        audioPlayer.src = "mp3/compra.mp3";
-        audioPlayer.volume = volumeControl.value;
-        audioPlayer.play();
+        tocarSom("compra", volumeControl.value);
 
     };
 
@@ -36,9 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setCookie("zllValue", ZLL);
             setCookie("custozeleleValue", custozelele);
         }
-        audioPlayer.src = "mp3/compra.mp3";
-        audioPlayer.volume = volumeControl.value;
-        audioPlayer.play();
+        tocarSom("compra", volumeControl.value);
     };
 
     document.getElementById("Rosinha").onclick = function () {
@@ -57,9 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setCookie("custorosinhaValue", custorosinha);
         }
         rosasdiv.style.display = 'block';
-        audioPlayer.src = "mp3/compra.mp3";
-        audioPlayer.volume = volumeControl.value;
-        audioPlayer.play();
+        tocarSom("compra", volumeControl.value);
 
         rosasdiv.style.display = 'block';
     };
@@ -80,9 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setCookie("cvlValue", CVL);
         }
 
-        audioPlayer.src = "mp3/compra.mp3";
-        audioPlayer.volume = volumeControl.value;
-        audioPlayer.play();
+        tocarSom("compra", volumeControl.value);
 
         rosasdiv.style.display = 'block';
     };
@@ -102,9 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setCookie("cbtmaValue", CBTMA);
             setCookie("custochicomalhadoValue", custochicomalhado);
         }
-        audioPlayer.src = "mp3/compra.mp3";
-        audioPlayer.volume = volumeControl.value;
-        audioPlayer.play();
+        tocarSom("compra", volumeControl.value);
 
     };
 
@@ -123,9 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setCookie("monicaValue", MON);
             setCookie("customonicaValue", customonica);
         }
-        audioPlayer.src = "mp3/compra.mp3";
-        audioPlayer.volume = volumeControl.value;
-        audioPlayer.play();
+        tocarSom("compra", volumeControl.value);
 
     };
 
@@ -144,9 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setCookie("cebolinhaValue", CEB);
             setCookie("custocebolinhaValue", custocebolinha);
         }
-        audioPlayer.src = "mp3/compra.mp3";
-        audioPlayer.volume = volumeControl.value;
-        audioPlayer.play();
+        tocarSom("compra", volumeControl.value);
 
     };
 
@@ -176,9 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setCookie("sansaoValue", SAN);
             setCookie("custosansaoValue", custosansao);
         }
-        audioPlayer.src = "mp3/compra.mp3";
-        audioPlayer.volume = volumeControl.value;
-        audioPlayer.play();
+        tocarSom("compra", volumeControl.value);
         */
 
     };

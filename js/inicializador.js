@@ -297,3 +297,14 @@ function formata(num) {
         return num.toLocaleString('pt');
     }
 }
+
+function tocarSom(nomeArquivo, volume = 1) {
+    const audio = new Audio(`mp3/${nomeArquivo}.mp3`);
+    audio.volume = volume;
+    audio.play();
+
+    // opcional: limpar da memória quando terminar
+    audio.addEventListener("ended", () => {
+        audio.remove();
+    });
+}

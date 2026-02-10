@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (getCookie("playPrestigio") == 1) {
         // Toca o som
-        somprestigio();
+        tocarSom("prestigio", volumeControl.value);
 
         // Limpa o cookie para não tocar de novo
         setCookie("playPrestigio", 0); // define cookie expirado
@@ -80,9 +80,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 });
-
-function somprestigio(callback) {
-    audioPlayer.src = "mp3/prestigio.mp3";
-    audioPlayer.volume = volumeControl.value;
-    audioPlayer.play();
-}

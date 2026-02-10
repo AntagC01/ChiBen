@@ -60,9 +60,7 @@ function girar() {
     rotacao += giro;
     canvas.style.transform = `rotate(${rotacao}deg)`;
 
-    audioPlayer.src = "mp3/gira.mp3";
-    audioPlayer.volume = volumeControl.value;
-    audioPlayer.play();
+    tocarSom("gira", volumeControl.value);
 
     setTimeout(() => {
         mostrarResultado();
@@ -85,9 +83,7 @@ function mostrarResultado() {
 
     document.getElementById("resultado").innerText = "Resultado: " + premios[index];
 
-    audioPlayer.src = "mp3/perde.mp3";
-    audioPlayer.volume = volumeControl.value;
-    audioPlayer.play();
+    tocarSom("perde", volumeControl.value);
 
     setTimeout(() => {
     girando = false; // libera novo giro

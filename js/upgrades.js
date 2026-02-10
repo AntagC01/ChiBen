@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("ApplyAllButton").onclick = function () {
         upgreideiatudo();
-        somupgrade();
+        tocarSom("upgrade", volumeControl.value);
     }
 
     // Função para chamar todos os upgrades
@@ -264,9 +264,4 @@ document.addEventListener("DOMContentLoaded", () => {
         upgrade13Func();
     }
 
-    function somupgrade() {
-        audioPlayer.src = "mp3/upgrade.mp3";
-        audioPlayer.volume = volumeControl.value;
-        audioPlayer.play();
-    }
 });
